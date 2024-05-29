@@ -332,6 +332,7 @@ ul li a{
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
+  color: black;
 }
 
 .dropdown-menu ul{
