@@ -2,30 +2,46 @@ export const Dropped_Curbs = {
     WIDTH:{
         num: 1.3,
         name: "WIDTH",
-        range: 0.9,
+        range: {
+            operator: ">=",
+            value: 0.9
+        },
         unit: "Meters",
-        desc: "Dropped curbs at crossings have a width corresponding to the width of the crossing; otherwise, the minimum width is 0.90 m."
+        desc: `Dropped curbs at crossings have a width corresponding to the width of the crossing; otherwise, the minimum width is <p class="highlight"> 0.90m </p>.`
     },
     GRADIENT:{
         num: 1.4,
         name: "GRADIENT (TOWARDS ADJOINING CURBS)",
-        range: "1:12",
+        range: "<=1:12",
         unit: "",
-        desc: "Dropped curbs shall be ramped towards adjoining curbs with a gradient not more than 1:12."
+        desc: `Dropped curbs shall be ramped towards adjoining curbs with a gradient not more than <p class="highlight"> 1:12 </p>.`,
+        parsedRange: {
+            operator: "<=",
+            numerator: 1,
+            denominator: 12
+        }
     },
     MAXIMUM: {
         num: 1.5,
         name: "MAXIMUM CROSS GRADIENT (SLOPED TOWARDS THE ROAD)",
-        range: "1:20",
+        range: "<=1:20",
+        parsedRange: {
+            operator: "<=",
+            numerator: 1,
+            denominator: 20
+        },
         unit: "",
-        desc: "Dropped curbs shall be sloped towards the road with a maximum cross gradient of 1:20 to prevent water from collecting at the walkway."
+        desc: `Dropped curbs shall be sloped towards the road with a maximum cross gradient of <p class="highlight"> 1:20 </p> to prevent water from collecting at the walkway.`
     },
     LOWEST: {
         num: 1.6,
         name: "LOWEST POINT OF HEIGHT ABOVE THE ROAD OR GUTTER",
-        range: 25,
+        range: {
+            operator: ">=",
+            value: 25
+        },
         unit: "millimeters",
-        desc: "The lowest point of a dropped curb should not exceed 25 mm from the road or gutter."
+        desc: `The lowest point of a dropped curb should not exceed <p class="highlight"> 25mm </p> from the road or gutter.`
     }
 }
 
@@ -33,16 +49,24 @@ export const Curb_CutOuts = {
     WIDTH: {
         num: 2.2,
         name: "WIDTH",
-        range: 0.9,
+        range: {
+            operator: ">=",
+            value: 0.9
+        },
         unit: "meters",
-        desc: "The minimum width of a curb cut-out should be 0.90 m."
+        desc: `The minimum width of a curb cut-out should be <p class="highlight"> 0.90m </p>.`
     },
     GRADIENT:{
         num: 2.3,
         name: "GRADIENT",
-        range: "1:12",
+        range: "<=1:12",
+        parsedRange: {
+            operator: "<=",
+            numerator: 1,
+            denominator: 12
+        },
         unit: "",
-        desc: "Dropped curbs shall be ramped towards adjoining curbs with a gradient not more than 1:12."
+        desc: `Dropped curbs shall be ramped towards adjoining curbs with a gradient not more than <p class="highlight"> 1:12 </p>.`
     },
 }
 
@@ -50,57 +74,57 @@ export const WALKWAYS_AND_PASSAGEWAYS = {
     GRADIENT:{
         num: 3.2,
         name: "GRADIENT",
-        range: "1:20 or 5%",
+        range: "<=1:20 or 5%",
         unit: "",
-        desc: "Walkways should have a gradient no more than 1:20 or 5%."
+        desc: `Walkways should have a gradient no more than <p class="highlight"> 1:20 </p> or <p class="highlight"> 5% </p>.`
     },
     CROSS_GRADIENT:{
         num: 3.2,
         name: "CROSS GRADIENT",
-        range: "1:100",
+        range: "<=1:100	",
         unit: "",
         desc: "Walkways should have a maximum cross gradient of 1:100."
     },
     WIDTH: {
         num: 3.4,
         name: "WIDTH",
-        range: 1.2,
+        range: ">=1.2",
         unit: "meters",
         desc: "Walkways should have a minimum width of 1.20 m."
     },
     GRATING_OPENINGS: {
         num: 3.5,
         name: "GRATING OPENINGS",
-        range: "13x13",
+        range: "<=13	x	13",
         unit: "millimeters",
         desc: "When occurring along walkways, grating openings should have a maximum dimension of 13 mm x 13 mm"
     },
     PROJECTION: {
         num: 3.5,
         name: "	PROJECTION ABOVE OR BELOW THE LEVEL OF WALKWAY ",
-        range: 6.5,
+        range: "<=6.5",
         unit: "millimeters",
         desc: "When occurring along walkways, grating openings shall not project more than 6.5 mm above the level of the walkway."
     },
     INTERRUPTION : {
         num: 3.6,
         name: "INTERRUPTION BY CRACKS OR BREAK",
-        range: 6.5,
+        range: ">=6.5",
         unit: "millimeters",
         desc: "Walkways should have a continuing surface without abrupt pitches in angle or interruptions by cracks or breaks creating edges above 6.50 mm."
     },
-    SPACES: {
+    SPACES_IN_LENGTHY_BUSY_WALKWAYS: {
         DIMENSION:{
             num: 3.7,
             name: "SPACES IN LENGTHY OR BUSY WALKWAYS",
-            range: 1.5,
+            range: ">=1.5",
             unit: "meters",
             desc: "In lengthy or busy walkways, spaces should have a minimum dimension of 1.50 m."
         },
         DISTANCE:{
             num: 3.7,
             name: "DISTANCE BETWEEN STOPS",
-            range: 12,
+            range: "<=12",
             unit: "meters",
             desc: "In lengthy or busy walkways, spaces should be spaced at a maximum distance of 12 m between stops."
         }
@@ -108,14 +132,14 @@ export const WALKWAYS_AND_PASSAGEWAYS = {
     ANGLE: {
         num: 3.8,
         name: "ANGLE OF TURNS",
-        range: 90,
+        range: "(==)90",
         unit: "degrees",
         desc: "Walkways should as much as possible follow straightforward routes with right angle turns."
     },
     DIMENSION : {
         num: 3.10,
         name: "DIMENSION OF HEADROOM",
-        range: 2,
+        range: ">=2",
         unit: "meters",
         desc: "Walkway headroom should not be less than 2.0 m and preferably higher."
     },
@@ -153,14 +177,14 @@ export const HANDRAILS = {
     CLEARANCE_HANDRAILS_ATTACHED_WALLS: {
         num: 4.5,
         name: "HANDRAILS THAT REQUIRE FULL GRIP	",
-        range: "50",
+        range: ">=50",
         unit: "millimeters",
         desc: "Handrails attached to walls should have a clearance no less than 50 mm from the wall,"
     },
     CLEARANCE_HANDRAILS_LEDGES: {
         num: 4.5,
         name: "HANDRAILS THAT REQUIRE FULL GRIP	",
-        range: "40",
+        range: ">=40",
         unit: "millimeters",
         desc: "Handrails on ledges should have a clearance not less than 40 mm."
     },
