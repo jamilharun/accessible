@@ -7,14 +7,14 @@ export const Dropped_Curbs = {
             value: 0.9
         },
         unit: "Meters",
-        desc: `Dropped curbs at crossings have a width corresponding to the width of the crossing; otherwise, the minimum width is <p class="highlight"> 0.90m </p>.`
+        desc: `Dropped curbs at crossings have a width corresponding to the width of the crossing; otherwise, the minimum width is <span  class="highlight">0.90m</span >.`
     },
     GRADIENT:{
         num: 1.4,
         name: "GRADIENT (TOWARDS ADJOINING CURBS)",
         range: "<=1:12",
         unit: "",
-        desc: `Dropped curbs shall be ramped towards adjoining curbs with a gradient not more than <p class="highlight"> 1:12 </p>.`,
+        desc: `Dropped curbs shall be ramped towards adjoining curbs with a gradient not more than <span class="highlight">1:12</span>.`,
         parsedRange: {
             operator: "<=",
             numerator: 1,
@@ -31,7 +31,7 @@ export const Dropped_Curbs = {
             denominator: 20
         },
         unit: "",
-        desc: `Dropped curbs shall be sloped towards the road with a maximum cross gradient of <p class="highlight"> 1:20 </p> to prevent water from collecting at the walkway.`
+        desc: `Dropped curbs shall be sloped towards the road with a maximum cross gradient of <span  class="highlight">1:20</span > to prevent water from collecting at the walkway.`
     },
     LOWEST: {
         num: 1.6,
@@ -41,7 +41,7 @@ export const Dropped_Curbs = {
             value: 25
         },
         unit: "millimeters",
-        desc: `The lowest point of a dropped curb should not exceed <p class="highlight"> 25mm </p> from the road or gutter.`
+        desc: `The lowest point of a dropped curb should not exceed <span  class="highlight">25mm</span > from the road or gutter.`
     }
 }
 
@@ -54,7 +54,7 @@ export const Curb_CutOuts = {
             value: 0.9
         },
         unit: "meters",
-        desc: `The minimum width of a curb cut-out should be <p class="highlight"> 0.90m </p>.`
+        desc: `The minimum width of a curb cut-out should be <span class="highlight">0.90m</span>.`
     },
     GRADIENT:{
         num: 2.3,
@@ -66,65 +66,97 @@ export const Curb_CutOuts = {
             denominator: 12
         },
         unit: "",
-        desc: `Dropped curbs shall be ramped towards adjoining curbs with a gradient not more than <p class="highlight"> 1:12 </p>.`
+        desc: `Dropped curbs shall be ramped towards adjoining curbs with a gradient not more than <span class="highlight">1:12 </span>.`
     },
 }
 
 export const WALKWAYS_AND_PASSAGEWAYS = { 
-    GRADIENT:{
+    GRADIENT: {
         num: 3.2,
         name: "GRADIENT",
         range: "<=1:20 or 5%",
         unit: "",
-        desc: `Walkways should have a gradient no more than <p class="highlight"> 1:20 </p> or <p class="highlight"> 5% </p>.`
+        desc: `Walkways should have a gradient no more than <span class="highlight"> 1:20 </span> or <span class="highlight"> 5%</span>.`,
+        parsedRange: {
+            ratio: {
+                operator: "<=",
+                numerator: 1,
+                denominator: 20
+            },
+            percentage: 5
+        }
     },
     CROSS_GRADIENT:{
         num: 3.2,
         name: "CROSS GRADIENT",
         range: "<=1:100	",
+        parsedRange: {
+            operator: "<=",
+            numerator: 1,
+            denominator: 100
+        },
         unit: "",
-        desc: "Walkways should have a maximum cross gradient of 1:100."
+        desc: `Walkways should have a maximum cross gradient of <span class="highlight">1:100</span>.`
     },
     WIDTH: {
         num: 3.4,
         name: "WIDTH",
-        range: ">=1.2",
+        range: {
+            operator: ">=",
+            value: 1.2
+        },
         unit: "meters",
-        desc: "Walkways should have a minimum width of 1.20 m."
+        desc: `Walkways should have a minimum width of <span class="highlight">1.20m</span>.`
     },
     GRATING_OPENINGS: {
         num: 3.5,
         name: "GRATING OPENINGS",
-        range: "<=13	x	13",
+        range: {
+            operator: "<=",
+            width: 13,
+            height: 13,
+        },
         unit: "millimeters",
-        desc: "When occurring along walkways, grating openings should have a maximum dimension of 13 mm x 13 mm"
+        desc: `When occurring along walkways, grating openings should have a maximum dimension of <span class="highlight">13mm</span> x <span class="highlight">13mm</span>.`
     },
     PROJECTION: {
         num: 3.5,
         name: "	PROJECTION ABOVE OR BELOW THE LEVEL OF WALKWAY ",
-        range: "<=6.5",
+        range: {
+            operator: "<=",
+            value: 6.5
+        },
         unit: "millimeters",
-        desc: "When occurring along walkways, grating openings shall not project more than 6.5 mm above the level of the walkway."
+        desc: `When occurring along walkways, grating openings shall not project more than <span class="highlight">6.5mm</span> above the level of the walkway.`
     },
     INTERRUPTION : {
         num: 3.6,
         name: "INTERRUPTION BY CRACKS OR BREAK",
-        range: ">=6.5",
+        range: {
+            operator: ">=",
+            value: 6.5
+        },
         unit: "millimeters",
-        desc: "Walkways should have a continuing surface without abrupt pitches in angle or interruptions by cracks or breaks creating edges above 6.50 mm."
+        desc: `Walkways should have a continuing surface without abrupt pitches in angle or interruptions by cracks or breaks creating edges above <span class="highlight">6.50mm.`
     },
     SPACES_IN_LENGTHY_BUSY_WALKWAYS: {
-        DIMENSION:{
+        DIMENSION: {
             num: 3.7,
             name: "SPACES IN LENGTHY OR BUSY WALKWAYS",
-            range: ">=1.5",
+            range: {
+                operator: ">=",
+                value: 1.5
+            },
             unit: "meters",
             desc: "In lengthy or busy walkways, spaces should have a minimum dimension of 1.50 m."
         },
-        DISTANCE:{
+        DISTANCE: {
             num: 3.7,
             name: "DISTANCE BETWEEN STOPS",
-            range: "<=12",
+            range: {
+                operator: "<=",
+                value: 12
+            },
             unit: "meters",
             desc: "In lengthy or busy walkways, spaces should be spaced at a maximum distance of 12 m between stops."
         }

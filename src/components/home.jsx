@@ -3,8 +3,18 @@ import { Outlet, Route, Routes, useNavigate } from "react-router-dom";
 import '../App.css'
 import DroppedCurbs from './DroppedCurbs';
 import CurbCutouts from './CurbCutouts';
+import WalkWaysPassageWays from './WalkWaysPassageWays';
 export default function Home() {
     const navigate = useNavigate();
+
+
+    // const dropdownMenu = document.querySelector('.dropdown-menu ul');
+
+    //     // Get the computed style of the dropdown menu
+    // const computedStyle = window.getComputedStyle(dropdownMenu);
+
+    //     // Access the max-height property
+    // const maxHeight = computedStyle.getPropertyValue('max-height');
   return (
     <>
     <div className='home'>
@@ -25,7 +35,7 @@ export default function Home() {
                 <ul>
                     <li onClick={()=>{navigate("DroppedCurbs")}}>Dropped Curbs</li>
                     <li onClick={()=>{navigate("CurbCutouts")}}>Curb Cut-outs</li>
-                    <li>Walkways and Passageways</li>
+                    <li onClick={()=>{navigate("WalkPassageWays")}}>Walkways and Passageways</li>
                     <li>Handrails</li>
                     <li>Open Spaces</li>
                     <li>Signages</li>
@@ -77,6 +87,7 @@ export default function Home() {
             <Routes>
                 <Route path="DroppedCurbs" element={<DroppedCurbs />} />
                 <Route path="CurbCutouts" element={<CurbCutouts/>} />
+                <Route path="WalkPassageWays" element={<WalkWaysPassageWays/>} />
             </Routes>
         </div>
         {/* <div>

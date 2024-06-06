@@ -64,7 +64,7 @@ export default function CurbCutouts() {
                     <div className=' flex mb-5'>
                       <div>
                         <div className=' input-container input-container-width'>
-                          <p className=' input-text poppins-regular'>width</p>
+                          <p className=' input-text poppins-regular'>Width</p>
                           <input
                             type="number"
                             name="WIDTH"
