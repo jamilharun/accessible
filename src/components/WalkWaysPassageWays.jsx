@@ -17,6 +17,9 @@ export default function WalkWaysPassageWays() {
     const [showAngle, setShowAngle] = useState(true)
     const [showDimention, setShowDimension] = useState(true)
 
+    const [showSpaceDimention, setShowSpaceDimension] = useState(true)
+    const [showSpaceDistance, setShowSpaceDistance] = useState(true)
+
     const [gradientNumerator, setGradientNumerator] = useState(1)
     const [gradientDenominator, setGradientDenominator] = useState(1)
     const [gradientPercent, setGradientPercent] = useState(1)
@@ -24,14 +27,19 @@ export default function WalkWaysPassageWays() {
     const [crossGradientNumerator, setCrossGradientNumerator] = useState(1)
     const [crossGradientDenominator, setCrossGradientDenominator] = useState(1)
 
-    const [width, setWidth] = useState(1)
+    const [width, setWidth] = useState(0)
 
-    const [gratingWidth, setGratingWidth] = useState(1)
-    const [gratingHeight, setGratingHeight] = useState(1)
+    const [gratingWidth, setGratingWidth] = useState(0)
+    const [gratingHeight, setGratingHeight] = useState(0)
 
-    const [projection, setProjection] = useState(1)
+    const [projection, setProjection] = useState(0)
 
-    const [interruption, setInterruption] = useState(1)
+    const [interruption, setInterruption] = useState(0)
+
+    const [spaceDimension, setSpaceDimension] = useState(0)
+    const [spaceDistance, setSpaceDistance] = useState(0)
+    const [angle, setAngle] = useState(0)
+    const [dimension, setDimension] = useState(0)
 
     const searchGradient = () => {
         const parsedNumerator = Number(gradientNumerator);
@@ -155,6 +163,86 @@ export default function WalkWaysPassageWays() {
           }
     }
 
+    const searchSpaceDimention = () => {
+      if (Number(spaceDimension) >= WALKWAYS_AND_PASSAGEWAYS.SPACES_IN_LENGTHY_BUSY_WALKWAYS.DIMENSION.range.value) {
+        console.log("success");
+        setDesc(''); // Clear description on success
+      } else {
+        setDesc(WALKWAYS_AND_PASSAGEWAYS.SPACES_IN_LENGTHY_BUSY_WALKWAYS.DIMENSION.desc);
+        setError(true);
+        setShowGradient(false)
+        setShowCrossGradient(false)
+        setShowWidth(false)
+        setShowGratingOpenings(false)
+          setShowProjection(false)
+          setShowInterruption(false)
+          setShowAngle(false)
+          setShowDimension(false)
+
+        setShowSpaceDistance(false)
+      }
+    }
+
+    const searchSpaceDistance = () => {
+      if (Number(spaceDistance) <= WALKWAYS_AND_PASSAGEWAYS.SPACES_IN_LENGTHY_BUSY_WALKWAYS.DISTANCE.range.value) {
+        console.log("success");
+        setDesc(''); // Clear description on success
+      } else {
+        setDesc(WALKWAYS_AND_PASSAGEWAYS.SPACES_IN_LENGTHY_BUSY_WALKWAYS.DISTANCE.desc);
+        setError(true);
+        setShowGradient(false)
+        setShowCrossGradient(false)
+        setShowWidth(false)
+        setShowGratingOpenings(false)
+          setShowProjection(false)
+          setShowInterruption(false)
+          setShowAngle(false)
+          setShowDimension(false)
+
+        setShowSpaceDimension(false)
+      }
+    }
+
+    const searchAngle = () => {
+      if (Number(angle) === WALKWAYS_AND_PASSAGEWAYS.ANGLE.range.value) {
+          console.log("success");
+          setDesc(''); // Clear description on success
+          setError(false);
+      } else {
+          setDesc(WALKWAYS_AND_PASSAGEWAYS.ANGLE.desc);
+          setError                  (true);
+          setDesc                   (false)
+          setError                  (false);
+          setShowGradient           (false)
+          setShowCrossGradient      (false)
+          setShowWidth              (false)
+          setShowGratingOpenings    (false)
+          setShowProjection         (false)
+          setShowInterruption       (false)
+          setShowDimension          (false)
+          setShowSpacesLengthBusyWalkWays(false)
+      }
+    };
+
+    const searchDimention = () => {
+      if (Number(dimension) >= WALKWAYS_AND_PASSAGEWAYS.DIMENSION.range.value) {
+        console.log("success");
+        setDesc(''); // Clear description on success
+      } else {
+        setDesc(WALKWAYS_AND_PASSAGEWAYS.DIMENSION.desc);
+        setError(true);
+        setShowGradient(false)
+        setShowCrossGradient(false)
+        setShowGratingOpenings(false)
+          setShowProjection(false)
+          setShowInterruption(false)
+          setShowSpacesLengthBusyWalkWays(false)
+          setShowAngle(false)
+          setShowWidth              (false)
+          
+      }
+  };
+
     const backButton = () => {
         if (desc, error) {
           setDesc(false)
@@ -168,12 +256,15 @@ export default function WalkWaysPassageWays() {
             setShowSpacesLengthBusyWalkWays(true)
             setShowAngle(true)
             setShowDimension(true)
+
+            setShowSpaceDimension(true)
+            setShowSpaceDistance(true)
         } else {
           navigate("/Profile");
         }
       }
     return (
-        <div className='container poppins-regular'>
+        <div className='container-moreheight poppins-regular'>
             <div className='container-body '>
 
                 {
@@ -322,7 +413,7 @@ export default function WalkWaysPassageWays() {
                             />
                             </div>
                             <div className=' input-text text-end'>
-                            {/* <p className='unit'>{`(${Dropped_Curbs.GRADIENT.unit})`}</p> */}
+                            <p className='unit'>{`(${WALKWAYS_AND_PASSAGEWAYS.GRATING_OPENINGS.unit})`}</p>
                             </div>
                         </div>
                         {
@@ -407,36 +498,98 @@ export default function WalkWaysPassageWays() {
                     <div className=' flex mb-5'>
                       <div>
                         <div className=' input-container-box input-container-width'>
-                          <div>
-                            <div>
-                              <p className=' input-text poppins-regular'>Space in length or busy walkways</p>
-                              <input
-                                type="number"
-                                name="WIDTH"
-                                className="input-field"
-                                value={interruption}
-                                onChange={(e) => setInterruption(e.target.value)}
-                              />
-                            </div>
-                            <div className=' input-text text-end'>
-                              <p className='unit'>{`(${WALKWAYS_AND_PASSAGEWAYS.INTERRUPTION.unit})`}</p>
-                            </div>
+                          <p> Spaces in length or busy walkways</p>
+                          {
+                            showSpaceDimention && 
+                              <div className=' w-full'>
+                                <div className='asdasda'>
+                                  <p className=' input-text poppins-regular'>Dimentions</p>
+                                  <input
+                                    type="number"
+                                    name="spaceDimension"
+                                    className="input-field"
+                                    value={spaceDimension}
+                                    onChange={(e) => setSpaceDimension(e.target.value)}
+                                  />
+                                </div>
+                                <div className=' input-text text-end'>
+                                  <p className='unit'>{`(${WALKWAYS_AND_PASSAGEWAYS.INTERRUPTION.unit})`}</p>
+                                </div>
+                              </div>
+                          }
+
+                          {
+                            showSpaceDistance &&
+                              <div className=' w-full'>
+                                <div className='asdasda'>
+                                  <p className=' input-text poppins-regular'>Distance</p>
+                                  <input
+                                    type="number"
+                                    name="spaceDistance"
+                                    className="input-field"
+                                    value={spaceDistance}
+                                    onChange={(e) => setSpaceDistance(e.target.value)}
+                                  />
+                                </div>
+                                <div className=' input-text text-end'>
+                                  <p className='unit'>{`(${WALKWAYS_AND_PASSAGEWAYS.INTERRUPTION.unit})`}</p>
+                                </div>
+                              </div>
+                          }
+                        </div>
+                      </div>
+                      <div className='wqwwqwq'>
+                        {
+                          showSpaceDimention && 
+                          <div className='qweqwe'>
+                            {
+                              error ? <div>
+                                <p className='inadequate'>INADEQUATE</p>
+                              </div> :
+                              <div 
+                                onClick={searchSpaceDimention}
+                                className='input-button poppins-regular'>
+                                <p>Search</p>
+                              </div>
+                            }
                           </div>
-                          <div>
-                            <div>
-                              <p className=' input-text poppins-regular'>Fistance between stops</p>
-                              <input
-                                type="number"
-                                name="WIDTH"
-                                className="input-field"
-                                value={interruption}
-                                onChange={(e) => setInterruption(e.target.value)}
-                              />
-                            </div>
-                            <div className=' input-text text-end'>
-                              <p className='unit'>{`(${WALKWAYS_AND_PASSAGEWAYS.INTERRUPTION.unit})`}</p>
-                            </div>
+                        }
+                        {
+                          showSpaceDistance &&
+                          <div className='qweqwe'>
+                            {
+                              error ? <div>
+                                <p className='inadequate'>INADEQUATE</p>
+                              </div> :
+                              <div 
+                                onClick={searchSpaceDistance}
+                                className='input-button poppins-regular'>
+                                <p>Search</p>
+                              </div>
+                            }
                           </div>
+                        }
+                      </div>
+                      
+                    </div>
+                }
+
+                {
+                  showAngle && 
+                    <div className=' flex mb-5'>
+                      <div>
+                        <div className=' input-container input-container-width'>
+                          <p className=' input-text poppins-regular'>Angle of turns</p>
+                          <input
+                            type="number"
+                            name="angle"
+                            className="input-field"
+                            value={angle}
+                            onChange={(e) => setAngle(e.target.value)}
+                          />
+                        </div>
+                        <div className=' input-text text-end'>
+                          <p className='unit'>{`(${WALKWAYS_AND_PASSAGEWAYS.ANGLE.unit})`}</p>
                         </div>
                       </div>
                       {
@@ -444,14 +597,46 @@ export default function WalkWaysPassageWays() {
                           <p className='inadequate'>INADEQUATE</p>
                         </div> :
                         <div 
-                          onClick={searchInterruption}
+                          onClick={searchAngle}
                           className='input-button poppins-regular'>
                           <p>Search</p>
                         </div>
                       }
+                      
                     </div>
                 }
 
+                {
+                  showDimention && 
+                    <div className=' flex mb-5'>
+                      <div>
+                        <div className=' input-container input-container-width'>
+                          <p className=' input-text poppins-regular'>Dimention of headroom</p>
+                          <input
+                            type="number"
+                            name="WIDTH"
+                            className="input-field"
+                            value={dimension}
+                            onChange={(e) => setDimension(e.target.value)}
+                          />
+                        </div>
+                        <div className=' input-text text-end'>
+                          <p className='unit'>{`(${WALKWAYS_AND_PASSAGEWAYS.DIMENSION.unit})`}</p>
+                        </div>
+                      </div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div 
+                          onClick={searchDimention}
+                          className='input-button poppins-regular'>
+                          <p>Search</p>
+                        </div>
+                      }
+                      
+                    </div>
+                }
 
                 {desc && <div dangerouslySetInnerHTML={{ __html: desc }} className='description'></div>}
             </div>

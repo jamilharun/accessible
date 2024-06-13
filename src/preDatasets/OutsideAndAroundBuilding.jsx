@@ -6,7 +6,7 @@ export const Dropped_Curbs = {
             operator: ">=",
             value: 0.9
         },
-        unit: "Meters",
+        unit: "meters",
         desc: `Dropped curbs at crossings have a width corresponding to the width of the crossing; otherwise, the minimum width is <span  class="highlight">0.90m</span >.`
     },
     GRADIENT:{
@@ -137,7 +137,7 @@ export const WALKWAYS_AND_PASSAGEWAYS = {
             value: 6.5
         },
         unit: "millimeters",
-        desc: `Walkways should have a continuing surface without abrupt pitches in angle or interruptions by cracks or breaks creating edges above <span class="highlight">6.50mm.`
+        desc: `Walkways should have a continuing surface without abrupt pitches in angle or interruptions by cracks or breaks creating edges above <span class="highlight">6.50mm</span>.`
     },
     SPACES_IN_LENGTHY_BUSY_WALKWAYS: {
         DIMENSION: {
@@ -148,7 +148,7 @@ export const WALKWAYS_AND_PASSAGEWAYS = {
                 value: 1.5
             },
             unit: "meters",
-            desc: "In lengthy or busy walkways, spaces should have a minimum dimension of 1.50 m."
+            desc: `In lengthy or busy walkways, spaces should have a minimum dimension of <span class="highlight">1.50m</span>.`
         },
         DISTANCE: {
             num: 3.7,
@@ -158,22 +158,28 @@ export const WALKWAYS_AND_PASSAGEWAYS = {
                 value: 12
             },
             unit: "meters",
-            desc: "In lengthy or busy walkways, spaces should be spaced at a maximum distance of 12 m between stops."
+            desc: `In lengthy or busy walkways, spaces should be spaced at a maximum distance of <span class="highlight">12m</span> between stops.`
         }
     },
     ANGLE: {
         num: 3.8,
         name: "ANGLE OF TURNS",
-        range: "(==)90",
+        range: {
+            operator: "(==)",
+            value: 90
+        },
         unit: "degrees",
         desc: "Walkways should as much as possible follow straightforward routes with right angle turns."
     },
     DIMENSION : {
         num: 3.10,
         name: "DIMENSION OF HEADROOM",
-        range: ">=2",
+        range: {
+            operator: ">=",
+            value: 2
+        },
         unit: "meters",
-        desc: "Walkway headroom should not be less than 2.0 m and preferably higher."
+        desc: `Walkway headroom should not be less than <span class="highlight">2.0m</span> and preferably higher.`
     },
 }
 
@@ -182,43 +188,69 @@ export const HANDRAILS = {
         num: 4.2,
         name: "HEIGHT ABOVE STEPS OR RAMPS",
         range: "(==)0.7	&	(==)0.9",
+        parsedRange: {
+            numerator: 0.7,
+            denominator: 0.9
+        },
         unit: "meters",
-        desc: "Handrails shall be installed at 0.90 m and 0.70 m above steps or ramps."
+        desc: `Handrails shall be installed at <span class="highlight">0.90m</span> and <span class="highlight">0.70m</span> above steps or ramps.`
     },
     HANDRAILS: {
         num: 4.2,
         name: "HANDRAILS FOR PROTECTION AT GREAT HEIGHTS",
         range: "1 - 1.06",
+        parsedRange: {
+            operator: "min max",
+            numerator: 1,
+            denominator: 1.06
+        },
         unit: "meters",
-        desc: "Handrails for protection at great heights may be installed at 1.0 m to 1.06 m."
+        desc: `Handrails for protection at great heights may be installed at <span class="highlight">1.0m</span> to <span class="highlight">1.06m</span>.`
     },
     EXTENSION: {
         num: 4.3,
         name: "EXTENSION OF HANDRAIL AT THE START AND END OF RAMPS AND STAIRS",
-        range: 30,
+        // range: "(==)30",
+        range: {
+            operator: "==",
+            value: 30
+        },
         unit: "meters",
-        desc: "A.0.30 m long extension of the handrail should be provided at the start and end of ramps and stairs."
+        desc: `A.<span class="highlight">0.30</span> long extension of the handrail should be provided at the start and end of ramps and stairs.`
     },
     HANDRAILS_FULL_GRIP: {
         num: 4.4,
         name: "HANDRAILS THAT REQUIRE FULL GRIP	",
         range: "30 - 50",
+        parsedRange: {
+            operator: "min max",
+            numerator: 30,
+            denominator: 50
+        },
         unit: "millimeters",
-        desc: "Handrails that require full grip should have a dimension of 30 mm to 50 mm."
+        desc: `Handrails that require full grip should have a dimension of <span class="highlight">30mm</span> to <span class="highlight">50mm</span>.`
     },
     CLEARANCE_HANDRAILS_ATTACHED_WALLS: {
         num: 4.5,
         name: "HANDRAILS THAT REQUIRE FULL GRIP	",
-        range: ">=50",
+        // range: ">=50",
+        range: {
+            operator: ">=",
+            value: 50
+        },
         unit: "millimeters",
-        desc: "Handrails attached to walls should have a clearance no less than 50 mm from the wall,"
+        desc: `Handrails attached to walls should have a clearance no less than <span class="highlight">50mm</span> from the wall,`
     },
     CLEARANCE_HANDRAILS_LEDGES: {
         num: 4.5,
         name: "HANDRAILS THAT REQUIRE FULL GRIP	",
-        range: ">=40",
+        // range: ">=40",
+        range: {
+            operator: ">=",
+            value: 40
+        },
         unit: "millimeters",
-        desc: "Handrails on ledges should have a clearance not less than 40 mm."
+        desc: `Handrails on ledges should have a clearance not less than <span class="highlight">40mm</span>.`
     },
 }
 
@@ -229,86 +261,132 @@ export const SIGNAGES = {
         desc: "The international symbol for access should be used to designate routes and facilities that are accessible.",
         a:{
             name: "A: Access Symbol",
-            range: "(==)10	x	10",
+            // range: "(==)10	x	10",
+            range: {
+                operator: "==",
+                value: 10
+            },
             unit: "centimeters"
         },
         b:{
             name: "B: Phone	",
-            range: "(==)15	x	15",
+            // range: "(==)15	x	15",
+            range: {
+                operator: "==",
+                value: 15
+            },
             unit: "centimeters"
         },
         c:{
             name: "C. Elevator",
-            range: "(==)22	x	22",
+            // range: "(==)22	x	22",
+            range: {
+                operator: "==",
+                value: 22
+            },
             unit: "centimeters"
         },
         d:{
             name: "D. Parking",
-            range: "(==)30	x	30",
+            // range: "(==)30	x	30",
+            range: {
+                operator: "==",
+                value: 30
+            },
             unit: "centimeters"
         },
         e:{
             name: "E. Ramp",
-            range: "(==)60	x	60",
+            // range: "(==)60	x	60",
+            range: {
+                operator: "==",
+                value: 60
+            },
             unit: "centimeters"
         },
         f:{
             name: "",
-            range: "(==)20	x	60",
+            // range: "(==)20	x	60",
+            range: {
+                operator: "==",
+                numerator: 20,
+                denominator: 60
+            },
             unit: "centimeters"
         },
     },
     DIMENSION:{
         num: 6.4,
         name: "DIMENSION OF HEADROOM	",
-        range: ">=2",
+        range: {
+            operator: ">=",
+            value: 2
+        },
         unit: "meters",
-        desc: "Signs protrude into a walkway or route should provide a minimum headroom of 2.0 m,"
+        desc: `Signs protrude into a walkway or route should provide a minimum headroom of <span class="highlight">2.0m</span>,`
     },
     HEIGHT1:{
         num: 6.5,
         name: "HEIGHT OF SIGNS ON WALLS AND DOORS	",
-        range: "<=1.4",
+        range: {
+            operator: "<=",
+            value: 1.4
+        },
         unit: "meters",
-        desc: "Signs on walls and doors should be located at a maximum height of 1.6 m."
+        desc: `Signs on walls and doors should be located at a maximum height of <span class="highlight">1.6m</span>.`
     },
     HEIGHT2:{
         num: 6.5,
         name: "HEIGHT OF SIGNS ON WALLS AND DOORS	",
-        range: ">=1.6",
+        range: {
+            operator: ">=",
+            value: 1.6
+        },
         unit: "meters",
-        desc: "Signs on walls and doors should be located at a minimum height of 1.4 m."
+        desc: `Signs on walls and doors should be located at a minimum height of <span class="highlight">1.4m</span>.`
     },
     HEIGHT_SIGNAGES_SYMBOLS_LETTERS_NUMBERS:{
         num: 6.6,
         name: "HEIGHT OF SIGNAGES SHOULD HAVE RAISED SYMBOLS, LETTERS, OR NUMBERS",
-        range: ">=1",
+        range: {
+            operator: ">=",
+            value: 1
+        },
         unit: "millimeters",
-        desc: "Signages labeling public rooms and places should have raised symbols, letters or numbers with minimum height of 1 mm."
+        desc: `Signages labeling public rooms and places should have raised symbols, letters or numbers with minimum height of <span class="highlight">1mm</span>.`
     }
 }
 
 export const CROSSINGS = {
-    DEPTH:{
+    DEPTH: {
         num: 7.1,
         name: "DEPTH OF CENTRAL REFUGES	",
-        range: ">=1.5",
+        range: {
+            operator: ">=",
+            value: 1.5
+        },
         unit: "meters",
-        desc: "All at grade crossing should have central refuges of at least 1.5 m in depth and preferably 2.0 m."
+        desc: `All at grade crossing should have central refuges of at least <span class="highlight">1.5m</span> in depth and preferably <span class="highlight">2.0m</span>.`
     },
-    WIDTH:{
+    WIDTH: {
         num: 7.1,
         name: "WIDTH OF THE CARRIAGEWAY	",
-        range: ">=10",
+        range: {
+            operator: ">=",
+            value: 10
+        },
         unit: "meters",
-        desc: "All at grade crossing should have central refuges, provided as a midcrossing shelter with a width of carriageway to be crossed exceeds 10 m."
+        desc: `All at grade crossing should have central refuges, provided as a midcrossing shelter with a width of carriageway to be crossed exceeds <span class="highlight">10m</span>.`
     },
-    CROSSING_PERIOD:{
+    CROSSING_PERIOD: {
         num: 7.6,
         name: "CROSSING PERIOD",
-        range: ">=6",
+        range: {
+            operator: ">=",
+            value: 6
+        },
         unit: "seconds",
-        desc: "The minimum period for the steady green (for pedestrians) should not be less than 6 seconds or the crossing distance times 0.90 m/sec, whichever is the greatest,"
+        desc: `The minimum period for the steady green (for pedestrians) should not be less than <span class="highlight">6</span> seconds or the crossing distance times <span class="highlight">0.90m/sec</span>, whichever is the greatest,`
     }
 }
 // https://docs.google.com/spreadsheets/d/1INlWvv3XZu0cRbJc4_uIpCUtVAQyAWQD/htmlview#

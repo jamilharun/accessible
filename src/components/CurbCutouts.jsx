@@ -8,9 +8,9 @@ export default function CurbCutouts() {
     const [showWidth, setShowWidth] = useState(true)
     const [showGradient, setShowGradient] = useState(true)
 
-    const [width, setWidth] = useState(1)
-    const [gradientNumerator, setGradientNumerator] = useState(1)
-    const [gradientDenominator, setGradientDenominator] = useState(1)
+    const [width, setWidth] = useState(0)
+    const [gradientNumerator, setGradientNumerator] = useState(0)
+    const [gradientDenominator, setGradientDenominator] = useState(0)
 
     const [desc, setDesc] = useState(false)
     const [error, setError] = useState(false)
@@ -116,15 +116,24 @@ export default function CurbCutouts() {
                         <div className=' input-text text-end'>
                         </div>
                       </div>
-                      {
-                        error ? <div>
-                          <p className='inadequate'>INADEQUATE</p>
-                        </div> :
+                      {/* {
+
+                        default ?
                         <div 
                           onClick={searchGradient}
                           className='input-button poppins-regular'>
                           <p>Search</p>
-                        </div>
+                        </div>: 
+                    
+                      } */}
+                      
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
                       }
                     </div>
                 }

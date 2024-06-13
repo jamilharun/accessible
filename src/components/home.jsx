@@ -4,6 +4,25 @@ import '../App.css'
 import DroppedCurbs from './DroppedCurbs';
 import CurbCutouts from './CurbCutouts';
 import WalkWaysPassageWays from './WalkWaysPassageWays';
+import Handrails from './Handrails';
+import Signages from './Signages';
+import Crossing from './Crossing';
+import ParkingArea from './ParkingArea';
+import Fencing from './Fencing';
+import Covers from './Covers';
+import SafetySignage from './SafetySignage';
+import Entrance from './Entrance';
+import Ramps from './Ramps';
+import Doors from './Doors';
+import Thresholds from './Thresholds';
+import Switches from './Switches';
+import Corridors from './Corridors';
+import WashRooms from './WashRooms';
+import Stairs from './Stairs';
+import Elevator from './Elevator';
+import WaterFountain from './WaterFountain';
+import PublicTelephone from './PublicTelephone';
+import PlacesOfAssembly from './PlacesOfAssembly';
 export default function Home() {
     const navigate = useNavigate();
 
@@ -36,47 +55,44 @@ export default function Home() {
                     <li onClick={()=>{navigate("DroppedCurbs")}}>Dropped Curbs</li>
                     <li onClick={()=>{navigate("CurbCutouts")}}>Curb Cut-outs</li>
                     <li onClick={()=>{navigate("WalkPassageWays")}}>Walkways and Passageways</li>
-                    <li>Handrails</li>
-                    <li>Open Spaces</li>
-                    <li>Signages</li>
-                    <li>Crossings</li>
+                    <li onClick={()=>{navigate("HandRails")}}>Handrails</li>
+                    <li onClick={()=>{navigate("Signage")}}>Signages</li>
+                    <li onClick={()=>{navigate("Crossing")}}>Crossings</li>
                 </ul>
             </div>
 
             <div className="dropdown-menu">
                 <button>Inside Buildings and Structures▾</button>
                 <ul>
-                    <li><a href="#">Entrances</a></li>
-                    <li><a href="#">Ramps</a></li>
-                    <li><a href="#">Doors</a></li>
-                    <li><a href="#">Thresholds</a></li>
-                    <li><a href="#">Switches</a></li>
-                    <li><a href="#">Signages</a></li>
-                    <li><a href="#">Corridors</a></li>
-                    <li><a href="#">Washrooms & Toilets</a></li>
-                    <li><a href="#">Stairs</a></li>
-                    <li><a href="#">Elevators</a></li>
-                    <li><a href="#">Water Fountains</a></li>
-                    <li><a href="#">Public Telephones</a></li>
-                    <li><a href="#">Places of Assembly</a></li>
+                    <li onClick={()=>{navigate("Entrance")}}>Entrances</li>
+                    <li onClick={()=>{navigate("Ramps")}}>Ramps</li>
+                    <li onClick={()=>{navigate("Doors")}}>Doors</li>
+                    <li onClick={()=>{navigate("Thresholds")}}>Thresholds</li>
+                    <li onClick={()=>{navigate("Switches")}}>Switches</li>
+                    {/* <li onClick={()=>{navigate("Signages")}}>Signages</li> */}
+                    <li onClick={()=>{navigate("Corridor")}}>Corridors</li>
+                    <li onClick={()=>{navigate("Washtoilet")}}>Washrooms & Toilets</li>
+                    <li onClick={()=>{navigate("Stairs")}}>Stairs</li>
+                    <li onClick={()=>{navigate("Elevator")}}>Elevators</li>
+                    <li onClick={()=>{navigate("WaterFountain")}}>Water Fountains</li>
+                    <li onClick={()=>{navigate("PublicTel")}}>Public Telephones</li>
+                    <li onClick={()=>{navigate("PlaceAssembly")}}>Places of Assembly</li>
                 </ul>
             </div>
 
             <div className="dropdown-menu">
                 <button>Safety▾</button>
                 <ul>
-                    <li><a href="#">Fencing for Roadworks and Footworks</a></li>
-                    <li><a href="#">Covers for Excavation</a></li>
-                    <li><a href="#">Signage for Roadworks on the Carriageway</a></li>
-                    <li><a href="#">Location of Emergency Exit</a></li>
-                    <li><a href="#">Audible and Visible Alarm System</a></li>
+                    <li onClick={()=>{navigate("Fencing")}}>Fencing for Roadworks and Footworks</li>
+                    <li onClick={()=>{navigate("Covers")}}>Covers for Excavation</li>
+                    <li onClick={()=>{navigate("SafetySignage")}}>Signage for Roadworks on the Carriageway</li>
                 </ul>
             </div>
 
             <div class="dropdown-menu">
                 <button>Parking▾</button>
                 <ul>
-                    <li><a href="#">Parking Areas</a></li>
+                    <li onClick={()=>{navigate("ParkingArea")}}>Parking Areas</li>
                 </ul>
             </div>
             </div>
@@ -88,6 +104,25 @@ export default function Home() {
                 <Route path="DroppedCurbs" element={<DroppedCurbs />} />
                 <Route path="CurbCutouts" element={<CurbCutouts/>} />
                 <Route path="WalkPassageWays" element={<WalkWaysPassageWays/>} />
+                <Route path="HandRails" element={<Handrails/>} />
+                <Route path="Signage" element={<Signages/>} />
+                <Route path="Crossing" element={<Crossing/>} />
+                <Route path="ParkingArea" element={<ParkingArea/>} />
+                <Route path="Fencing" element={<Fencing/>} />
+                <Route path="Covers" element={<Covers/>} />
+                <Route path="SafetySignage" element={<SafetySignage/>} />
+                <Route path="Entrance" element={<Entrance/>} />
+                <Route path="Ramps" element={<Ramps/>} />
+                <Route path="Doors" element={<Doors/>} />
+                <Route path="Thresholds" element={<Thresholds/>} />
+                <Route path="Switches" element={<Switches/>} />
+                <Route path="Corridor" element={<Corridors/>} />
+                <Route path="Washtoilet" element={<WashRooms/>} />
+                <Route path="Stairs" element={<Stairs/>} />
+                <Route path="Elevator" element={<Elevator/>} />
+                <Route path="WaterFountain" element={<WaterFountain/>} />
+                <Route path="PublicTel" element={<PublicTelephone/>} />
+                <Route path="PlaceAssembly" element={<PlacesOfAssembly/>} />
             </Routes>
         </div>
         {/* <div>

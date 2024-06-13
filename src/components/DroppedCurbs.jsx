@@ -11,11 +11,11 @@ export default function DroppedCurbs() {
   const [showMaximum, setShowMaximum] = useState(true)
   const [showLowest, setShowLowest] = useState(true)
 
-  const [width, setWidth] = useState(1)
-  const [gradientNumerator, setGradientNumerator] = useState(1)
-  const [gradientDenominator, setGradientDenominator] = useState(1)
-  const [maximumNumerator, setMaximumNumerator] = useState(1)
-  const [maximumDenominator, setMaximumDenominator] = useState(1)
+  const [width, setWidth] = useState(0)
+  const [gradientNumerator, setGradientNumerator] = useState(0)
+  const [gradientDenominator, setGradientDenominator] = useState(0)
+  const [maximumNumerator, setMaximumNumerator] = useState(0)
+  const [maximumDenominator, setMaximumDenominator] = useState(0)
   const [lowest, setLowest] = useState(1)
 
   const [desc, setDesc] = useState(false)
