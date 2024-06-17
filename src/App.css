@@ -475,7 +475,7 @@ ul li a{
   justify-content: center;
   align-items: center;
 
-  margin-right: 300px;
+  margin-right: 200px;
   margin-bottom: 100px;
 }
 
@@ -499,6 +499,7 @@ ul li a{
 }
 
 .input-container{
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -525,6 +526,7 @@ ul li a{
 }
 
 .input-text{
+  max-height: 50px;
   font-size: larger;
   text-align: start;
   padding: 0 10px;
@@ -688,4 +690,76 @@ ul li a{
   /* text-align: end; */
   /* align-items: end; */
   justify-content: end;
+}
+
+
+
+@media (max-width: 1510px) {
+  .input-container-width {
+    width: 475px;
+  }
+  .dropdown-menu ul{
+    width: 300px;
+  }
+  .dropdown-menu button{
+    width: 300px;
+    font-size: 15px;
+  }
+  .dropdown-container{
+
+  }
+  .dropdown-menu{
+    margin-top: 80px;
+  }
+
+  .league-spartan{
+    font-size: 50px;
+  }
+  ul li{
+    margin-left: 50px;
+  }
+  .container-moreheight{
+    margin-right: 150px;
+  }
+  .container{
+    margin-right: 150px;
+  }
+}
+
+@media (max-width: 1315px) {
+  .input-container {
+    height: 45px;
+  }
+  .league-spartan{
+    font-size: 45px;
+  }
+  ul li{
+    margin-left: 0px;
+  }
+  .container-moreheight{
+    margin-right: 100px;
+  }
+  .container{
+    margin-right: 100px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container-moreheight{
+    margin-right: 50px;
+  }
+  .container{
+    margin-right: 50px;
+  }
+}
+
+@media (max-width: 1100px) {
+
+  .container-moreheight{
+    margin-right: 0px;
+  }
+
+  .container{
+    margin-right: 0px;
+  }
 }
