@@ -6,6 +6,7 @@ export default function PlacesOfAssembly() {
 
     const [desc, setDesc] = useState(false)
   const [error, setError] = useState(false)
+  const [buttonDefault, setButtonDefault] = useState(true)
 
   const [showWheelChairTurnabout, setShowWheelChairTurnabout] = useState(true)
   const [showWheelChairWidth, setShowWheelChairWidth] = useState(true)
@@ -19,9 +20,14 @@ export default function PlacesOfAssembly() {
     if (Number(wheelChairTurnabout) == PLACES_ASSEMBLY.WHEELCHAIR_TURNABOUT_SPACE.range) {
         console.log("success");
         setDesc(''); // Clear description on success
+        setButtonDefault(false)
+        // setShowWheelChairTurnabout(false)
+        setShowWheelChairWidth(false)
+        setShowSpacePerson(false)
       } else {
         setDesc(PLACES_ASSEMBLY.WHEELCHAIR_TURNABOUT_SPACE.desc);
         setError(true);
+        setButtonDefault(false)
         // setShowWheelChairTurnabout(false)
         setShowWheelChairWidth(false)
         setShowSpacePerson(false)
@@ -32,9 +38,14 @@ export default function PlacesOfAssembly() {
     if (Number(wheelChairWidth) == PLACES_ASSEMBLY.WHEELCHAIR_WIDTH.range) {
         console.log("success");
         setDesc(''); // Clear description on success
+        setButtonDefault(false)
+        setShowWheelChairTurnabout(false)
+        // setShowWheelChairWidth(false)
+        setShowSpacePerson(false)
       } else {
         setDesc(PLACES_ASSEMBLY.WHEELCHAIR_WIDTH.desc);
         setError(true);
+        setButtonDefault(false)
         setShowWheelChairTurnabout(false)
         // setShowWheelChairWidth(false)
         setShowSpacePerson(false)
@@ -45,9 +56,14 @@ export default function PlacesOfAssembly() {
     if (Number(spacePerson) == PLACES_ASSEMBLY.SPACEPERSON_BRACES_CRUTCHES.range) {
         console.log("success");
         setDesc(''); // Clear description on success
+        setButtonDefault(false)
+        setShowWheelChairTurnabout(false)
+        setShowWheelChairWidth(false)
+        // setShowSpacePerson(false)
       } else {
         setDesc(PLACES_ASSEMBLY.SPACEPERSON_BRACES_CRUTCHES.desc);
         setError(true);
+        setButtonDefault(false)
         setShowWheelChairTurnabout(false)
         setShowWheelChairWidth(false)
         // setShowSpacePerson(false)
@@ -55,9 +71,10 @@ export default function PlacesOfAssembly() {
   }
 
   const backButton = () => {
-    if (desc, error) {
+    if (!buttonDefault) {
       setDesc(false)
       setError(false);
+      setButtonDefault(true)
       setShowWheelChairTurnabout(true)
       setShowWheelChairWidth(true)
       setShowSpacePerson(true)    
@@ -90,16 +107,23 @@ export default function PlacesOfAssembly() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchWheelChairTurnabout}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -122,16 +146,23 @@ export default function PlacesOfAssembly() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchWheelChairWidth}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -154,16 +185,23 @@ export default function PlacesOfAssembly() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchSpacePerson}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 

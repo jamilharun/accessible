@@ -457,7 +457,7 @@ ul li a{
 
 .container{
   width: 75%;
-  height: 100%;
+  /* height: 100%; */
   background: #f6f6f6;
   display: flex;
   justify-content: center;
@@ -469,12 +469,14 @@ ul li a{
 .container-moreheight{
   width: 75%;
   /* height: 130vh; */
+  /* height: 100%; */
   background: #f6f6f6;
   display: flex;
   justify-content: center;
   align-items: center;
 
   margin-right: 300px;
+  margin-bottom: 100px;
 }
 
 .container-body{
@@ -518,12 +520,14 @@ ul li a{
   color: #0097b2;
   /* padding: 15px; */
   text-decoration: underline;
-  /* height: 50px; */
+  margin-left: 20px;
+  max-height: 50px;
 }
 
 .input-text{
   font-size: larger;
   text-align: start;
+  padding: 0 10px;
 }
 
 .signage_title{
@@ -552,6 +556,7 @@ ul li a{
   /* padding: 0 10px; */
   font-size: large;
   font-weight: 400;
+  padding-left: 10px;
 }
 
 .input-field-signage{
@@ -640,6 +645,14 @@ ul li a{
 .asdasda{
   /* background: #ff9e7a; */
   /* border-radius: 25px; */
+  padding: 10px 0px;
+  display:  flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.asdasda123{
+  width: 100%;
   padding: 10px 15px;
   display:  flex;
   justify-content: center;

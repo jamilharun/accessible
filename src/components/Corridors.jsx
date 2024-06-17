@@ -6,6 +6,7 @@ export default function Corridors() {
     const navigate = useNavigate();
     const [desc, setDesc] = useState(false)
     const [error, setError] = useState(false)
+    const [buttonDefault, setButtonDefault] = useState(true)
 
     const [showWidth, setShowWidth] = useState(true)
     const [showTurnaboutArea, setShowTurnaboutArea] = useState(true)
@@ -22,9 +23,14 @@ export default function Corridors() {
         if (Number(width) >= CORRIDORS.WIDTH.range.value) {
           console.log("success");
           setDesc(''); // Clear description on success
+          setButtonDefault(false)
+          setShowTurnaboutArea(false)
+          setShowTurnaboutSpace(false)
+          setShowTurnaboutSpaceDead(false)
         } else {
           setDesc(CORRIDORS.WIDTH.desc);
           setError(true);
+          setButtonDefault(false)
           setShowTurnaboutArea(false)
           setShowTurnaboutSpace(false)
           setShowTurnaboutSpaceDead(false)
@@ -39,11 +45,17 @@ export default function Corridors() {
           setError(false);
           // Add any search logic here if needed
           console.log('Values are within the range.');
+          setButtonDefault(false)
+          setShowWidth(true)
+          // setShowTurnaboutArea(true)
+          setShowTurnaboutSpace(true)
+          setShowTurnaboutSpaceDead(true)
         } else {
           setDesc(CORRIDORS.TURNABOUTS_AREA.desc);
           setError(true);
+          setButtonDefault(false)
           setShowWidth(true)
-          setShowTurnaboutArea(true)
+          // setShowTurnaboutArea(true)
           setShowTurnaboutSpace(true)
           setShowTurnaboutSpaceDead(true)
         }
@@ -53,9 +65,14 @@ export default function Corridors() {
         if (Number(turnablutSpace) <= CORRIDORS.TURNABOUTS_SPACE.range.value) {
           console.log("success");
           setDesc(''); // Clear description on success
+          setButtonDefault(false)
+          setShowWidth(false)
+          setShowTurnaboutArea(false)
+          setShowTurnaboutSpaceDead(false)
         } else {
           setDesc(CORRIDORS.TURNABOUTS_SPACE.desc);
           setError(true);
+          setButtonDefault(false)
           setShowWidth(false)
           setShowTurnaboutArea(false)
           setShowTurnaboutSpaceDead(false)
@@ -66,9 +83,14 @@ export default function Corridors() {
         if (Number(turnablutSpaceDead) <= CORRIDORS.TURNABOUT_SPACES_DEAD_ENDS.range.value) {
           console.log("success");
           setDesc(''); // Clear description on success
+          setButtonDefault(false)
+          setShowWidth(false)
+          setShowTurnaboutArea(false)
+          setShowTurnaboutSpace(false)
         } else {
           setDesc(CORRIDORS.TURNABOUT_SPACES_DEAD_ENDS.desc);
           setError(true);
+          setButtonDefault(false)
           setShowWidth(false)
           setShowTurnaboutArea(false)
           setShowTurnaboutSpace(false)
@@ -78,9 +100,10 @@ export default function Corridors() {
       }
 
       const backButton = () => {
-        if (desc, error) {
+        if (!buttonDefault) {
           setDesc(false)
           setError(false);
+          setButtonDefault(true)
           setShowWidth(true)
           setShowTurnaboutArea(true)
           setShowTurnaboutSpace(true)
@@ -113,16 +136,23 @@ export default function Corridors() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchWidth}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -153,13 +183,21 @@ export default function Corridors() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchTurnaboutArea}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>
@@ -185,16 +223,23 @@ export default function Corridors() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchTurnaboutSpace}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -217,16 +262,23 @@ export default function Corridors() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchTurnaboutSpaceDead}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 

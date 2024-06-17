@@ -13,15 +13,20 @@ export default function Fencing() {
 
     const [desc, setDesc] = useState(false)
     const [error, setError] = useState(false)
+    const [buttonDefault, setButtonDefault] = useState(true)
 
     const searchTopRails = () => {
         if (Number(topRails) >= FENCING.TOP_RAIL.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            
+            setShowTappingRails(false);
+            setButtonDefault(false)
           } else {
             setDesc(FENCING.TOP_RAIL.desc);
             setError(true);
             setShowTappingRails(false);
+            setButtonDefault(false)
         }
     }
 
@@ -29,19 +34,23 @@ export default function Fencing() {
         if (Number(tappingRails) <= FENCING.TAPPING_RAIL.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setShowTopRails(false);
+            setButtonDefault(false)
           } else {
             setDesc(FENCING.TAPPING_RAIL.desc);
             setError(true);
             setShowTopRails(false);
+            setButtonDefault(false)
           }
     }
 
     const backButton = () => {
-        if (desc, error) {
+        if (!buttonDefault) {
           setDesc(false)
           setError(false);
           setShowTopRails(true)
           setShowTappingRails(true)
+          setButtonDefault(true)
         } else {
           navigate("/Profile");
         }
@@ -70,16 +79,23 @@ export default function Fencing() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchTopRails}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -100,18 +116,24 @@ export default function Fencing() {
                     <div className=' input-text text-end'>
                       <p className='unit'>{`(${FENCING.TAPPING_RAIL.unit})`}</p>
                     </div>
-                  </div>
-                  {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                  </div>{
+                    buttonDefault ?
                     <div 
                       onClick={searchTappingRails}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
             

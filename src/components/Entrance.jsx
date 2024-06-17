@@ -11,15 +11,19 @@ export default function Entrance() {
     const [width, setWidth] = useState(0)
     const [depth, setDepth] = useState(0)
     const [showDepth, setShowDepth] = useState(true)
+    const [buttonDefault, setButtonDefault] = useState(true)
 
     const searchDepth = () => {
         if (Number(depth) >= ENTRANCES.DEPTH.range.value) {
           console.log("success");
           setDesc(''); // Clear description on success
+          setShowWidth(false);
+          setButtonDefault(false)
         } else {
           setDesc(ENTRANCES.DEPTH.desc);
           setError(true);
           setShowWidth(false);
+          setButtonDefault(false)
         }
       };
 
@@ -27,19 +31,23 @@ export default function Entrance() {
         if (Number(width) >= ENTRANCES.WIDTH.range.value) {
           console.log("success");
           setDesc(''); // Clear description on success
+          setButtonDefault(false)
+          setShowDepth(false);
         } else {
           setDesc(ENTRANCES.WIDTH.desc);
           setError(true);
+          setButtonDefault(false)
           setShowDepth(false);
         }
       };
     
     const backButton = () => {
-        if (desc, error) {
+        if (!buttonDefault) {
           setDesc(false)
           setError(false);
           setShowDepth(true)
           setShowWidth(true)
+          setButtonDefault(true)
         } else {
           navigate("/Profile");
         }
@@ -67,15 +75,24 @@ export default function Entrance() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchDepth}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
+                  
                 </div>
             }
 
@@ -98,13 +115,21 @@ export default function Entrance() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchWidth}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                   

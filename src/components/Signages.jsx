@@ -32,26 +32,31 @@ export default function Signages() {
 
     const [desc, setDesc] = useState(false)
     const [error, setError] = useState(false)
+    const [buttonDefault, setButtonDefault] = useState(true)
 
-    const werwer = () => {
-        setDesc(WALKWAYS_AND_PASSAGEWAYS.DIMENSION.desc);
-        setError(true);
-
-        setShowInternational(false)
-          setShowDimension(false)
-          setShowHeight1(false)
-          setShowHeight2(false)
-          setShowHeightSignage(false)
-    }
+    
      
     const searchA = () => {
         if (Number(a) == SIGNAGES.INTERNATIONAL.a.range.value) {
             console.log("success");
             setDesc('');
+            
+          setButtonDefault(false)
+          // setShowA(false)
+          setShowB(false)
+          setShowC(false)
+          setShowD(false)
+          setShowE(false)
+          setShowF(false)
+          setShowDimension(false)
+          setShowHeight1(false)
+          setShowHeight2(false)
+          setShowHeightSignage(false)
         } else {
             setDesc(SIGNAGES.INTERNATIONAL.desc);
         setError(true);
-
+          setButtonDefault(false)
+          // setShowA(false)
           setShowB(false)
           setShowC(false)
           setShowD(false)
@@ -68,10 +73,10 @@ export default function Signages() {
         if (Number(b) == SIGNAGES.INTERNATIONAL.b.range.value) {
             console.log("success");
             setDesc('');
-        } else {
-            setDesc(SIGNAGES.INTERNATIONAL.desc);
-        setError(true);
-        setShowA(false)
+            
+          setButtonDefault(false)
+          setShowA(false)
+          // setShowB(false)
           setShowC(false)
           setShowD(false)
           setShowE(false)
@@ -80,6 +85,21 @@ export default function Signages() {
           setShowHeight1(false)
           setShowHeight2(false)
           setShowHeightSignage(false)
+        } else {
+            setDesc(SIGNAGES.INTERNATIONAL.desc);
+        setError(true);
+        
+        setButtonDefault(false)
+        setShowA(false)
+        // setShowB(false)
+        setShowC(false)
+        setShowD(false)
+        setShowE(false)
+        setShowF(false)
+        setShowDimension(false)
+        setShowHeight1(false)
+        setShowHeight2(false)
+        setShowHeightSignage(false)
         }
     }
 
@@ -87,11 +107,11 @@ export default function Signages() {
         if (Number(c) == SIGNAGES.INTERNATIONAL.c.range.value) {
             console.log("success");
             setDesc('');
-        } else {
-            setDesc(SIGNAGES.INTERNATIONAL.desc);
-        setError(true);
-        setShowA(false)
+            
+          setButtonDefault(false)
+          setShowA(false)
           setShowB(false)
+          // setShowC(false)
           setShowD(false)
           setShowE(false)
           setShowF(false)
@@ -99,6 +119,21 @@ export default function Signages() {
           setShowHeight1(false)
           setShowHeight2(false)
           setShowHeightSignage(false)
+        } else {
+            setDesc(SIGNAGES.INTERNATIONAL.desc);
+        setError(true);
+        
+        setButtonDefault(false)
+        setShowA(false)
+        setShowB(false)
+        // setShowC(false)
+        setShowD(false)
+        setShowE(false)
+        setShowF(false)
+        setShowDimension(false)
+        setShowHeight1(false)
+        setShowHeight2(false)
+        setShowHeightSignage(false)
         }
     }
 
@@ -106,18 +141,33 @@ export default function Signages() {
         if (Number(d) == SIGNAGES.INTERNATIONAL.d.range.value) {
             console.log("success");
             setDesc('');
+          
+            setButtonDefault(false)
+            setShowA(false)
+            setShowB(false)
+            setShowC(false)
+            // setShowD(false)
+            setShowE(false)
+            setShowF(false)
+            setShowDimension(false)
+            setShowHeight1(false)
+            setShowHeight2(false)
+            setShowHeightSignage(false)
         } else {
             setDesc(SIGNAGES.INTERNATIONAL.desc);
         setError(true);
+        
+        setButtonDefault(false)
         setShowA(false)
-          setShowB(false)
-          setShowC(false)
-          setShowE(false)
-          setShowF(false)
-          setShowDimension(false)
-          setShowHeight1(false)
-          setShowHeight2(false)
-          setShowHeightSignage(false)
+        setShowB(false)
+        setShowC(false)
+        // setShowD(false)
+        setShowE(false)
+        setShowF(false)
+        setShowDimension(false)
+        setShowHeight1(false)
+        setShowHeight2(false)
+        setShowHeightSignage(false)
         }
     }
 
@@ -125,18 +175,33 @@ export default function Signages() {
         if (Number(e) == SIGNAGES.INTERNATIONAL.e.range.value) {
             console.log("success");
             setDesc('');
-        } else {
-            setDesc(SIGNAGES.INTERNATIONAL.desc);
-        setError(true);
-        setShowA(false)
+            
+          setButtonDefault(false)
+          setShowA(false)
           setShowB(false)
           setShowC(false)
           setShowD(false)
+          // setShowE(false)
           setShowF(false)
           setShowDimension(false)
           setShowHeight1(false)
           setShowHeight2(false)
           setShowHeightSignage(false)
+        } else {
+            setDesc(SIGNAGES.INTERNATIONAL.desc);
+        setError(true);
+        
+        setButtonDefault(false)
+        setShowA(false)
+        setShowB(false)
+        setShowC(false)
+        setShowD(false)
+        // setShowE(false)
+        setShowF(false)
+        setShowDimension(false)
+        setShowHeight1(false)
+        setShowHeight2(false)
+        setShowHeightSignage(false)
         }
     }
 
@@ -144,18 +209,33 @@ export default function Signages() {
         if (Number(f) == SIGNAGES.INTERNATIONAL.f.range.numerator) {
             console.log("success");
             setDesc('');
+          
+            setButtonDefault(false)
+            setShowA(false)
+            setShowB(false)
+            setShowC(false)
+            setShowD(false)
+            setShowE(false)
+            // setShowF(false)
+            setShowDimension(false)
+            setShowHeight1(false)
+            setShowHeight2(false)
+            setShowHeightSignage(false)
         } else {
             setDesc(SIGNAGES.INTERNATIONAL.desc);
         setError(true);
+        
+        setButtonDefault(false)
         setShowA(false)
-          setShowB(false)
-          setShowC(false)
-          setShowD(false)
-          setShowE(false)
-          setShowDimension(false)
-          setShowHeight1(false)
-          setShowHeight2(false)
-          setShowHeightSignage(false)
+        setShowB(false)
+        setShowC(false)
+        setShowD(false)
+        setShowE(false)
+        // setShowF(false)
+        setShowDimension(false)
+        setShowHeight1(false)
+        setShowHeight2(false)
+        setShowHeightSignage(false)
         }
     }
 
@@ -163,14 +243,22 @@ export default function Signages() {
         if (Number(dimension) >= SIGNAGES.DIMENSION.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setShowInternational(false)
+        setButtonDefault(false)
+        // setShowDimension(false)
+        setShowHeight1(false)
+        setShowHeight2(false)
+        setShowHeightSignage(false)
           } else {
             setDesc(SIGNAGES.DIMENSION.desc);
         setError(true);
 
         setShowInternational(false)
-          setShowHeight1(false)
-          setShowHeight2(false)
-          setShowHeightSignage(false)
+        setButtonDefault(false)
+        // setShowDimension(false)
+        setShowHeight1(false)
+        setShowHeight2(false)
+        setShowHeightSignage(false)
 
           }
     }
@@ -179,14 +267,21 @@ export default function Signages() {
         if (Number(height1) >= SIGNAGES.HEIGHT1.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setShowInternational(false)
+            setButtonDefault(false)
+            // setShowDimension(false)
+            setShowHeight1(false)
+            setShowHeight2(false)
+            setShowHeightSignage(false)
           } else {
             setDesc(SIGNAGES.HEIGHT1.desc);
         setError(true);
-
         setShowInternational(false)
-          setShowDimension(false)
-          setShowHeight2(false)
-          setShowHeightSignage(false)
+        setButtonDefault(false)
+        setShowDimension(false)
+        // setShowHeight1(false)
+        setShowHeight2(false)
+        setShowHeightSignage(false)
 
           }
     }
@@ -195,14 +290,21 @@ export default function Signages() {
         if (Number(height2) >= SIGNAGES.HEIGHT2.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setShowInternational(false)
+            setButtonDefault(false)
+            setShowDimension(false)
+            setShowHeight1(false)
+            // setShowHeight2(false)
+            setShowHeightSignage(false)
           } else {
             setDesc(SIGNAGES.HEIGHT2.desc);
         setError(true);
-
         setShowInternational(false)
-          setShowDimension(false)
-          setShowHeight1(false)
-          setShowHeightSignage(false)
+        setButtonDefault(false)
+        setShowDimension(false)
+        setShowHeight1(false)
+        // setShowHeight2(false)
+        setShowHeightSignage(false)
           }
     }
 
@@ -210,21 +312,29 @@ export default function Signages() {
         if (Number(heightSignage) >= SIGNAGES.HEIGHT_SIGNAGES_SYMBOLS_LETTERS_NUMBERS.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setShowInternational(false)
+            setButtonDefault(false)
+            setShowDimension(false)
+            setShowHeight1(false)
+            setShowHeight2(false)
+            // setShowHeightSignage(false)
           } else {
             setDesc(SIGNAGES.HEIGHT_SIGNAGES_SYMBOLS_LETTERS_NUMBERS.desc);
         setError(true);
-
         setShowInternational(false)
-          setShowDimension(false)
-          setShowHeight1(false)
-          setShowHeight2(false)
+        setButtonDefault(false)
+        setShowDimension(false)
+        setShowHeight1(false)
+        setShowHeight2(false)
+        // setShowHeightSignage(false)
           }
     }
 
     const backButton = () => {
-        if (desc, error) {
+        if (!buttonDefault) {
           setDesc(false)
           setError(false);
+          setButtonDefault(true)
           setShowInternational(true)
           setShowA(true)
           setShowB(true)
@@ -280,20 +390,24 @@ export default function Signages() {
                                     />
                                   </div>
                                   {
-                                    showA && 
-                                    <div className='werwerwe'>
-                                      {
-                                        error ? <div>
-                                          <p className='inadequate'>INADEQUATE</p>
-                                        </div> :
+                                        buttonDefault ?
                                         <div 
                                           onClick={searchA}
                                           className='input-button poppins-regular'>
                                           <p>Search</p>
+                                        </div> :
+                                        <div>
+                                          {
+                                            error ? <div>
+                                              <p className='inadequate'>INADEQUATE</p>
+                                            </div> :
+                                            <div>
+                                            <p className='inadequate'>ADEQUATE</p>
+                                          </div>
+                                          }
                                         </div>
-                                      }
-                                    </div>
                                   }
+                                  
                                 </div>
                         
                               </div>
@@ -327,17 +441,20 @@ export default function Signages() {
                                     />
                                   </div>
                                   {
-                                    showB &&
-                                    <div className='werwerwe'>
+                                    buttonDefault ?
+                                    <div 
+                                      onClick={searchA}
+                                      className='input-button poppins-regular'>
+                                      <p>Search</p>
+                                    </div> :
+                                    <div>
                                       {
                                         error ? <div>
                                           <p className='inadequate'>INADEQUATE</p>
                                         </div> :
-                                        <div 
-                                          onClick={searchB}
-                                          className='input-button poppins-regular'>
-                                          <p>Search</p>
-                                        </div>
+                                        <div>
+                                        <p className='inadequate'>ADEQUATE</p>
+                                      </div>
                                       }
                                     </div>
                                   }
@@ -373,19 +490,21 @@ export default function Signages() {
                                     onChange={(e) => setC(e.target.value)}
                                   />
                                   </div>
-
                                   {
-                                    showC &&
-                                    <div className='werwerwe'>
+                                    buttonDefault ?
+                                    <div 
+                                      onClick={searchA}
+                                      className='input-button poppins-regular'>
+                                      <p>Search</p>
+                                    </div> :
+                                    <div>
                                       {
                                         error ? <div>
                                           <p className='inadequate'>INADEQUATE</p>
                                         </div> :
-                                        <div 
-                                          onClick={searchC}
-                                          className='input-button poppins-regular'>
-                                          <p>Search</p>
-                                        </div>
+                                        <div>
+                                        <p className='inadequate'>ADEQUATE</p>
+                                      </div>
                                       }
                                     </div>
                                   }
@@ -421,17 +540,20 @@ export default function Signages() {
                                   />
                                   </div>
                                   {
-                                    showD &&
-                                    <div className='werwerwe'>
+                                    buttonDefault ?
+                                    <div 
+                                      onClick={searchA}
+                                      className='input-button poppins-regular'>
+                                      <p>Search</p>
+                                    </div> :
+                                    <div>
                                       {
                                         error ? <div>
                                           <p className='inadequate'>INADEQUATE</p>
                                         </div> :
-                                        <div 
-                                          onClick={searchD}
-                                          className='input-button poppins-regular'>
-                                          <p>Search</p>
-                                        </div>
+                                        <div>
+                                        <p className='inadequate'>ADEQUATE</p>
+                                      </div>
                                       }
                                     </div>
                                   }
@@ -467,17 +589,20 @@ export default function Signages() {
                                   />
                                   </div>
                                   {
-                                    showE &&
-                                    <div className='werwerwe'>
+                                    buttonDefault ?
+                                    <div 
+                                      onClick={searchA}
+                                      className='input-button poppins-regular'>
+                                      <p>Search</p>
+                                    </div> :
+                                    <div>
                                       {
                                         error ? <div>
                                           <p className='inadequate'>INADEQUATE</p>
                                         </div> :
-                                        <div 
-                                          onClick={searchE}
-                                          className='input-button poppins-regular'>
-                                          <p>Search</p>
-                                        </div>
+                                        <div>
+                                        <p className='inadequate'>ADEQUATE</p>
+                                      </div>
                                       }
                                     </div>
                                   }
@@ -511,20 +636,23 @@ export default function Signages() {
                                   />
                                   </div>
                                   {
-                          showF &&
-                          <div className='werwerwe'>
-                            {
-                              error ? <div>
-                                <p className='inadequate'>INADEQUATE</p>
-                              </div> :
-                              <div 
-                                onClick={searchF}
-                                className='input-button poppins-regular'>
-                                <p>Search</p>
-                              </div>
-                            }
-                          </div>
-                        }
+                                    buttonDefault ?
+                                    <div 
+                                      onClick={searchA}
+                                      className='input-button poppins-regular'>
+                                      <p>Search</p>
+                                    </div> :
+                                    <div>
+                                      {
+                                        error ? <div>
+                                          <p className='inadequate'>INADEQUATE</p>
+                                        </div> :
+                                        <div>
+                                        <p className='inadequate'>ADEQUATE</p>
+                                      </div>
+                                      }
+                                    </div>
+                                  }
                                 </div>
                               </div>
                           }
@@ -552,16 +680,23 @@ export default function Signages() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchDimension}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -584,13 +719,21 @@ export default function Signages() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchHeight1}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>
@@ -615,13 +758,21 @@ export default function Signages() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchHeight2}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>
@@ -646,16 +797,23 @@ export default function Signages() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchHeightSignage}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 

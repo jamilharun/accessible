@@ -6,6 +6,7 @@ export default function WashRooms() {
     const navigate = useNavigate();
     const [desc, setDesc] = useState(false)
     const [error, setError] = useState(false)
+    const [buttonDefault, setButtonDefault] = useState(true)
 
     const [showWaterClosetArea, setShowWaterClosetArea] = useState(true)
     const [showTurningSpaceArea, setShowTurningSpaceArea] = useState(true)
@@ -49,9 +50,20 @@ export default function WashRooms() {
           setError(false);
           // Add any search logic here if needed
           console.log('Values are within the range.');
+          setButtonDefault(false)
+            setShowTurningSpaceArea(false)
+            setShowTurningSpaceDimention(false)
+            setShowSignageThickness(false)
+            setShowWaterClosetHeight(false)
+            setShowFlushControl(false)
+            setShowLavatories(false)
+            setShowKneeRecess(false)
+            setShowVerticalClearance(false)
+            setShowUrinalHeightLip(false)
         } else {
           setDesc(WASHROOMS_TOILETS.WATER_CLOSET_AREA.desc);
           setError(true);
+          setButtonDefault(false)
             setShowTurningSpaceArea(false)
             setShowTurningSpaceDimention(false)
             setShowSignageThickness(false)
@@ -68,9 +80,20 @@ export default function WashRooms() {
         if (Number(turningSpaceArea) == WASHROOMS_TOILETS.TURNING_SPACE_AREA.range) {
           console.log("success");
           setDesc(''); // Clear description on success
+          setButtonDefault(false)
+          setShowWaterClosetArea(false)
+            setShowTurningSpaceDimention(false)
+            setShowSignageThickness(false)
+            setShowWaterClosetHeight(false)
+            setShowFlushControl(false)
+            setShowLavatories(false)
+            setShowKneeRecess(false)
+            setShowVerticalClearance(false)
+            setShowUrinalHeightLip(false)
         } else {
           setDesc(WASHROOMS_TOILETS.TURNING_SPACE_AREA.desc);
           setError(true);
+          setButtonDefault(false)
           setShowWaterClosetArea(false)
             setShowTurningSpaceDimention(false)
             setShowSignageThickness(false)
@@ -87,9 +110,20 @@ export default function WashRooms() {
         if (Number(turningSpaceDimention) >= WASHROOMS_TOILETS.TURNING_SPACE_DIMENSION.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+            setShowWaterClosetArea(false)
+    setShowTurningSpaceArea(false)
+    setShowSignageThickness(false)
+    setShowWaterClosetHeight(false)
+    setShowFlushControl(false)
+    setShowLavatories(false)
+    setShowKneeRecess(false)
+    setShowVerticalClearance(false)
+    setShowUrinalHeightLip(false)
           } else {
             setDesc(WASHROOMS_TOILETS.TURNING_SPACE_DIMENSION.desc);
             setError(true);
+            setButtonDefault(false)
             setShowWaterClosetArea(false)
     setShowTurningSpaceArea(false)
     setShowSignageThickness(false)
@@ -106,9 +140,20 @@ export default function WashRooms() {
         if (Number(signageThick) >= WASHROOMS_TOILETS.SIGNAGE_THICK.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+    setShowWaterClosetArea(false)
+    setShowTurningSpaceArea(false)
+    setShowTurningSpaceDimention(false)
+    setShowWaterClosetHeight(false)
+    setShowFlushControl(false)
+    setShowLavatories(false)
+    setShowKneeRecess(false)
+    setShowVerticalClearance(false)
+    setShowUrinalHeightLip(false)
           } else {
             setDesc(WASHROOMS_TOILETS.SIGNAGE_THICK.desc);
             setError(true);
+            setButtonDefault(false)
     setShowWaterClosetArea(false)
     setShowTurningSpaceArea(false)
     setShowTurningSpaceDimention(false)
@@ -126,9 +171,20 @@ export default function WashRooms() {
         if (Number(waterClosetHeight) <= WASHROOMS_TOILETS.WATER_CLOSET_HEIGHT.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+    setShowWaterClosetArea(false)
+    setShowTurningSpaceArea(false)
+    setShowTurningSpaceDimention(false)
+    setShowWaterClosetHeight(false)
+    setShowFlushControl(false)
+    setShowLavatories(false)
+    setShowKneeRecess(false)
+    setShowVerticalClearance(false)
+    setShowUrinalHeightLip(false)
           } else {
             setDesc(WASHROOMS_TOILETS.WATER_CLOSET_HEIGHT.desc);
             setError(true);
+            setButtonDefault(false)
     setShowWaterClosetArea(false)
     setShowTurningSpaceArea(false)
     setShowTurningSpaceDimention(false)
@@ -147,10 +203,21 @@ export default function WashRooms() {
         if (Number(flushControlHeight) <= WASHROOMS_TOILETS.FLUSH_CONTROL_HEIGHT.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+    setShowWaterClosetArea(false)
+    setShowTurningSpaceArea(false)
+    setShowTurningSpaceDimention(false)
+    setShowSignageThickness(false)
+    setShowWaterClosetHeight(false)
+    // setShowFlushControl(false)
+    setShowLavatories(false)
+    setShowKneeRecess(false)
+    setShowVerticalClearance(false)
+    setShowUrinalHeightLip(false) 
           } else {
             setDesc(WASHROOMS_TOILETS.FLUSH_CONTROL_HEIGHT.desc);
             setError(true);
-
+            setButtonDefault(false)
     setShowWaterClosetArea(false)
     setShowTurningSpaceArea(false)
     setShowTurningSpaceDimention(false)
@@ -168,10 +235,21 @@ export default function WashRooms() {
         if (Number(lavatoriesHeight) <= WASHROOMS_TOILETS.LAVATORIES_HEIGHT.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+    setShowWaterClosetArea(false)
+    setShowTurningSpaceArea(false)
+    setShowTurningSpaceDimention(false)
+    setShowSignageThickness(false)
+    setShowWaterClosetHeight(false)
+    // setShowFlushControl(false)
+    setShowLavatories(false)
+    setShowKneeRecess(false)
+    setShowVerticalClearance(false)
+    setShowUrinalHeightLip(false) 
           } else {
             setDesc(WASHROOMS_TOILETS.LAVATORIES_HEIGHT.desc);
             setError(true);
-
+            setButtonDefault(false)
     setShowWaterClosetArea(false)
     setShowTurningSpaceArea(false)
     setShowTurningSpaceDimention(false)
@@ -192,9 +270,21 @@ export default function WashRooms() {
           setError(false);
           // Add any search logic here if needed
           console.log('Values are within the range.');
+          setButtonDefault(false)
+          setShowWaterClosetArea(false)
+          setShowTurningSpaceArea(false)
+          setShowTurningSpaceDimention(false)
+          setShowSignageThickness(false)
+          setShowWaterClosetHeight(false)
+          setShowFlushControl(false)
+          setShowLavatories(false)
+        //   setShowKneeRecess(false)
+          setShowVerticalClearance(false)
+          setShowUrinalHeightLip(false) 
         } else {
           setDesc(WASHROOMS_TOILETS.KNEE_RECESS.desc);
           setError(true);
+          setButtonDefault(false)
           setShowWaterClosetArea(false)
           setShowTurningSpaceArea(false)
           setShowTurningSpaceDimention(false)
@@ -212,10 +302,21 @@ export default function WashRooms() {
         if (Number(verticalClearance) <= WASHROOMS_TOILETS.VERTICAL_CLEARANCE.range) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+    setShowWaterClosetArea(false)
+    setShowTurningSpaceArea(false)
+    setShowTurningSpaceDimention(false)
+    setShowSignageThickness(false)
+    setShowWaterClosetHeight(false)
+    setShowFlushControl(false)
+    setShowLavatories(false)
+    setShowKneeRecess(false)
+    // setShowVerticalClearance(false)
+    setShowUrinalHeightLip(false) 
           } else {
             setDesc(WASHROOMS_TOILETS.VERTICAL_CLEARANCE.desc);
             setError(true);
-
+            setButtonDefault(false)
     setShowWaterClosetArea(false)
     setShowTurningSpaceArea(false)
     setShowTurningSpaceDimention(false)
@@ -233,10 +334,21 @@ export default function WashRooms() {
         if (Number(urinalHeightLip) <= WASHROOMS_TOILETS.URINAL_HEIGHT_LIP.range) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+    setShowWaterClosetArea(false)
+    setShowTurningSpaceArea(false)
+    setShowTurningSpaceDimention(false)
+    setShowSignageThickness(false)
+    setShowWaterClosetHeight(false)
+    setShowFlushControl(false)
+    setShowLavatories(false)
+    setShowKneeRecess(false)
+    setShowVerticalClearance(false)
+    // setShowUrinalHeightLip(false) 
           } else {
             setDesc(WASHROOMS_TOILETS.URINAL_HEIGHT_LIP.desc);
             setError(true);
-
+            setButtonDefault(false)
     setShowWaterClosetArea(false)
     setShowTurningSpaceArea(false)
     setShowTurningSpaceDimention(false)
@@ -251,9 +363,10 @@ export default function WashRooms() {
     }
 
     const backButton = () => {
-        if (desc, error) {
+        if (!buttonDefault) {
           setDesc(false)
           setError(false);
+          setButtonDefault(true)
           setShowWaterClosetArea(true)
           setShowTurningSpaceArea(true)
           setShowTurningSpaceDimention(true)
@@ -300,13 +413,21 @@ export default function WashRooms() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchWaterClosetArea}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>
@@ -332,16 +453,23 @@ export default function WashRooms() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchTurningSpaceArea}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -364,16 +492,23 @@ export default function WashRooms() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
-                      onClick={searchTurningSpaceArea}
+                      onClick={searchTurningSpaceDimension}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -396,16 +531,23 @@ export default function WashRooms() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchSignageThickness}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -429,16 +571,23 @@ export default function WashRooms() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchWaterClosetHeight}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -461,16 +610,23 @@ export default function WashRooms() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchFlushControl}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -493,16 +649,23 @@ export default function WashRooms() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchLavatories}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -526,16 +689,23 @@ export default function WashRooms() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchKneeRecess}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -558,16 +728,23 @@ export default function WashRooms() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchVerticalClearance}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -590,16 +767,23 @@ export default function WashRooms() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchUrinalHightLip}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
                 

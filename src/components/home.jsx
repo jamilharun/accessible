@@ -107,10 +107,13 @@ export default function Home() {
                 <Route path="HandRails" element={<Handrails/>} />
                 <Route path="Signage" element={<Signages/>} />
                 <Route path="Crossing" element={<Crossing/>} />
+
                 <Route path="ParkingArea" element={<ParkingArea/>} />
+                
                 <Route path="Fencing" element={<Fencing/>} />
                 <Route path="Covers" element={<Covers/>} />
                 <Route path="SafetySignage" element={<SafetySignage/>} />
+
                 <Route path="Entrance" element={<Entrance/>} />
                 <Route path="Ramps" element={<Ramps/>} />
                 <Route path="Doors" element={<Doors/>} />

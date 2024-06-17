@@ -16,7 +16,6 @@ export default function Handrails() {
     const [heightDenominator, setHeightDenominator] = useState(0)
 
     const [handRailNumerator, setHandRailNumerator] = useState(0)
-    const [handRailDenominator, setHandRailDenominator] = useState(0)
 
     const [extension, setExtension] = useState(0)
 
@@ -29,6 +28,7 @@ export default function Handrails() {
     
     const [desc, setDesc] = useState(false)
     const [error, setError] = useState(false)
+    const [buttonDefault, setButtonDefault] = useState(true)
 
     const searchHeight = () => {
         const numerator = parseFloat(heightNumerator);
@@ -40,27 +40,52 @@ export default function Handrails() {
         setError(false);
         console.log("success");
         setDesc('');
+        setButtonDefault(false)
+        // setShowHeight(false)
+        setShowHandRails(false)
+        setShowExtension(false)
+        setShowHandRailsPullGrip(false)
+        setShowClearanceHandRailsAttachedWalls(false)
+        setShowClearanceHandRailsLegs(false)
         } else {
             setError(true);
             setDesc(HANDRAILS.HEIGHT.desc);
-            setShowHandRails(false)
-            setShowExtension(false)
-            setShowClearanceHandRailsAttachedWalls(false)
-            setShowHandRailsPullGrip(false)
-            setShowClearanceHandRailsLegs(false)
+            setButtonDefault(false)
+        // setShowHeight(false)
+        setShowHandRails(false)
+        setShowExtension(false)
+        setShowHandRailsPullGrip(false)
+        setShowClearanceHandRailsAttachedWalls(false)
+        setShowClearanceHandRailsLegs(false)
         }
     }
 
     const searchHandRails = () => {
         const numerator = parseFloat(handRailNumerator);
-        const denominator = parseFloat(handRailDenominator);
+        // const denominator = parseFloat(handRailDenominator);
     
-        if (numerator >= minNumerator && denominator <= maxDenominator) {
+        if (numerator >= HANDRAILS.HANDRAILS.parsedRange.numerator && 
+            numerator <= HANDRAILS.HANDRAILS.parsedRange.denominator) {
           setError(false);
-          // Add any search logic here if needed
-          console.log('Values are within the range.');
+          setDesc('');
+          setButtonDefault(false)
+          setShowHeight(false)
+          // setShowHandRails(false)
+          setShowExtension(false)
+          setShowHandRailsPullGrip(false)
+          setShowClearanceHandRailsAttachedWalls(false)
+          setShowClearanceHandRailsLegs(false)
+          
         } else {
+          setDesc(HANDRAILS.HANDRAILS.desc);
           setError(true);
+          setButtonDefault(false)
+          setShowHeight(false)
+          // setShowHandRails(false)
+          setShowExtension(false)
+          setShowHandRailsPullGrip(false)
+          setShowClearanceHandRailsAttachedWalls(false)
+          setShowClearanceHandRailsLegs(false)
         }
     };
 
@@ -68,32 +93,76 @@ export default function Handrails() {
         if (Number(extension) == HANDRAILS.EXTENSION.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+            setShowHeight(false)
+            setShowHandRails(false)
+            // setShowExtension(false)
+            setShowHandRailsPullGrip(false)
+            setShowClearanceHandRailsAttachedWalls(false)
+            setShowClearanceHandRailsLegs(false)
           } else {
             setDesc(HANDRAILS.EXTENSION.desc);
             setError(true);
+            setButtonDefault(false)
             setShowHeight(false)
             setShowHandRails(false)
-            setShowClearanceHandRailsAttachedWalls(false)
+            // setShowExtension(false)
             setShowHandRailsPullGrip(false)
+            setShowClearanceHandRailsAttachedWalls(false)
             setShowClearanceHandRailsLegs(false)
           }
     }
 
     const searchHandRailsFullGrip = () => {
-
+      const numerator = parseFloat(handRailFullGripNumerator);
+      // const denominator = parseFloat(handRailDenominator);
+  
+      if (numerator >= HANDRAILS.HANDRAILS_FULL_GRIP.parsedRange.numerator && 
+          numerator <= HANDRAILS.HANDRAILS_FULL_GRIP.parsedRange.denominator) {
+        setError(false);
+        setDesc('');
+        setButtonDefault(false)
+        setShowHeight(false)
+        setShowHandRails(false)
+        setShowExtension(false)
+        // setShowHandRailsPullGrip(false)
+        setShowClearanceHandRailsAttachedWalls(false)
+        setShowClearanceHandRailsLegs(false)
+        
+      } else {
+        setDesc(HANDRAILS.HANDRAILS.desc);
+        setError(true);
+        setButtonDefault(false)
+        setShowHeight(false)
+        setShowHandRails(false)
+        setShowExtension(false)
+        // setShowHandRailsPullGrip(false)
+        setShowClearanceHandRailsAttachedWalls(false)
+        setShowClearanceHandRailsLegs(false)
+      }
     }
 
     const searchCHAW = () => {
         if (Number(clearanceHandrailsAW) >= HANDRAILS.CLEARANCE_HANDRAILS_ATTACHED_WALLS.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
-          } else {
-            setDesc(HANDRAILS.CLEARANCE_HANDRAILS_ATTACHED_WALLS.desc);
-            setError(true);
+            
+            setButtonDefault(false)
             setShowHeight(false)
             setShowHandRails(false)
             setShowExtension(false)
             setShowHandRailsPullGrip(false)
+            // setShowClearanceHandRailsAttachedWalls(false)
+            setShowClearanceHandRailsLegs(false)
+          } else {
+            setDesc(HANDRAILS.CLEARANCE_HANDRAILS_ATTACHED_WALLS.desc);
+            setError(true);
+            setButtonDefault(false)
+            setShowHeight(false)
+            setShowHandRails(false)
+            setShowExtension(false)
+            setShowHandRailsPullGrip(false)
+            // setShowClearanceHandRailsAttachedWalls(false)
             setShowClearanceHandRailsLegs(false)
           }
     }
@@ -102,22 +171,32 @@ export default function Handrails() {
         if (Number(CHL) >= HANDRAILS.CLEARANCE_HANDRAILS_LEDGES.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
-          } else {
-            setDesc(HANDRAILS.CLEARANCE_HANDRAILS_LEDGES.desc);
-            setError(true);
+            setButtonDefault(false)
             setShowHeight(false)
             setShowHandRails(false)
             setShowExtension(false)
             setShowHandRailsPullGrip(false)
             setShowClearanceHandRailsAttachedWalls(false)
+            // setShowClearanceHandRailsLegs(false)
+          } else {
+            setDesc(HANDRAILS.CLEARANCE_HANDRAILS_LEDGES.desc);
+            setError(true);
+            setButtonDefault(false)
+            setShowHeight(false)
+            setShowHandRails(false)
+            setShowExtension(false)
+            setShowHandRailsPullGrip(false)
+            setShowClearanceHandRailsAttachedWalls(false)
+            // setShowClearanceHandRailsLegs(false)
           }
     }
 
     const backButton = () => {
-        if (desc, error) {
+        if (!buttonDefault) {
             setDesc(false)
             setError(false);
-            setShowHeight(true)
+            setButtonDefault(true)
+            setShowHeight(true) 
             setShowHandRails(true)
             setShowExtension(true)
             setShowClearanceHandRailsAttachedWalls(true)
@@ -159,14 +238,22 @@ export default function Handrails() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
-                    <div 
-                      onClick={searchHeight}
-                      className='input-button poppins-regular'>
-                      <p>Search</p>
-                    </div>
+                        buttonDefault ?
+                        <div 
+                          onClick={searchHeight}
+                          className='input-button poppins-regular'>
+                          <p>Search</p>
+                        </div> :
+                        <div>
+                          {
+                            error ? <div>
+                              <p className='inadequate'>INADEQUATE</p>
+                            </div> :
+                            <div>
+                            <p className='inadequate'>ADEQUATE</p>
+                          </div>
+                          }
+                        </div>
                   }
                 </div>
             }
@@ -174,7 +261,7 @@ export default function Handrails() {
             {
               showHandRails &&
                 <div className=' flex mb-5'>
-                  <p>computation not working</p>
+                  {/* <p>computation not working</p> */}
                   <div>
                     <div className=' input-container input-container-width'>
                       <p className=' input-text poppins-regular'>HandRails</p>
@@ -185,28 +272,28 @@ export default function Handrails() {
                         value={handRailNumerator}
                         onChange={(e) => setHandRailNumerator(e.target.value)}
                       />
-                      <p className=' input-text poppins-regular'>x</p>
-                      <input
-                        type="number"
-                        name="handRailDenominator"
-                        className="input-field"
-                        value={handRailDenominator}
-                        onChange={(e) => setHandRailDenominator(e.target.value)}
-                      />
                     </div>
                     <div className=' input-text text-end'>
                       <p className='unit'>{`(${HANDRAILS.HANDRAILS_FULL_GRIP.unit})`}</p>
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
-                    <div 
-                      onClick={searchHandRails}
-                      className='input-button poppins-regular'>
-                      <p>Search</p>
-                    </div>
+                        buttonDefault ?
+                        <div 
+                          onClick={searchHandRails}
+                          className='input-button poppins-regular'>
+                          <p>Search</p>
+                        </div> :
+                        <div>
+                          {
+                            error ? <div>
+                              <p className='inadequate'>INADEQUATE</p>
+                            </div> :
+                            <div>
+                            <p className='inadequate'>ADEQUATE</p>
+                          </div>
+                          }
+                        </div>
                   }
                 </div>
             }
@@ -230,14 +317,22 @@ export default function Handrails() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
-                    <div 
-                      onClick={searchExtension}
-                      className='input-button poppins-regular'>
-                      <p>Search</p>
-                    </div>
+                        buttonDefault ?
+                        <div 
+                          onClick={searchExtension}
+                          className='input-button poppins-regular'>
+                          <p>Search</p>
+                        </div> :
+                        <div>
+                          {
+                            error ? <div>
+                              <p className='inadequate'>INADEQUATE</p>
+                            </div> :
+                            <div>
+                            <p className='inadequate'>ADEQUATE</p>
+                          </div>
+                          }
+                        </div>
                   }
                 </div>
             }
@@ -245,7 +340,7 @@ export default function Handrails() {
             {
               showHandRailsPullGrip &&
                 <div className=' flex mb-5'>
-                  <p>computation not working</p>
+                  {/* <p>computation not working</p> */}
                   <div>
                     <div className=' input-container input-container-width'>
                       <p className=' input-text poppins-regular'>Handrail full grip</p>
@@ -256,28 +351,29 @@ export default function Handrails() {
                         value={handRailFullGripNumerator}
                         onChange={(e) => setHandRailFullGripNumerator(e.target.value)}
                       />
-                      <p className=' input-text poppins-regular'>x</p>
-                      <input
-                        type="number"
-                        name="handRailFullGripDenominator"
-                        className="input-field"
-                        value={handRailFullGripDenominator}
-                        onChange={(e) => setHandRailFullGripDenominator(e.target.value)}
-                      />
+                      
                     </div>
                     <div className=' input-text text-end'>
                       <p className='unit'>{`(${HANDRAILS.HANDRAILS_FULL_GRIP.unit})`}</p>
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
-                    <div 
-                      onClick={searchHandRailsFullGrip}
-                      className='input-button poppins-regular'>
-                      <p>Search</p>
-                    </div>
+                        buttonDefault ?
+                        <div 
+                          onClick={searchHandRailsFullGrip}
+                          className='input-button poppins-regular'>
+                          <p>Search</p>
+                        </div> :
+                        <div>
+                          {
+                            error ? <div>
+                              <p className='inadequate'>INADEQUATE</p>
+                            </div> :
+                            <div>
+                            <p className='inadequate'>ADEQUATE</p>
+                          </div>
+                          }
+                        </div>
                   }
                 </div>
             }
@@ -301,14 +397,22 @@ export default function Handrails() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
-                    <div 
-                      onClick={searchCHAW}
-                      className='input-button poppins-regular'>
-                      <p>Search</p>
-                    </div>
+                        buttonDefault ?
+                        <div 
+                          onClick={searchCHAW}
+                          className='input-button poppins-regular'>
+                          <p>Search</p>
+                        </div> :
+                        <div>
+                          {
+                            error ? <div>
+                              <p className='inadequate'>INADEQUATE</p>
+                            </div> :
+                            <div>
+                            <p className='inadequate'>ADEQUATE</p>
+                          </div>
+                          }
+                        </div>
                   }
                 </div>
             }
@@ -332,14 +436,22 @@ export default function Handrails() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
-                    <div 
-                      onClick={searchCHL}
-                      className='input-button poppins-regular'>
-                      <p>Search</p>
-                    </div>
+                        buttonDefault ?
+                        <div 
+                          onClick={searchCHL}
+                          className='input-button poppins-regular'>
+                          <p>Search</p>
+                        </div> :
+                        <div>
+                          {
+                            error ? <div>
+                              <p className='inadequate'>INADEQUATE</p>
+                            </div> :
+                            <div>
+                            <p className='inadequate'>ADEQUATE</p>
+                          </div>
+                          }
+                        </div>
                   }
                 </div>
             }

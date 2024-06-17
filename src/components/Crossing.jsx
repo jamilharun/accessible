@@ -15,14 +15,19 @@ export default function Crossing() {
 
   const [desc, setDesc] = useState(false)
   const [error, setError] = useState(false)
+  const [buttonDefault, setButtonDefault] = useState(true)
 
   const searchDepth = () => {
     if (Number(depth) >= CROSSINGS.DEPTH.range.value) {
       console.log("success");
       setDesc(''); // Clear description on success
+      setButtonDefault(false)
+      setShowWidth(false);
+      setShowCrossing(false);
     } else {
       setDesc(CROSSINGS.DEPTH.desc);
       setError(true);
+      setButtonDefault(false)
       setShowWidth(false);
       setShowCrossing(false);
     }
@@ -32,10 +37,16 @@ export default function Crossing() {
     if (Number(width) >= CROSSINGS.WIDTH.range.value) {
       console.log("success");
       setDesc(''); // Clear description on success
+      setButtonDefault(false)
+      setShowDepth(false);
+      // setShowWidth(false);
+      setShowCrossing(false);
     } else {
       setDesc(CROSSINGS.WIDTH.desc);
       setError(true);
+      setButtonDefault(false)
       setShowDepth(false);
+      // setShowWidth(false);
       setShowCrossing(false);
     }
   };
@@ -44,19 +55,25 @@ export default function Crossing() {
     if (Number(crossing) >= CROSSINGS.CROSSING_PERIOD.range.value) {
       console.log("success");
       setDesc(''); // Clear description on success
+      setButtonDefault(false)
+      setShowDepth(false);
+      setShowWidth(false);
+      // setShowCrossing(false);
     } else {
       setDesc(CROSSINGS.CROSSING_PERIOD.desc);
       setError(true);
+      setButtonDefault(false)
       setShowDepth(false);
       setShowWidth(false);
+      // setShowCrossing(false);
     }
   };
 
   const backButton = () => {
-    if (desc, error) {
+    if (!buttonDefault) {
       setDesc(false)
       setError(false);
-
+      setButtonDefault(true);
       setShowDepth(true)
       setShowWidth(true)
       setShowCrossing(true)
@@ -87,13 +104,21 @@ export default function Crossing() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchDepth}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>
@@ -118,13 +143,21 @@ export default function Crossing() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchWidth}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>
@@ -149,16 +182,23 @@ export default function Crossing() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchCrossing}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 

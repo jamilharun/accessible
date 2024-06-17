@@ -6,6 +6,7 @@ export default function WalkWaysPassageWays() {
     const navigate = useNavigate();  
     const [desc, setDesc] = useState(false)
     const [error, setError] = useState(false)
+    const [buttonDefault, setButtonDefault] = useState(true)
   
     const [showGradient, setShowGradient] = useState(true)
     const [showCrossGradient, setShowCrossGradient] = useState(true)
@@ -20,12 +21,12 @@ export default function WalkWaysPassageWays() {
     const [showSpaceDimention, setShowSpaceDimension] = useState(true)
     const [showSpaceDistance, setShowSpaceDistance] = useState(true)
 
-    const [gradientNumerator, setGradientNumerator] = useState(1)
-    const [gradientDenominator, setGradientDenominator] = useState(1)
-    const [gradientPercent, setGradientPercent] = useState(1)
+    const [gradientNumerator, setGradientNumerator] = useState(0)
+    const [gradientDenominator, setGradientDenominator] = useState(0)
+    const [gradientPercent, setGradientPercent] = useState(0)
     
-    const [crossGradientNumerator, setCrossGradientNumerator] = useState(1)
-    const [crossGradientDenominator, setCrossGradientDenominator] = useState(1)
+    const [crossGradientNumerator, setCrossGradientNumerator] = useState(0)
+    const [crossGradientDenominator, setCrossGradientDenominator] = useState(0)
 
     const [width, setWidth] = useState(0)
 
@@ -44,18 +45,29 @@ export default function WalkWaysPassageWays() {
     const searchGradient = () => {
         const parsedNumerator = Number(gradientNumerator);
         const parsedDenominator = Number(gradientDenominator);
-        const parsedPercentage = parseFloat(gradientPercent);
+        // const parsedPercentage = parseFloat(gradientPercent);
 
-        const isRatioValid = parsedNumerator / parsedDenominator <= WALKWAYS_AND_PASSAGEWAYS.GRADIENT.parsedRange.ratio.numerator / WALKWAYS_AND_PASSAGEWAYS.GRADIENT.parsedRange.ratio.denominator;
-        const isPercentageValid = !isNaN(parsedPercentage) && parsedPercentage <= WALKWAYS_AND_PASSAGEWAYS.GRADIENT.parsedRange.percentage;
+        // const isRatioValid = parsedNumerator / parsedDenominator <= WALKWAYS_AND_PASSAGEWAYS.GRADIENT.parsedRange.ratio.numerator / WALKWAYS_AND_PASSAGEWAYS.GRADIENT.parsedRange.ratio.denominator;
+        // const isPercentageValid = !isNaN(parsedPercentage) && parsedPercentage <= WALKWAYS_AND_PASSAGEWAYS.GRADIENT.parsedRange.percentage;
 
-        if (isRatioValid || isPercentageValid) {
+        if (parsedNumerator <= WALKWAYS_AND_PASSAGEWAYS.GRADIENT.parsedRange.ratio.numerator && 
+            parsedDenominator <= WALKWAYS_AND_PASSAGEWAYS.GRADIENT.parsedRange.ratio.denominator) {
             console.log("Success");
             setDesc(''); // Clear description on success
             setError(false);
+            setButtonDefault(false)
+            setShowCrossGradient(false)
+            setShowWidth(false)
+            setShowGratingOpenings(false)
+            setShowProjection(false)
+            setShowInterruption(false)
+            setShowSpacesLengthBusyWalkWays(false)
+            setShowAngle(false)
+            setShowDimension(false)
         } else {
             setDesc(WALKWAYS_AND_PASSAGEWAYS.GRADIENT.desc);
             setError(true);
+            setButtonDefault(false)
             setShowCrossGradient(false)
             setShowWidth(false)
             setShowGratingOpenings(false)
@@ -73,10 +85,21 @@ export default function WalkWaysPassageWays() {
       
         if (parsedNumerator / parsedDenominator <= WALKWAYS_AND_PASSAGEWAYS.CROSS_GRADIENT.parsedRange.numerator / WALKWAYS_AND_PASSAGEWAYS.CROSS_GRADIENT.parsedRange.denominator) {
           console.log("success");
-          setDesc(''); 
+          setDesc('');
+          
+          setButtonDefault(false)
+          setShowGradient(false)
+          setShowWidth(false)
+          setShowGratingOpenings(false)
+          setShowProjection(false)
+          setShowInterruption(false)
+          setShowSpacesLengthBusyWalkWays(false)
+          setShowAngle(false)
+          setShowDimension(false)
         } else {
           setDesc(WALKWAYS_AND_PASSAGEWAYS.CROSS_GRADIENT.desc);
           setError(true);
+          setButtonDefault(false)
           setShowGradient(false)
           setShowWidth(false)
           setShowGratingOpenings(false)
@@ -92,9 +115,20 @@ export default function WalkWaysPassageWays() {
         if (Number(width) >= WALKWAYS_AND_PASSAGEWAYS.WIDTH.range.value) {
           console.log("success");
           setDesc(''); // Clear description on success
+          
+          setButtonDefault(false)
+          setShowGradient(false)
+          setShowCrossGradient(false)
+          setShowGratingOpenings(false)
+            setShowProjection(false)
+            setShowInterruption(false)
+            setShowSpacesLengthBusyWalkWays(false)
+            setShowAngle(false)
+            setShowDimension(false)
         } else {
           setDesc(WALKWAYS_AND_PASSAGEWAYS.WIDTH.desc);
           setError(true);
+          setButtonDefault(false)
           setShowGradient(false)
           setShowCrossGradient(false)
           setShowGratingOpenings(false)
@@ -114,8 +148,20 @@ export default function WalkWaysPassageWays() {
         if (gratingWidth <= maxWidth && gratingHeight <= maxHeight) {
             console.log("Grating openings are within the specified dimensions.");
             setDesc(''); 
+            
+            setButtonDefault(false)
+            setShowGradient(false)
+            setShowCrossGradient(false)
+            setShowWidth(false)
+            setShowProjection(false)
+            setShowInterruption(false)
+            setShowSpacesLengthBusyWalkWays(false)
+            setShowAngle(false)
+            setShowDimension(false)
         } else {
             setDesc(WALKWAYS_AND_PASSAGEWAYS.GRATING_OPENINGS.desc);
+            setError(true);
+            setButtonDefault(false)
             setShowGradient(false)
             setShowCrossGradient(false)
             setShowWidth(false)
@@ -130,10 +176,21 @@ export default function WalkWaysPassageWays() {
     const searchProjection = () => {
         if (Number(projection) <= WALKWAYS_AND_PASSAGEWAYS.PROJECTION.range.value) {
             console.log("success");
-            setDesc(''); // Clear description on success
+            setDesc(''); 
+            
+            setButtonDefault(false)
+            setShowGradient(false)
+            setShowCrossGradient(false)
+            setShowWidth(false)
+            setShowGratingOpenings(false)
+            setShowInterruption(false)
+            setShowSpacesLengthBusyWalkWays(false)
+            setShowAngle(false)
+            setShowDimension(false)
           } else {
             setDesc(WALKWAYS_AND_PASSAGEWAYS.PROJECTION.desc);
             setError(true);
+            setButtonDefault(false)
             setShowGradient(false)
             setShowCrossGradient(false)
             setShowWidth(false)
@@ -149,9 +206,20 @@ export default function WalkWaysPassageWays() {
         if (Number(interruption) >= WALKWAYS_AND_PASSAGEWAYS.INTERRUPTION.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            
+            setButtonDefault(false)
+            setShowGradient(false)
+            setShowCrossGradient(false)
+            setShowWidth(false)
+            setShowGratingOpenings(false)
+            setShowProjection(false)
+            setShowSpacesLengthBusyWalkWays(false)
+            setShowAngle(false)
+            setShowDimension(false)
           } else {
             setDesc(WALKWAYS_AND_PASSAGEWAYS.INTERRUPTION.desc);
             setError(true);
+            setButtonDefault(false)
             setShowGradient(false)
             setShowCrossGradient(false)
             setShowWidth(false)
@@ -167,9 +235,22 @@ export default function WalkWaysPassageWays() {
       if (Number(spaceDimension) >= WALKWAYS_AND_PASSAGEWAYS.SPACES_IN_LENGTHY_BUSY_WALKWAYS.DIMENSION.range.value) {
         console.log("success");
         setDesc(''); // Clear description on success
+        
+        setButtonDefault(false)
+        setShowGradient(false)
+        setShowCrossGradient(false)
+        setShowWidth(false)
+        setShowGratingOpenings(false)
+          setShowProjection(false)
+          setShowInterruption(false)
+          setShowAngle(false)
+          setShowDimension(false)
+
+        setShowSpaceDistance(false)
       } else {
         setDesc(WALKWAYS_AND_PASSAGEWAYS.SPACES_IN_LENGTHY_BUSY_WALKWAYS.DIMENSION.desc);
         setError(true);
+        setButtonDefault(false)
         setShowGradient(false)
         setShowCrossGradient(false)
         setShowWidth(false)
@@ -187,9 +268,22 @@ export default function WalkWaysPassageWays() {
       if (Number(spaceDistance) <= WALKWAYS_AND_PASSAGEWAYS.SPACES_IN_LENGTHY_BUSY_WALKWAYS.DISTANCE.range.value) {
         console.log("success");
         setDesc(''); // Clear description on success
+        
+        setButtonDefault(false)
+        setShowGradient(false)
+        setShowCrossGradient(false)
+        setShowWidth(false)
+        setShowGratingOpenings(false)
+          setShowProjection(false)
+          setShowInterruption(false)
+          setShowAngle(false)
+          setShowDimension(false)
+
+        setShowSpaceDimension(false)
       } else {
         setDesc(WALKWAYS_AND_PASSAGEWAYS.SPACES_IN_LENGTHY_BUSY_WALKWAYS.DISTANCE.desc);
         setError(true);
+        setButtonDefault(false)
         setShowGradient(false)
         setShowCrossGradient(false)
         setShowWidth(false)
@@ -207,10 +301,19 @@ export default function WalkWaysPassageWays() {
       if (Number(angle) === WALKWAYS_AND_PASSAGEWAYS.ANGLE.range.value) {
           console.log("success");
           setDesc(''); // Clear description on success
-          setError(false);
+          setButtonDefault(false)
+          setShowGradient           (false)
+          setShowCrossGradient      (false)
+          setShowWidth              (false)
+          setShowGratingOpenings    (false)
+          setShowProjection         (false)
+          setShowInterruption       (false)
+          setShowDimension          (false)
+          setShowSpacesLengthBusyWalkWays(false)
       } else {
           setDesc(WALKWAYS_AND_PASSAGEWAYS.ANGLE.desc);
           setError                  (true);
+          setButtonDefault(false)
           setDesc                   (false)
           setError                  (false);
           setShowGradient           (false)
@@ -227,10 +330,21 @@ export default function WalkWaysPassageWays() {
     const searchDimention = () => {
       if (Number(dimension) >= WALKWAYS_AND_PASSAGEWAYS.DIMENSION.range.value) {
         console.log("success");
-        setDesc(''); // Clear description on success
+        setDesc('');
+        
+        setButtonDefault(false)
+        setShowGradient(false)
+        setShowCrossGradient(false)
+        setShowGratingOpenings(false)
+          setShowProjection(false)
+          setShowInterruption(false)
+          setShowSpacesLengthBusyWalkWays(false)
+          setShowAngle(false)
+          setShowWidth              (false)
       } else {
         setDesc(WALKWAYS_AND_PASSAGEWAYS.DIMENSION.desc);
         setError(true);
+        setButtonDefault(false)
         setShowGradient(false)
         setShowCrossGradient(false)
         setShowGratingOpenings(false)
@@ -244,9 +358,10 @@ export default function WalkWaysPassageWays() {
   };
 
     const backButton = () => {
-        if (desc, error) {
+        if (!buttonDefault) {
           setDesc(false)
           setError(false);
+          setButtonDefault(true)
             setShowGradient(true)
             setShowCrossGradient(true)
             setShowWidth(true)
@@ -267,57 +382,55 @@ export default function WalkWaysPassageWays() {
         <div className='container-moreheight poppins-regular'>
             <div className='container-body '>
 
-                {
-                    showGradient && 
-                        <div className=' flex mb-5'>
-                            <div>
-                                <div className=' input-containerv2 input-container-width'>
-                                    <div className=' input-container input-container-width'>
-                                        <p className=' input-text poppins-regular'>Gradient</p>
-                                        <input
-                                        type="number"
-                                        name="waklPassageNumerator"
-                                        className="input-field"
-                                        value={gradientNumerator}
-                                        onChange={(e) => setGradientNumerator(e.target.value)}
-                                        />
-                                        <p className=' input-text poppins-regular'>:</p>
-                                        <input
-                                        type="number"
-                                        name="walkPassageDenominator"
-                                        className="input-field"
-                                        value={gradientDenominator}
-                                        onChange={(e) => setGradientDenominator(e.target.value)}
-                                        />
-                                    </div>
-                                    <div className='input-container input-container-width'>
-                                        <p className='input-text poppins-regular'>(Percentage)</p>
-                                        <input
-                                            type="number"
-                                            name="percentage"
-                                            className="input-field"
-                                            value={gradientPercent}
-                                            onChange={(e) => setGradientPercent(e.target.value)}
-                                        />
-                                    </div>
-                                    
-                                </div>
-                            <div className=' input-text text-end'>
-                                {/* <p className='unit'>{`(${Dropped_Curbs.GRADIENT.unit})`}</p> */}
-                            </div>
-                            </div>
-                            {
+            {
+              showGradient &&
+                <div className=' flex mb-5'>
+                  <div>
+                    <div className=' input-container input-container-width'>
+                      <p className=' input-text poppins-regular'>Gradient</p>
+                      <input
+                        type="number"
+                        name="gradientNumerator"
+                        className="input-field"
+                        value={gradientNumerator}
+                        onChange={(e) => setGradientNumerator(e.target.value)}
+                      />
+                      <p className=' input-text poppins-regular '>:</p>
+                      <input
+                        type="number"
+                        name="gradientDenuminator"
+                        className="input-field"
+                        value={gradientDenominator}
+                        onChange={(e) => setGradientDenominator(e.target.value)}
+                      />
+                    </div>
+                    <div className=' input-text text-end'>
+                      {/* <p className='unit'>{`(${Dropped_Curbs.GRADIENT.unit})`}</p> */}
+                    </div>
+                  </div>
+                  {
+                        buttonDefault ?
+                        <div 
+                          onClick={searchGradient}
+                          className='input-button poppins-regular'>
+                          <p>Search</p>
+                        </div> :
+                        <div>
+                          {
                             error ? <div>
-                                <p className='inadequate'>INADEQUATE</p>
+                              <p className='inadequate'>INADEQUATE</p>
                             </div> :
-                            <div 
-                                onClick={searchGradient}
-                                className='input-button poppins-regular'>
-                                <p>Search</p>
-                            </div>
-                            }
+                            <div>
+                            <p className='inadequate'>ADEQUATE</p>
+                          </div>
+                          }
                         </div>
-                }
+                  }
+                </div>  
+            }
+
+
+                
 
                 {
                     showCrossGradient &&
@@ -346,15 +459,23 @@ export default function WalkWaysPassageWays() {
                             </div>
                         </div>
                         {
+                        buttonDefault ?
+                        <div 
+                          onClick={searchCrossGradient}
+                          className='input-button poppins-regular'>
+                          <p>Search</p>
+                        </div> :
+                        <div>
+                          {
                             error ? <div>
-                            <p className='inadequate'>INADEQUATE</p>
+                              <p className='inadequate'>INADEQUATE</p>
                             </div> :
-                            <div 
-                            onClick={searchCrossGradient}
-                            className='input-button poppins-regular'>
-                            <p>Search</p>
-                            </div>
-                        }
+                            <div>
+                            <p className='inadequate'>ADEQUATE</p>
+                          </div>
+                          }
+                        </div>
+                  }
                         </div>
                 }
 
@@ -377,15 +498,23 @@ export default function WalkWaysPassageWays() {
                         </div>
                       </div>
                       {
-                        error ? <div>
-                          <p className='inadequate'>INADEQUATE</p>
-                        </div> :
+                        buttonDefault ?
                         <div 
                           onClick={searchWidth}
                           className='input-button poppins-regular'>
                           <p>Search</p>
+                        </div> :
+                        <div>
+                          {
+                            error ? <div>
+                              <p className='inadequate'>INADEQUATE</p>
+                            </div> :
+                            <div>
+                            <p className='inadequate'>ADEQUATE</p>
+                          </div>
+                          }
                         </div>
-                      }
+                  }
                       
                     </div>
                 }
@@ -417,15 +546,24 @@ export default function WalkWaysPassageWays() {
                             </div>
                         </div>
                         {
-                            error ? <div>
-                            <p className='inadequate'>INADEQUATE</p>
-                            </div> :
-                            <div 
-                            onClick={searchGratingOpenings}
-                            className='input-button poppins-regular'>
-                            <p>Search</p>
-                            </div>
+                              buttonDefault ?
+                              <div 
+                                onClick={searchGratingOpenings}
+                                className='input-button poppins-regular'>
+                                <p>Search</p>
+                              </div> :
+                              <div>
+                                {
+                                  error ? <div>
+                                    <p className='inadequate'>INADEQUATE</p>
+                                  </div> :
+                                  <div>
+                                  <p className='inadequate'>ADEQUATE</p>
+                                </div>
+                                }
+                              </div>
                         }
+                              
                         </div>
                 }
 
@@ -448,15 +586,23 @@ export default function WalkWaysPassageWays() {
                         </div>
                       </div>
                       {
-                        error ? <div>
-                          <p className='inadequate'>INADEQUATE</p>
-                        </div> :
-                        <div 
-                          onClick={searchProjection}
-                          className='input-button poppins-regular'>
-                          <p>Search</p>
-                        </div>
-                      }
+                              buttonDefault ?
+                              <div 
+                                onClick={searchProjection}
+                                className='input-button poppins-regular'>
+                                <p>Search</p>
+                              </div> :
+                              <div>
+                                {
+                                  error ? <div>
+                                    <p className='inadequate'>INADEQUATE</p>
+                                  </div> :
+                                  <div>
+                                  <p className='inadequate'>ADEQUATE</p>
+                                </div>
+                                }
+                              </div>
+                        }
                       
                     </div>
                 }
@@ -480,15 +626,23 @@ export default function WalkWaysPassageWays() {
                         </div>
                       </div>
                       {
-                        error ? <div>
-                          <p className='inadequate'>INADEQUATE</p>
-                        </div> :
-                        <div 
-                          onClick={searchInterruption}
-                          className='input-button poppins-regular'>
-                          <p>Search</p>
-                        </div>
-                      }
+                              buttonDefault ?
+                              <div 
+                                onClick={searchInterruption}
+                                className='input-button poppins-regular'>
+                                <p>Search</p>
+                              </div> :
+                              <div>
+                                {
+                                  error ? <div>
+                                    <p className='inadequate'>INADEQUATE</p>
+                                  </div> :
+                                  <div>
+                                  <p className='inadequate'>ADEQUATE</p>
+                                </div>
+                                }
+                              </div>
+                        }
                       
                     </div>
                 }
@@ -497,79 +651,96 @@ export default function WalkWaysPassageWays() {
                   showSpacesLengthBusyWalkWays && 
                     <div className=' flex mb-5'>
                       <div>
-                        <div className=' input-container-box input-container-width'>
-                          <p> Spaces in length or busy walkways</p>
+                        <p className='pl-5 signage_title'> Spaces in length or busy walkways</p>
+                        <div className=' input-container-box '>
                           {
                             showSpaceDimention && 
-                              <div className=' w-full'>
-                                <div className='asdasda'>
-                                  <p className=' input-text poppins-regular'>Dimentions</p>
-                                  <input
-                                    type="number"
-                                    name="spaceDimension"
-                                    className="input-field"
-                                    value={spaceDimension}
-                                    onChange={(e) => setSpaceDimension(e.target.value)}
-                                  />
+                              <div className=' w-full flex flex-row'>
+                                < div className='asdasda flex-col'>
+                                  <div className='input-container input-container-width'>
+                                    <p className=' input-text poppins-regular'>Dimentions</p>
+                                    <input
+                                      type="number"
+                                      name="spaceDimension"
+                                      className="input-field"
+                                      value={spaceDimension}
+                                      onChange={(e) => setSpaceDimension(e.target.value)}
+                                    />
+                                  </div>
+                                  <div className=' input-text w-full text-end'>
+                                    <p className='unit'>{`(${WALKWAYS_AND_PASSAGEWAYS.INTERRUPTION.unit})`}</p>
+                                  </div>
                                 </div>
-                                <div className=' input-text text-end'>
-                                  <p className='unit'>{`(${WALKWAYS_AND_PASSAGEWAYS.INTERRUPTION.unit})`}</p>
-                                </div>
+                                  <div className='qweqwe'>
+                                  {
+                                    buttonDefault ?
+                                    <div 
+                                      onClick={searchSpaceDimention}
+                                      className='input-button poppins-regular'>
+                                      <p>Search</p>
+                                    </div> :
+                                    <div>
+                                      {
+                                        error ? <div>
+                                          <p className='inadequate'>INADEQUATE</p>
+                                        </div> :
+                                        <div>
+                                        <p className='inadequate'>ADEQUATE</p>
+                                      </div>
+                                      }
+                                    </div>
+                                  }
+                                  </div>
+                                
                               </div>
                           }
 
                           {
                             showSpaceDistance &&
-                              <div className=' w-full'>
-                                <div className='asdasda'>
-                                  <p className=' input-text poppins-regular'>Distance</p>
-                                  <input
-                                    type="number"
-                                    name="spaceDistance"
-                                    className="input-field"
-                                    value={spaceDistance}
-                                    onChange={(e) => setSpaceDistance(e.target.value)}
-                                  />
+                              <div className=' w-full flex flex-row'>
+                                <div className='asdasda flex-col'>
+                                  <div className='input-container input-container-width'>
+                                    <p className=' input-text poppins-regular'>Distance</p>
+                                    <input
+                                      type="number"
+                                      name="spaceDistance"
+                                      className="input-field"
+                                      value={spaceDistance}
+                                      onChange={(e) => setSpaceDistance(e.target.value)}
+                                    />
+                                  </div>
+
+                                  <div className=' input-text w-full text-end'>
+                                    <p className='unit'>{`(${WALKWAYS_AND_PASSAGEWAYS.INTERRUPTION.unit})`}</p>
+                                  </div>
+
+
                                 </div>
-                                <div className=' input-text text-end'>
-                                  <p className='unit'>{`(${WALKWAYS_AND_PASSAGEWAYS.INTERRUPTION.unit})`}</p>
+                                <div className='qweqwe '>
+                                  {
+                                    buttonDefault ?
+                                    <div 
+                                      onClick={searchSpaceDimention}
+                                      className='input-button poppins-regular'>
+                                      <p>Search</p>
+                                    </div> :
+                                    <div>
+                                      {
+                                        error ? <div>
+                                          <p className='inadequate'>INADEQUATE</p>
+                                        </div> :
+                                        <div>
+                                        <p className='inadequate'>ADEQUATE</p>
+                                      </div>
+                                      }
+                                    </div>
+                                  }
                                 </div>
                               </div>
                           }
                         </div>
                       </div>
-                      <div className='wqwwqwq'>
-                        {
-                          showSpaceDimention && 
-                          <div className='qweqwe'>
-                            {
-                              error ? <div>
-                                <p className='inadequate'>INADEQUATE</p>
-                              </div> :
-                              <div 
-                                onClick={searchSpaceDimention}
-                                className='input-button poppins-regular'>
-                                <p>Search</p>
-                              </div>
-                            }
-                          </div>
-                        }
-                        {
-                          showSpaceDistance &&
-                          <div className='qweqwe'>
-                            {
-                              error ? <div>
-                                <p className='inadequate'>INADEQUATE</p>
-                              </div> :
-                              <div 
-                                onClick={searchSpaceDistance}
-                                className='input-button poppins-regular'>
-                                <p>Search</p>
-                              </div>
-                            }
-                          </div>
-                        }
-                      </div>
+                     
                       
                     </div>
                 }
@@ -593,13 +764,21 @@ export default function WalkWaysPassageWays() {
                         </div>
                       </div>
                       {
-                        error ? <div>
-                          <p className='inadequate'>INADEQUATE</p>
-                        </div> :
+                        buttonDefault ?
                         <div 
                           onClick={searchAngle}
                           className='input-button poppins-regular'>
                           <p>Search</p>
+                        </div> :
+                        <div>
+                          {
+                            error ? <div>
+                              <p className='inadequate'>INADEQUATE</p>
+                            </div> :
+                            <div>
+                            <p className='inadequate'>ADEQUATE</p>
+                          </div>
+                          }
                         </div>
                       }
                       
@@ -625,13 +804,21 @@ export default function WalkWaysPassageWays() {
                         </div>
                       </div>
                       {
-                        error ? <div>
-                          <p className='inadequate'>INADEQUATE</p>
-                        </div> :
+                        buttonDefault ?
                         <div 
                           onClick={searchDimention}
                           className='input-button poppins-regular'>
                           <p>Search</p>
+                        </div> :
+                        <div>
+                          {
+                            error ? <div>
+                              <p className='inadequate'>INADEQUATE</p>
+                            </div> :
+                            <div>
+                            <p className='inadequate'>ADEQUATE</p>
+                          </div>
+                          }
                         </div>
                       }
                       

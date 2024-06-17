@@ -10,23 +10,25 @@ export default function Thresholds() {
     
   const [desc, setDesc] = useState(false)
   const [error, setError] = useState(false)
-
+  const [buttonDefault, setButtonDefault] = useState(true)
   const searchMax = () => {
     if (Number(max) <= THRESHOLDS.MAX.range.value) {
       console.log("success");
       setDesc(''); // Clear description on success
+      setButtonDefault(false)
     } else {
       setDesc(THRESHOLDS.MAX.desc);
       setError(true);
+      setButtonDefault(false)
     }
   };
 
   const backButton = () => {
-    if (desc, error) {
+    if (!buttonDefault) {
       setDesc(false)
       setError(false);
       setShowMax(true)
-           
+      setButtonDefault(true)
     } else {
       navigate("/Profile");
     }
@@ -55,16 +57,23 @@ export default function Thresholds() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchMax}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
             

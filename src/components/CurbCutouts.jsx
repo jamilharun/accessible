@@ -7,6 +7,7 @@ export default function CurbCutouts() {
     const navigate = useNavigate();
     const [showWidth, setShowWidth] = useState(true)
     const [showGradient, setShowGradient] = useState(true)
+    const [buttonDefault, setButtonDefault] = useState(true)
 
     const [width, setWidth] = useState(0)
     const [gradientNumerator, setGradientNumerator] = useState(0)
@@ -19,9 +20,14 @@ export default function CurbCutouts() {
         if (Number(width) >= Curb_CutOuts.WIDTH.range.value) {
           console.log("success");
           setDesc(''); // Clear description on success
+          setButtonDefault(false)
+          setShowGradient(false);
+          setShowMaximum(false);
+          setShowLowest(false);
         } else {
           setDesc(Curb_CutOuts.WIDTH.desc);
           setError(true);
+          setButtonDefault(false)
           setShowGradient(false);
           setShowMaximum(false);
           setShowLowest(false);
@@ -35,9 +41,15 @@ export default function CurbCutouts() {
         if (parsedNumerator / parsedDenominator <= Curb_CutOuts.GRADIENT.parsedRange.numerator / Curb_CutOuts.GRADIENT.parsedRange.denominator) {
           console.log("success");
           setDesc(''); // Clear description on success
+          
+          setButtonDefault(false)
+          setShowWidth(false);
+          setShowMaximum(false);
+          setShowLowest(false);
         } else {
           setDesc(Curb_CutOuts.GRADIENT.desc);
           setError(true);
+          setButtonDefault(false)
           setShowWidth(false);
           setShowMaximum(false);
           setShowLowest(false);
@@ -45,11 +57,12 @@ export default function CurbCutouts() {
     };
 
     const backButton = () => {
-        if (desc, error) {
+        if (!buttonDefault) {
           setDesc(false)
           setError(false);
           setShowWidth(true);
-          setShowGradient(true);  
+          setShowGradient(true);
+          setButtonDefault(true);  
         } else {
           navigate("/Profile");
         }
@@ -78,13 +91,21 @@ export default function CurbCutouts() {
                         </div>
                       </div>
                       {
-                        error ? <div>
-                          <p className='inadequate'>INADEQUATE</p>
-                        </div> :
+                        buttonDefault ?
                         <div 
                           onClick={searchWidth}
                           className='input-button poppins-regular'>
                           <p>Search</p>
+                        </div> :
+                        <div>
+                          {
+                            error ? <div>
+                              <p className='inadequate'>INADEQUATE</p>
+                            </div> :
+                            <div>
+                            <p className='inadequate'>ADEQUATE</p>
+                          </div>
+                          }
                         </div>
                       }
                       
@@ -116,25 +137,28 @@ export default function CurbCutouts() {
                         <div className=' input-text text-end'>
                         </div>
                       </div>
-                      {/* {
+                      
 
-                        default ?
+                      {
+                        buttonDefault ?
                         <div 
                           onClick={searchGradient}
                           className='input-button poppins-regular'>
                           <p>Search</p>
-                        </div>: 
-                    
-                      } */}
-                      
-                      {
-                        error ? <div>
-                          <p className='inadequate'>INADEQUATE</p>
                         </div> :
                         <div>
-                        <p className='inadequate'>ADEQUATE</p>
-                      </div>
+                          {
+                            error ? <div>
+                              <p className='inadequate'>INADEQUATE</p>
+                            </div> :
+                            <div>
+                            <p className='inadequate'>ADEQUATE</p>
+                          </div>
+                          }
+                        </div>
                       }
+                      
+                      
                     </div>
                 }
     

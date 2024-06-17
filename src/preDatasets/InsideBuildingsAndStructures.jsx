@@ -408,7 +408,7 @@ export const ELEVATORS = {
         name: "CONTROL PANEL/EMERGENCY SYSTEM LOCATION FROM FLOOR",
         // range: "0.9 - 1.2",
         range: {
-            operator: ">=",
+            operator: " - ",
             numerator: 0.9,
             denominator: 1.2
         },

@@ -27,14 +27,23 @@ export default function Ramps() {
 
     const [desc, setDesc] = useState(false)
     const [error, setError] = useState(false)
+    const [buttonDefault, setButtonDefault] = useState(true)
 
     const searchClear = () => {
         if (Number(clear) >= RAMPS.CLEAR.range.value) {
           console.log("success");
           setDesc(''); // Clear description on success
+          setButtonDefault(false)
+          setShowGradient(false);
+          setShowLength(false);
+          setShowLevel(false);
+          setShowHandrailsRampLevel(false);
+          setShowCurbs(false);
+          setShowRailing(false);
         } else {
           setDesc(RAMPS.CLEAR.desc);
           setError(true);
+          setButtonDefault(false)
           setShowGradient(false);
           setShowLength(false);
           setShowLevel(false);
@@ -51,9 +60,17 @@ export default function Ramps() {
         if (parsedNumerator / parsedDenominator <= RAMPS.GRADIENT.parsedRange.numerator / RAMPS.GRADIENT.parsedRange.denominator) {
           console.log("success");
           setDesc(''); // Clear description on success
+          setButtonDefault(false)
+          setShowClear(false);
+          setShowLength(false);
+          setShowLevel(false);
+          setShowHandrailsRampLevel(false);
+          setShowCurbs(false);
+          setShowRailing(false);
         } else {
           setDesc(RAMPS.GRADIENT.desc);
           setError(true);
+          setButtonDefault(false)
           setShowClear(false);
           setShowLength(false);
           setShowLevel(false);
@@ -67,9 +84,17 @@ export default function Ramps() {
         if (Number(length) >= RAMPS.LENGTH.range.value) {
           console.log("success");
           setDesc(''); // Clear description on success
+          setButtonDefault(false)
+          setShowClear(false);
+          setShowGradient(false);
+          setShowLevel(false);
+          setShowHandrailsRampLevel(false);
+          setShowCurbs(false);
+          setShowRailing(false);
         } else {
           setDesc(RAMPS.LENGTH.desc);
           setError(true);
+          setButtonDefault(false)
           setShowClear(false);
           setShowGradient(false);
           setShowLevel(false);
@@ -83,9 +108,17 @@ export default function Ramps() {
         if (Number(levels) >= RAMPS.LEVEL.range.value) {
           console.log("success");
           setDesc(''); // Clear description on success
+          setButtonDefault(false)
+          setShowClear(false);
+          setShowGradient(false);
+          setShowLength(false);
+          setShowHandrailsRampLevel(false);
+          setShowCurbs(false);
+          setShowRailing(false);
         } else {
           setDesc(RAMPS.LEVEL.desc);
           setError(true);
+          setButtonDefault(false)
           setShowClear(false);
           setShowGradient(false);
           setShowLength(false);
@@ -102,9 +135,17 @@ export default function Ramps() {
         if (parsedNumerator / parsedDenominator && RAMPS.HANDRAILS_FROM_THE_RAMP_LEVEL.parsedRange.numerator / RAMPS.HANDRAILS_FROM_THE_RAMP_LEVEL.parsedRange.denominator) {
           console.log("success");
           setDesc(''); // Clear description on success
+          setButtonDefault(false)
+          setShowClear(false)
+          setShowGradient(false);
+          setShowLength(false);
+          setShowLevel(false);
+          setShowCurbs(false);
+          setShowRailing(false);
         } else {
           setDesc(RAMPS.GRADIENT.desc);
           setError(true);
+          setButtonDefault(false)
           setShowClear(false)
           setShowGradient(false);
           setShowLength(false);
@@ -118,9 +159,17 @@ export default function Ramps() {
         if (Number(curbs) >= RAMPS.CURBS.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+            setShowClear(false);
+            setShowGradient(false);
+            setShowLength(false);
+            setShowLevel(false);
+            setShowHandrailsRampLevel(false);
+            setShowRailing(false);
           } else {
             setDesc(RAMPS.CURBS.desc);
             setError(true);
+            setButtonDefault(false)
             setShowClear(false);
             setShowGradient(false);
             setShowLength(false);
@@ -134,22 +183,31 @@ export default function Ramps() {
         if (Number(railings) == RAMPS.RAILING.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
-          } else {
-            setDesc(RAMPS.RAILING.desc);
-            setError(true);
+            setButtonDefault(false)
             setShowClear(false);
             setShowGradient(false);
             setShowLength(false);
             setShowLevel(false);
             setShowHandrailsRampLevel(false);
-            setShowCurbs(true);
+            setShowCurbs(false);
+          } else {
+            setDesc(RAMPS.RAILING.desc);
+            setError(true);
+            setButtonDefault(false)
+            setShowClear(false);
+            setShowGradient(false);
+            setShowLength(false);
+            setShowLevel(false);
+            setShowHandrailsRampLevel(false);
+            setShowCurbs(false);
           }
       }
 
       const backButton = () => {
-        if (desc, error) {
+        if (!buttonDefault) {
           setDesc(false)
           setError(false);
+          setButtonDefault(true)
           setShowClear(true)
           setShowGradient(true);
           setShowLength(true);
@@ -185,13 +243,21 @@ export default function Ramps() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchClear}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>
@@ -224,13 +290,21 @@ export default function Ramps() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchGradient}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>
@@ -255,13 +329,21 @@ export default function Ramps() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchLength}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>
@@ -294,13 +376,21 @@ export default function Ramps() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchHandrailsRampLevels}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>
@@ -325,13 +415,21 @@ export default function Ramps() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchCurbs}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>
@@ -343,7 +441,7 @@ export default function Ramps() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Curbs</p>
+                      <p className=' input-text poppins-regular'>Railing</p>
                       <input
                         type="number"
                         name="curbs"
@@ -357,13 +455,21 @@ export default function Ramps() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchRailing}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>

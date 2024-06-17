@@ -16,10 +16,11 @@ export default function DroppedCurbs() {
   const [gradientDenominator, setGradientDenominator] = useState(0)
   const [maximumNumerator, setMaximumNumerator] = useState(0)
   const [maximumDenominator, setMaximumDenominator] = useState(0)
-  const [lowest, setLowest] = useState(1)
+  const [lowest, setLowest] = useState(0)
 
   const [desc, setDesc] = useState(false)
   const [error, setError] = useState(false)
+  const [buttonDefault, setButtonDefault] = useState(true)
 
   useEffect(() => {
     console.log(width)
@@ -29,9 +30,14 @@ export default function DroppedCurbs() {
     if (Number(width) >= Dropped_Curbs.WIDTH.range.value) {
       console.log("success");
       setDesc(''); // Clear description on success
+      setButtonDefault(false)
+      setShowGradient(false);
+      setShowMaximum(false);
+      setShowLowest(false);
     } else {
       setDesc(Dropped_Curbs.WIDTH.desc);
       setError(true);
+      setButtonDefault(false)
       setShowGradient(false);
       setShowMaximum(false);
       setShowLowest(false);
@@ -45,9 +51,14 @@ export default function DroppedCurbs() {
     if (parsedNumerator / parsedDenominator <= Dropped_Curbs.GRADIENT.parsedRange.numerator / Dropped_Curbs.GRADIENT.parsedRange.denominator) {
       console.log("success");
       setDesc(''); // Clear description on success
+      setButtonDefault(false)
+      setShowWidth(false);
+      setShowMaximum(false);
+      setShowLowest(false);
     } else {
       setDesc(Dropped_Curbs.GRADIENT.desc);
       setError(true);
+      setButtonDefault(false)
       setShowWidth(false);
       setShowMaximum(false);
       setShowLowest(false);
@@ -61,9 +72,14 @@ export default function DroppedCurbs() {
     if (parsedNumerator / parsedDenominator <= Dropped_Curbs.MAXIMUM.parsedRange.numerator / Dropped_Curbs.MAXIMUM.parsedRange.denominator) {
       console.log("success");
       setDesc(''); // Clear description on success
+      setButtonDefault(false)
+      setShowWidth(false);
+      setShowGradient(false);
+      setShowLowest(false);
     } else {
       setDesc(Dropped_Curbs.MAXIMUM.desc);
       setError(true);
+      setButtonDefault(false)
       setShowWidth(false);
       setShowGradient(false);
       setShowLowest(false);
@@ -74,9 +90,14 @@ export default function DroppedCurbs() {
     if (Number(lowest) >= Dropped_Curbs.LOWEST.range.value) {
       console.log("success");
       setDesc(''); // Clear description on success
+      setButtonDefault(false)
+      setShowWidth(false);
+      setShowGradient(false);
+      setShowMaximum(false);
     } else {
       setDesc(Dropped_Curbs.LOWEST.desc);
       setError(true);
+      setButtonDefault(false)
       setShowWidth(false);
       setShowGradient(false);
       setShowMaximum(false);
@@ -84,9 +105,10 @@ export default function DroppedCurbs() {
   };
 
   const backButton = () => {
-    if (desc, error) {
+    if (!buttonDefault) {
       setDesc(false)
       setError(false);
+      setButtonDefault(true);
       setShowWidth(true);
       setShowGradient(true);
       setShowMaximum(true);
@@ -94,7 +116,7 @@ export default function DroppedCurbs() {
     } else {
       navigate("/Profile");
     }
-  }
+  } 
   
   return (
     <div className='container poppins-regular'>
@@ -105,7 +127,7 @@ export default function DroppedCurbs() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>width</p>
+                      <p className=' input-text poppins-regular'>Width</p>
                       <input
                         type="number"
                         name="WIDTH"
@@ -119,14 +141,22 @@ export default function DroppedCurbs() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
-                    <div 
-                      onClick={searchWidth}
-                      className='input-button poppins-regular'>
-                      <p>Search</p>
-                    </div>
+                        buttonDefault ?
+                        <div 
+                          onClick={searchWidth}
+                          className='input-button poppins-regular'>
+                          <p>Search</p>
+                        </div> :
+                        <div>
+                          {
+                            error ? <div>
+                              <p className='inadequate'>INADEQUATE</p>
+                            </div> :
+                            <div>
+                            <p className='inadequate'>ADEQUATE</p>
+                          </div>
+                          }
+                        </div>
                   }
                   
                 </div>
@@ -145,7 +175,7 @@ export default function DroppedCurbs() {
                         value={gradientNumerator}
                         onChange={(e) => setGradientNumerator(e.target.value)}
                       />
-                      <p className=' input-text poppins-regular'>:</p>
+                      <p className=' input-text poppins-regular '>:</p>
                       <input
                         type="number"
                         name="gradientDenuminator"
@@ -159,16 +189,24 @@ export default function DroppedCurbs() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
-                    <div 
-                      onClick={searchGradient}
-                      className='input-button poppins-regular'>
-                      <p>Search</p>
-                    </div>
+                        buttonDefault ?
+                        <div 
+                          onClick={searchGradient}
+                          className='input-button poppins-regular'>
+                          <p>Search</p>
+                        </div> :
+                        <div>
+                          {
+                            error ? <div>
+                              <p className='inadequate'>INADEQUATE</p>
+                            </div> :
+                            <div>
+                            <p className='inadequate'>ADEQUATE</p>
+                          </div>
+                          }
+                        </div>
                   }
-                </div>
+                </div>  
             }
 
             {
@@ -198,14 +236,22 @@ export default function DroppedCurbs() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
-                    <div 
-                      onClick={searchMaximum}
-                      className='input-button poppins-regular'>
-                      <p>Search</p>
-                    </div>
+                        buttonDefault ?
+                        <div 
+                          onClick={searchMaximum}
+                          className='input-button poppins-regular'>
+                          <p>Search</p>
+                        </div> :
+                        <div>
+                          {
+                            error ? <div>
+                              <p className='inadequate'>INADEQUATE</p>
+                            </div> :
+                            <div>
+                            <p className='inadequate'>ADEQUATE</p>
+                          </div>
+                          }
+                        </div>
                   }
                 </div>
             }
@@ -230,14 +276,22 @@ export default function DroppedCurbs() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
-                    <div 
-                      onClick={searchLowest}
-                      className='input-button poppins-regular'>
-                      <p>Search</p>
-                    </div>
+                        buttonDefault ?
+                        <div 
+                          onClick={searchLowest}
+                          className='input-button poppins-regular'>
+                          <p>Search</p>
+                        </div> :
+                        <div>
+                          {
+                            error ? <div>
+                              <p className='inadequate'>INADEQUATE</p>
+                            </div> :
+                            <div>
+                            <p className='inadequate'>ADEQUATE</p>
+                          </div>
+                          }
+                        </div>
                   }
                   
                 </div>

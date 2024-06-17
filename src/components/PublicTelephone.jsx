@@ -6,6 +6,7 @@ export default function PublicTelephone() {
 
     const [desc, setDesc] = useState(false)
   const [error, setError] = useState(false)
+  const [buttonDefault, setButtonDefault] = useState(true)
 
   const [showSpaceInfront, setShowSpaceInfront] = useState(true)
   const [showTelephone, setShowTelephone] = useState(true)
@@ -21,9 +22,14 @@ export default function PublicTelephone() {
         Number(spaceInfrontDenominator) == PUBLIC_TELEPHONES.SPACE_INFRONT.range.value) {
         console.log("success");
         setDesc(''); // Clear description on success
+        setButtonDefault(false)
+        // setShowSpaceInfront(false)
+        setShowTelephone(false)
+        setShowCoins(false)
       } else {
         setDesc(PUBLIC_TELEPHONES.SPACE_INFRONT.desc);
         setError(true);
+        setButtonDefault(false)
         // setShowSpaceInfront(false)
         setShowTelephone(false)
         setShowCoins(false)
@@ -34,9 +40,14 @@ export default function PublicTelephone() {
     if (Number(telephone) >= PUBLIC_TELEPHONES.TELEPHONE.range.value) {
         console.log("success");
         setDesc(''); // Clear description on success
+        setButtonDefault(false)
+        // setShowTelephone(false)
+        setShowSpaceInfront(false)
+        setShowCoins(false)
       } else {
         setDesc(PUBLIC_TELEPHONES.TELEPHONE.desc);
         setError(true);
+        setButtonDefault(false)
         // setShowTelephone(false)
         setShowSpaceInfront(false)
         setShowCoins(false)
@@ -47,9 +58,14 @@ export default function PublicTelephone() {
     if (Number(coins) <= PUBLIC_TELEPHONES.COINS_SLOT.range.value) {
         console.log("success");
         setDesc(''); // Clear description on success
+        setButtonDefault(false)
+        setShowTelephone(false)
+        setShowSpaceInfront(false)
+        // setShowCoins(false)
       } else {
         setDesc(PUBLIC_TELEPHONES.COINS_SLOT.desc);
         setError(true);
+        setButtonDefault(false)
         setShowTelephone(false)
         setShowSpaceInfront(false)
         // setShowCoins(false)
@@ -57,9 +73,10 @@ export default function PublicTelephone() {
   }
 
   const backButton = () => {
-    if (desc, error) {
+    if (!buttonDefault) {
       setDesc(false)
       setError(false);
+      setButtonDefault(true)
       setShowSpaceInfront(true)
       setShowTelephone(true)
       setShowCoins(true)     
@@ -99,13 +116,21 @@ export default function PublicTelephone() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchSpaceInfront}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>
@@ -129,16 +154,23 @@ export default function PublicTelephone() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
-                      onClick={searchSpaceInfront}
+                      onClick={searchTelephone}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -162,16 +194,23 @@ export default function PublicTelephone() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchCoin}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
             

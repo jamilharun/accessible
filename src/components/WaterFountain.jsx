@@ -6,6 +6,7 @@ export default function WaterFountain() {
 
     const [desc, setDesc] = useState(false)
     const [error, setError] = useState(false)
+    const [buttonDefault, setButtonDefault] = useState(true)
 
     const [showLocation, setShowLocation] = useState(true)
     const [showWallMounted, setShowWallMounted] = useState(true)
@@ -19,9 +20,14 @@ export default function WaterFountain() {
         if (Number(location) >= WATER_FOUNTAINS.LOCATION.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+            // showLocation(false)
+            setShowWallMounted(false)
+            setShowFloorMounted(false)
           } else {
             setDesc(WATER_FOUNTAINS.LOCATION.desc);
             setError(true);
+            setButtonDefault(false)
             // showLocation(false)
             setShowWallMounted(false)
             setShowFloorMounted(false)
@@ -32,9 +38,14 @@ export default function WaterFountain() {
         if (Number(wallMounted) >= WATER_FOUNTAINS.WALL_MOUNTED.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+            showLocation(false)
+            // setShowWallMounted(false)
+            setShowFloorMounted(false)
           } else {
             setDesc(WATER_FOUNTAINS.WALL_MOUNTED.desc);
             setError(true);
+            setButtonDefault(false)
             showLocation(false)
             // setShowWallMounted(false)
             setShowFloorMounted(false)
@@ -45,9 +56,14 @@ export default function WaterFountain() {
         if (Number(floorMounted) > WATER_FOUNTAINS.FLOOR_MOUNTED.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+            showLocation(false)
+            setShowWallMounted(false)
+            // setShowFloorMounted(false)
           } else {
             setDesc(WATER_FOUNTAINS.FLOOR_MOUNTED.desc);
             setError(true);
+            setButtonDefault(false)
             showLocation(false)
             setShowWallMounted(false)
             // setShowFloorMounted(false)
@@ -77,16 +93,23 @@ export default function WaterFountain() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchLocation}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -109,16 +132,23 @@ export default function WaterFountain() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchWallMounted}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -141,16 +171,23 @@ export default function WaterFountain() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchFloorMounted}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 

@@ -7,7 +7,7 @@ export const FENCING = {
             value: 1
         },
         unit: "meters",
-        desc: `The height of the top of the rail should be at least <span class="highlight"></span>1.00m. above the adjacent surface.`
+        desc: `The height of the top of the rail should be at least <span class="highlight">1.00m</span>. above the adjacent surface.`
     },
     TAPPING_RAIL: {
         num: 1.2,
@@ -17,7 +17,7 @@ export const FENCING = {
             value: 0.35
         },
         unit: "meters",
-        desc: `The railing should incorporate a tapping rail to assist the blind, and this shoud not be greater than 0.35 m. above the adjacent surface.`
+        desc: `The railing should incorporate a tapping rail to assist the blind, and this shoud not be greater than <span class="highlight">0.35m</span>. above the adjacent surface.`
     },
 }
 

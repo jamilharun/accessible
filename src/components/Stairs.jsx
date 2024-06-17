@@ -7,6 +7,7 @@ export default function Stairs() {
 
     const [desc, setDesc] = useState(false)
   const [error, setError] = useState(false)
+  const [buttonDefault, setButtonDefault] = useState(true)
 
   const [showTactile, setShowTactile] = useState(true)
   const [tactile, setTactile] = useState(0)
@@ -15,17 +16,20 @@ export default function Stairs() {
     if (Number(tactile) >= STAIRS.TACTILE_STRIP_WIDTH.range) {
         console.log("success");
         setDesc(''); // Clear description on success
+        setButtonDefault(false)
       } else {
         setDesc(STAIRS.TACTILE_STRIP_WIDTH.desc);
         setError(true);
+        setButtonDefault(false)
       }
   }
 
   const backButton = () => {
-    if (desc, error) {
+    if (!buttonDefault) {
       setDesc(false)
       setError(false);
       setShowTactile(true)
+      setButtonDefault(true)
     } else {
       navigate("/Profile");
     }
@@ -54,16 +58,23 @@ export default function Stairs() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchTactile}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 

@@ -13,14 +13,19 @@ export default function Covers() {
 
     const [desc, setDesc] = useState(false)
     const [error, setError] = useState(false)
+    const [buttonDefault, setButtonDefault] = useState(true)
+
 
     const searchEffective = () => {
         if (Number(effective) >= COVERS.EFFECTIVE.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+            setShowKickBoard(false);
           } else {
             setDesc(COVERS.EFFECTIVE.desc);
             setError(true);
+            setButtonDefault(false)
             setShowKickBoard(false);
         }
     }
@@ -29,19 +34,23 @@ export default function Covers() {
         if (Number(kickBoard) >= COVERS.KICKBOARD.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+            setShowEffective(false);
           } else {
             setDesc(COVERS.KICKBOARD.desc);
             setError(true);
+            setButtonDefault(false)
             setShowEffective(false);
         }
     }
 
     const backButton = () => {
-        if (desc, error) {
+        if (!buttonDefault) {
           setDesc(false)
           setError(false);
           setShowEffective(true)
           setShowKickBoard(true)
+          setButtonDefault(true)
         } else {
           navigate("/Profile");
         }
@@ -70,16 +79,23 @@ export default function Covers() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchEffective}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -102,16 +118,23 @@ export default function Covers() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchKickBoard}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
             

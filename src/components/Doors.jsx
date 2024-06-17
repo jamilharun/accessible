@@ -7,6 +7,7 @@ export default function Doors() {
     const navigate = useNavigate();
     const [desc, setDesc] = useState(false)
     const [error, setError] = useState(false)
+    const [buttonDefault, setButtonDefault] = useState(true)
 
     const [showWidth, setShowWidth] = useState(true)
     const [showLevelSpace, setShowLevelSpace] = useState(true)
@@ -27,9 +28,16 @@ export default function Doors() {
         if (Number(width) >= DOORS.WIDTH.range.value) {
           console.log("success");
           setDesc(''); // Clear description on success
+          setButtonDefault(false)
+          setShowLevelSpace(false)
+          setShowLevelSpaceCorridor(false)
+          setShowDoorKnobs(false)
+          setShowVertical(false)
+          setShowKick(false)
         } else {
           setDesc(DOORS.WIDTH.desc);
           setError(true);
+          setButtonDefault(false)
           setShowLevelSpace(false)
           setShowLevelSpaceCorridor(false)
           setShowDoorKnobs(false)
@@ -45,9 +53,16 @@ export default function Doors() {
         if (parsedNumerator / parsedDenominator == DOORS.LEVEL_SPACE.rangeParsed.numerator / DOORS.LEVEL_SPACE.rangeParsed.denominator) {
           console.log("success");
           setDesc(''); // Clear description on success
+          setButtonDefault(false)
+          setShowWidth(false)
+          setShowLevelSpaceCorridor(false)
+          setShowDoorKnobs(false)
+          setShowVertical(false)
+          setShowKick(false)
         } else {
           setDesc(DOORS.LEVEL_SPACE.desc);
           setError(true);
+          setButtonDefault(false)
           setShowWidth(false)
           setShowLevelSpaceCorridor(false)
           setShowDoorKnobs(false)
@@ -60,9 +75,16 @@ export default function Doors() {
         if (Number(levelSpaceCorridor) >= DOORS.LEVEL_SPACE_CORRIDOR.range.value) {
         console.log("success");
         setDesc(''); // Clear description on success
+        setButtonDefault(false)
+        setShowWidth(false)
+        setShowLevelSpace(false)
+        setShowDoorKnobs(false)
+        setShowVertical(false)
+        setShowKick(false)
       } else {
         setDesc(DOORS.LEVEL_SPACE_CORRIDOR.desc);
         setError(true);
+        setButtonDefault(false)
         setShowWidth(false)
         setShowLevelSpace(false)
         setShowDoorKnobs(false)
@@ -74,9 +96,16 @@ export default function Doors() {
             Number(doorKnobs) <= DOORS.DOORKNOBS.range.denominator) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+            setShowWidth(false)
+            setShowLevelSpace(false)
+            setShowLevelSpaceCorridor(false)
+            setShowVertical(false)
+            setShowKick(false)
           } else {
             setDesc(DOORS.DOORKNOBS.desc);
             setError(true);
+            setButtonDefault(false)
             setShowWidth(false)
             setShowLevelSpace(false)
             setShowLevelSpaceCorridor(false)
@@ -88,9 +117,16 @@ export default function Doors() {
         if (Number(vertical) == DOORS.VERTICAL.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+            setShowLevelSpace(false)
+            setShowLevelSpaceCorridor(false)
+            setShowDoorKnobs(false)
+            setShowKick(false)
+            setShowWidth(false)
           } else {
             setDesc(DOORS.VERTICAL.desc);
             setError(true);
+            setButtonDefault(false)
             setShowLevelSpace(false)
             setShowLevelSpaceCorridor(false)
             setShowDoorKnobs(false)
@@ -103,9 +139,16 @@ export default function Doors() {
             Number(kick) <= DOORS.KICK.range.max) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+            setShowWidth(false)
+          setShowLevelSpace(false)
+          setShowLevelSpaceCorridor(false)
+          setShowDoorKnobs(false)
+          setShowVertical(false)
           } else {
             setDesc(DOORS.KICK.desc);
             setError(true);
+            setButtonDefault(false)
             setShowWidth(false)
           setShowLevelSpace(false)
           setShowLevelSpaceCorridor(false)
@@ -116,9 +159,10 @@ export default function Doors() {
 
 
       const backButton = () => {
-        if (desc, error) {
+        if (!buttonDefault) {
           setDesc(false)
           setError(false);
+          setButtonDefault(true)
           setShowWidth(true)
           setShowLevelSpace(true)
           setShowLevelSpaceCorridor(true)
@@ -152,16 +196,23 @@ export default function Doors() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchWidth}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -192,13 +243,21 @@ export default function Doors() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchLevelSpace}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>
@@ -224,16 +283,23 @@ export default function Doors() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchLevelSpaceCorridor}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -256,16 +322,23 @@ export default function Doors() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchDoorKnobs}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -288,16 +361,23 @@ export default function Doors() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchVertical}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -320,16 +400,23 @@ export default function Doors() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchKick}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
                 

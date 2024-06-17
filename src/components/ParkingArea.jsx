@@ -13,16 +13,22 @@ export default function ParkingArea() {
 
     const [desc, setDesc] = useState(false)
     const [error, setError] = useState(false)
+    const [buttonDefault, setButtonDefault] = useState(true)
 
     const searchWidth = () => {
         if (Number(width) >= PARKING_AREAS.WIDTH.range.value) {
           console.log("success");
           setDesc(''); // Clear description on success
+          
+          setButtonDefault(false)
+          setShowClear(false);
+          // setShowWidth(false);
         } else {
           setDesc(PARKING_AREAS.WIDTH.desc);
           setError(true);
-          setShowDepth(false);
-          setShowWidth(false);
+          setButtonDefault(false)
+          setShowClear(false);
+          // setShowWidth(false);
         }
       };
 
@@ -30,19 +36,23 @@ export default function ParkingArea() {
         if (Number(clear) >= PARKING_AREAS.CLEAR.range.value) {
           console.log("success");
           setDesc(''); // Clear description on success
+          setButtonDefault(false)
+          // setShowClear(false);
+          setShowWidth(false);
         } else {
           setDesc(PARKING_AREAS.CLEAR.desc);
           setError(true);
-          setShowDepth(false);
+          setButtonDefault(false)
+          // setShowClear(false);
           setShowWidth(false);
         }
       };
 
     const backButton = () => {
-        if (desc, error) {
+        if (!buttonDefault) {
           setDesc(false)
           setError(false);
-    
+          setButtonDefault(true)
           setShowWidth(true)
             setShowClear(true)
         } else {
@@ -75,13 +85,21 @@ export default function ParkingArea() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchWidth}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>
@@ -106,13 +124,21 @@ export default function ParkingArea() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchClear}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>

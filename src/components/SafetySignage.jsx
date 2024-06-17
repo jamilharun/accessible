@@ -10,23 +10,28 @@ export default function SafetySignage() {
 
     const [desc, setDesc] = useState(false)
     const [error, setError] = useState(false)
+    const [buttonDefault, setButtonDefault] = useState(true)
 
     const searchAvailable = () => {
       if (Number(available) >= SIGNAGE.AVAILABLE.range.value) {
           console.log("success");
           setDesc(''); // Clear description on success
+          setButtonDefault(false)
+          setShowKickBoard(false);
         } else {
           setDesc(SIGNAGE.AVAILABLE.desc);
           setError(true);
+          setButtonDefault(false)
           setShowKickBoard(false);
       }
   }
 
   const backButton = () => {
-    if (desc, error) {
+    if (!buttonDefault) {
       setDesc(false)
       setError(false);
       setShowAvailable(true)
+      setButtonDefault(true)
     } else {
       navigate("/Profile");
     }
@@ -55,13 +60,21 @@ export default function SafetySignage() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchAvailable}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                   

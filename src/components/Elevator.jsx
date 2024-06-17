@@ -5,7 +5,8 @@ export default function Elevator() {
     const navigate = useNavigate(); 
 
     const [desc, setDesc] = useState(false)
-    const [error, setError] = useState(false)
+    const [error, setError] = useState(false)    
+  const [buttonDefault, setButtonDefault] = useState(true)
 
     const [showLocationFromEntrance, setShowLocationFromEntrance] = useState(true)
     const [showElevatorDimension, setShowElevatorDimension] = useState(true)
@@ -24,9 +25,16 @@ export default function Elevator() {
         if (Number(locationFromEntrance) <= ELEVATORS.LOCATION_FROM_ENTRANCE.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+                // setShowLocationFromEntrance(false)
+    setShowElevatorDimension(false)
+    setShowControlPanel(false)
+    setShowDiameterElevator(false)
+    setShowDepthElevator(false)
           } else {
             setDesc(ELEVATORS.LOCATION_FROM_ENTRANCE.desc);
             setError(true);
+            setButtonDefault(false)
                 // setShowLocationFromEntrance(false)
     setShowElevatorDimension(false)
     setShowControlPanel(false)
@@ -43,9 +51,16 @@ export default function Elevator() {
           setError(false);
           // Add any search logic here if needed
           console.log('Values are within the range.');
+          setButtonDefault(false)
+            setShowLocationFromEntrance(false)
+            // setShowElevatorDimension(false)
+            setShowControlPanel(false)
+            setShowDiameterElevator(false)
+            setShowDepthElevator(false)
         } else {
           setDesc(ELEVATORS.ELEVATOR_DIMENSION.desc);
           setError(true);
+          setButtonDefault(false)
             setShowLocationFromEntrance(false)
             // setShowElevatorDimension(false)
             setShowControlPanel(false)
@@ -62,9 +77,16 @@ export default function Elevator() {
           setError(false);
           // Add any search logic here if needed
           console.log('Values are within the range.');
+          setButtonDefault(false)
+            setShowLocationFromEntrance(false)
+            setShowElevatorDimension(false)
+            // setShowControlPanel(false)
+            setShowDiameterElevator(false)
+            setShowDepthElevator(false)
         } else {
           setDesc(ELEVATORS.CONTROL_PANEL_EMERGENCY_SYSTEM_LOCATION_FLOOR.desc);
           setError(true);
+          setButtonDefault(false)
             setShowLocationFromEntrance(false)
             setShowElevatorDimension(false)
             // setShowControlPanel(false)
@@ -77,9 +99,16 @@ export default function Elevator() {
         if (Number(diameterElevator) >= ELEVATORS.DIAMETER_ELEVATOR_BUTTONS.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+            setShowLocationFromEntrance(false)
+            setShowElevatorDimension(false)
+            setShowControlPanel(false)
+            // setShowDiameterElevator(false)
+            setShowDepthElevator(false)
           } else {
             setDesc(ELEVATORS.DIAMETER_ELEVATOR_BUTTONS.desc);
             setError(true);
+            setButtonDefault(false)
             setShowLocationFromEntrance(false)
             setShowElevatorDimension(false)
             setShowControlPanel(false)
@@ -92,9 +121,16 @@ export default function Elevator() {
         if (Number(depthElevator) <= ELEVATORS.DEPTH_ELEVATOR_BUTTONS.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setButtonDefault(false)
+            setShowLocationFromEntrance(false)
+            setShowElevatorDimension(false)
+            setShowControlPanel(false)
+            setShowDiameterElevator(false)
+            // setShowDepthElevator(false)
           } else {
             setDesc(ELEVATORS.DEPTH_ELEVATOR_BUTTONS.desc);
             setError(true);
+            setButtonDefault(false)
             setShowLocationFromEntrance(false)
             setShowElevatorDimension(false)
             setShowControlPanel(false)
@@ -109,9 +145,10 @@ export default function Elevator() {
             // setShowDiameterElevator(false)
             // setShowDepthElevator(false)
     const backButton = () => {
-        if (desc, error) {
+        if (!buttonDefault) {
           setDesc(false)
           setError(false);
+          setButtonDefault(true)
           setShowLocationFromEntrance(true)
           setShowElevatorDimension(true)
           setShowControlPanel(true)
@@ -145,16 +182,23 @@ export default function Elevator() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchLocationFromEntrance}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -185,13 +229,21 @@ export default function Elevator() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchElevatorDimension}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>
@@ -217,13 +269,21 @@ export default function Elevator() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchControlPanel}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>
@@ -248,13 +308,21 @@ export default function Elevator() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchDiameterElevator}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>
@@ -280,13 +348,21 @@ export default function Elevator() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchDepthElevator}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
                 </div>

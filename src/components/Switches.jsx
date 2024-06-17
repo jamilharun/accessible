@@ -7,6 +7,8 @@ export default function Switches() {
 
     const [desc, setDesc] = useState(false)
   const [error, setError] = useState(false)
+  
+  const [buttonDefault, setButtonDefault] = useState(true)
 
     const [showHeight, setShowHeight] = useState(true)
     const [showDistance, setShowDistance] = useState(true)
@@ -20,10 +22,13 @@ export default function Switches() {
             Number(height) <= SWITCHES.HEIGHT.range.max) {
             console.log("success");
             setDesc(''); // Clear description on success
+            setShowDistance(false)
+            setButtonDefault(false)
           } else {
             setDesc(SWITCHES.HEIGHT.desc);
             setError(true);
             setShowDistance(false)
+            setButtonDefault(false)
           }
       }
 
@@ -31,17 +36,21 @@ export default function Switches() {
         if (Number(distance) <= SWITCHES.DISTANCE.range.value) {
           console.log("success");
           setDesc(''); // Clear description on success
+          setShowHeight(false)
+          setButtonDefault(false)
         } else {
           setDesc(SWITCHES.DISTANCE.desc);
           setError(true);
           setShowHeight(false)
+          setButtonDefault(false)
         }
       };
 
       const backButton = () => {
-        if (desc, error) {
+        if (!buttonDefault) {
           setDesc(false)
           setError(false);
+          setButtonDefault(true)
           setShowDistance(true)
           setShowHeight(true)     
         } else {
@@ -73,16 +82,23 @@ export default function Switches() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchHeight}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
 
@@ -106,16 +122,23 @@ export default function Switches() {
                     </div>
                   </div>
                   {
-                    error ? <div>
-                      <p className='inadequate'>INADEQUATE</p>
-                    </div> :
+                    buttonDefault ?
                     <div 
                       onClick={searchDistance}
                       className='input-button poppins-regular'>
                       <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
                     </div>
                   }
-                  
                 </div>
             }
             
