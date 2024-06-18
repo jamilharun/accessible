@@ -692,7 +692,11 @@ ul li a{
   justify-content: end;
 }
 
-
+.aboutpic{
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
 
 @media (max-width: 1510px) {
   .input-container-width {

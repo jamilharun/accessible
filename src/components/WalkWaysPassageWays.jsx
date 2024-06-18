@@ -651,7 +651,7 @@ export default function WalkWaysPassageWays() {
                   showSpacesLengthBusyWalkWays && 
                     <div className=' flex mb-5'>
                       <div>
-                        <p className='pl-5 signage_title'> Spaces in length or busy walkways</p>
+                        <p className='pl-5 signage_title'> Spaces in lengthy or busy walkways</p>
                         <div className=' input-container-box '>
                           {
                             showSpaceDimention && 

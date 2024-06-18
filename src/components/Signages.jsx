@@ -19,11 +19,17 @@ export default function Signages() {
     const [showF, setShowF] = useState(true)
 
     const [a, setA] = useState(0)
+    const [a1, setA1] = useState(0)
     const [b, setB] = useState(0)
+    const [b1, setB1] = useState(0)
     const [c, setC] = useState(0)
+    const [c1, setC1] = useState(0)
     const [d, setD] = useState(0)
+    const [d1, setD1] = useState(0)
     const [e, setE] = useState(0)
+    const [e1, setE1] = useState(0)
     const [f, setF] = useState(0)
+    const [f1, setF1] = useState(0)
 
     const [dimension, setDimension] = useState(0)
     const [height1, setHeight1] = useState(0)
@@ -278,8 +284,8 @@ export default function Signages() {
         setError(true);
         setShowInternational(false)
         setButtonDefault(false)
-        setShowDimension(false)
-        // setShowHeight1(false)
+        // setShowDimension(false)
+        setShowHeight1(false)
         setShowHeight2(false)
         setShowHeightSignage(false)
 

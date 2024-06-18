@@ -11,7 +11,7 @@ export default function About_us() {
   return (
     <>
         <div className="about-us-page">
-            <header >
+            <header className='aboutpic'>
                 <img src={logo} alt="logo2" class="about-us-logo"/>
             </header>
             <div className="about-us-content">
