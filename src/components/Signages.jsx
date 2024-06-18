@@ -275,8 +275,8 @@ export default function Signages() {
             setDesc(''); // Clear description on success
             setShowInternational(false)
             setButtonDefault(false)
-            // setShowDimension(false)
-            setShowHeight1(false)
+            setShowDimension(false)
+            // setShowHeight1(false)
             setShowHeight2(false)
             setShowHeightSignage(false)
           } else {
@@ -284,8 +284,8 @@ export default function Signages() {
         setError(true);
         setShowInternational(false)
         setButtonDefault(false)
-        // setShowDimension(false)
-        setShowHeight1(false)
+        setShowDimension(false)
+        // setShowHeight1(false)
         setShowHeight2(false)
         setShowHeightSignage(false)
 
