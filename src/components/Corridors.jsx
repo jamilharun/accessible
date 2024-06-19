@@ -46,18 +46,18 @@ export default function Corridors() {
           // Add any search logic here if needed
           console.log('Values are within the range.');
           setButtonDefault(false)
-          setShowWidth(true)
-          // setShowTurnaboutArea(true)
-          setShowTurnaboutSpace(true)
-          setShowTurnaboutSpaceDead(true)
+          setShowWidth(false)
+          // setShowTurnaboutArea(false)
+          setShowTurnaboutSpace(false)
+          setShowTurnaboutSpaceDead(false)
         } else {
           setDesc(CORRIDORS.TURNABOUTS_AREA.desc);
           setError(true);
           setButtonDefault(false)
-          setShowWidth(true)
-          // setShowTurnaboutArea(true)
-          setShowTurnaboutSpace(true)
-          setShowTurnaboutSpaceDead(true)
+          setShowWidth(false)
+          // setShowTurnaboutArea(false)
+          setShowTurnaboutSpace(false)
+          setShowTurnaboutSpaceDead(false)
         }
       }
 

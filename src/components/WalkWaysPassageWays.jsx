@@ -268,18 +268,18 @@ export default function WalkWaysPassageWays() {
       if (Number(spaceDistance) <= WALKWAYS_AND_PASSAGEWAYS.SPACES_IN_LENGTHY_BUSY_WALKWAYS.DISTANCE.range.value) {
         console.log("success");
         setDesc(''); // Clear description on success
-        
         setButtonDefault(false)
         setShowGradient(false)
         setShowCrossGradient(false)
         setShowWidth(false)
         setShowGratingOpenings(false)
-          setShowProjection(false)
-          setShowInterruption(false)
-          setShowAngle(false)
-          setShowDimension(false)
-
+        setShowProjection(false)
+        setShowInterruption(false)
+        // setShowSpacesLengthBusyWalkWays(false)
+        setShowAngle(false)
+        setShowDimension(false)
         setShowSpaceDimension(false)
+        // setShowSpaceDistance(true)
       } else {
         setDesc(WALKWAYS_AND_PASSAGEWAYS.SPACES_IN_LENGTHY_BUSY_WALKWAYS.DISTANCE.desc);
         setError(true);
@@ -288,12 +288,14 @@ export default function WalkWaysPassageWays() {
         setShowCrossGradient(false)
         setShowWidth(false)
         setShowGratingOpenings(false)
-          setShowProjection(false)
-          setShowInterruption(false)
-          setShowAngle(false)
-          setShowDimension(false)
+        setShowProjection(false)
+        setShowInterruption(false)
+        // setShowSpacesLengthBusyWalkWays(false)
+        setShowAngle(false)
+        setShowDimension(false)
 
         setShowSpaceDimension(false)
+        // setShowSpaceDistance(true)
       }
     }
 
@@ -331,29 +333,33 @@ export default function WalkWaysPassageWays() {
       if (Number(dimension) >= WALKWAYS_AND_PASSAGEWAYS.DIMENSION.range.value) {
         console.log("success");
         setDesc('');
-        
         setButtonDefault(false)
         setShowGradient(false)
         setShowCrossGradient(false)
+        setShowWidth(false)
         setShowGratingOpenings(false)
-          setShowProjection(false)
-          setShowInterruption(false)
-          setShowSpacesLengthBusyWalkWays(false)
-          setShowAngle(false)
-          setShowWidth              (false)
+        setShowProjection(false)
+        setShowInterruption(false)
+        setShowSpacesLengthBusyWalkWays(false)
+        setShowAngle(false)
+        // setShowDimension(false)
+        setShowSpaceDimension(false)
+        setShowSpaceDistance(true)
       } else {
         setDesc(WALKWAYS_AND_PASSAGEWAYS.DIMENSION.desc);
         setError(true);
         setButtonDefault(false)
         setShowGradient(false)
         setShowCrossGradient(false)
+        setShowWidth(false)
         setShowGratingOpenings(false)
-          setShowProjection(false)
-          setShowInterruption(false)
-          setShowSpacesLengthBusyWalkWays(false)
-          setShowAngle(false)
-          setShowWidth              (false)
-          
+        setShowProjection(false)
+        setShowInterruption(false)
+        setShowSpacesLengthBusyWalkWays(false)
+        setShowAngle(false)
+        // setShowDimension(false)
+        setShowSpaceDimension(false)
+        setShowSpaceDistance(true)
       }
   };
 
@@ -658,7 +664,7 @@ export default function WalkWaysPassageWays() {
                               <div className=' w-full flex flex-row'>
                                 < div className='asdasda flex-col'>
                                   <div className='input-container input-container-width'>
-                                    <p className=' input-text poppins-regular'>Dimentions</p>
+                                    <p className=' input-text poppins-regular'>Dimensions</p>
                                     <input
                                       type="number"
                                       name="spaceDimension"
@@ -720,7 +726,7 @@ export default function WalkWaysPassageWays() {
                                   {
                                     buttonDefault ?
                                     <div 
-                                      onClick={searchSpaceDimention}
+                                      onClick={searchSpaceDistance}
                                       className='input-button poppins-regular'>
                                       <p>Search</p>
                                     </div> :
@@ -790,7 +796,7 @@ export default function WalkWaysPassageWays() {
                     <div className=' flex mb-5'>
                       <div>
                         <div className=' input-container input-container-width'>
-                          <p className=' input-text poppins-regular'>Dimention of headroom</p>
+                          <p className=' input-text poppins-regular'>Dimension of headroom</p>
                           <input
                             type="number"
                             name="WIDTH"

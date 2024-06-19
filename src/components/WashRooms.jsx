@@ -172,10 +172,11 @@ export default function WashRooms() {
             console.log("success");
             setDesc(''); // Clear description on success
             setButtonDefault(false)
+            setShowSignageThickness(false)
     setShowWaterClosetArea(false)
     setShowTurningSpaceArea(false)
     setShowTurningSpaceDimention(false)
-    setShowWaterClosetHeight(false)
+    // setShowWaterClosetHeight(false)
     setShowFlushControl(false)
     setShowLavatories(false)
     setShowKneeRecess(false)
@@ -185,10 +186,11 @@ export default function WashRooms() {
             setDesc(WASHROOMS_TOILETS.WATER_CLOSET_HEIGHT.desc);
             setError(true);
             setButtonDefault(false)
+            setShowSignageThickness(false)
     setShowWaterClosetArea(false)
     setShowTurningSpaceArea(false)
     setShowTurningSpaceDimention(false)
-    setShowWaterClosetHeight(false)
+    // setShowWaterClosetHeight(false)
     setShowFlushControl(false)
     setShowLavatories(false)
     setShowKneeRecess(false)
@@ -241,8 +243,8 @@ export default function WashRooms() {
     setShowTurningSpaceDimention(false)
     setShowSignageThickness(false)
     setShowWaterClosetHeight(false)
-    // setShowFlushControl(false)
-    setShowLavatories(false)
+    setShowFlushControl(false)
+    // setShowLavatories(false)
     setShowKneeRecess(false)
     setShowVerticalClearance(false)
     setShowUrinalHeightLip(false) 
@@ -255,8 +257,8 @@ export default function WashRooms() {
     setShowTurningSpaceDimention(false)
     setShowSignageThickness(false)
     setShowWaterClosetHeight(false)
-    // setShowFlushControl(false)
-    setShowLavatories(false)
+    setShowFlushControl(false)
+    // setShowLavatories(false)
     setShowKneeRecess(false)
     setShowVerticalClearance(false)
     setShowUrinalHeightLip(false) 
@@ -265,7 +267,7 @@ export default function WashRooms() {
 
     const searchKneeRecess = () => {
         const parsedDenominator = parseFloat(kneeRecess);
-        if (parsedNumerator >= WASHROOMS_TOILETS.KNEE_RECESS.range.numerator && 
+        if (parsedDenominator >= WASHROOMS_TOILETS.KNEE_RECESS.range.numerator && 
             parsedDenominator <= WASHROOMS_TOILETS.KNEE_RECESS.range.denominator) {
           setError(false);
           // Add any search logic here if needed
@@ -691,7 +693,7 @@ export default function WashRooms() {
                   {
                     buttonDefault ?
                     <div 
-                      onClick={searchKneeRecess}
+                      onClick={()=>{searchKneeRecess}}
                       className='input-button poppins-regular'>
                       <p>Search</p>
                     </div> :
