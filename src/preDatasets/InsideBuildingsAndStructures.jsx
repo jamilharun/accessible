@@ -317,7 +317,7 @@ export const WASHROOMS_TOILETS = {
             value: 0.45	
         },
         unit: "meters",
-        desc: `The maximum height of water closets should be <span class="highlight">0.80m</span>.`
+        desc: `The maximum height of water closets should be <span class="highlight">0.45m</span>.`
     },
     FLUSH_CONTROL_HEIGHT: {
         num: 8.7,

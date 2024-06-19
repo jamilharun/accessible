@@ -284,6 +284,7 @@ export default function WashRooms() {
           setShowVerticalClearance(false)
           setShowUrinalHeightLip(false) 
         } else {
+          console.log('asdasdasd');
           setDesc(WASHROOMS_TOILETS.KNEE_RECESS.desc);
           setError(true);
           setButtonDefault(false)
