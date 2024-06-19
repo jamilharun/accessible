@@ -266,6 +266,7 @@ export default function WashRooms() {
     }
 
     const searchKneeRecess = () => {
+      console.log('qweqweqwe');
         const parsedDenominator = parseFloat(kneeRecess);
         if (parsedDenominator >= WASHROOMS_TOILETS.KNEE_RECESS.range.numerator && 
             parsedDenominator <= WASHROOMS_TOILETS.KNEE_RECESS.range.denominator) {
@@ -678,7 +679,7 @@ export default function WashRooms() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Knee recesses</p>
+                      <p className=' input-text poppins-regular'>Knee recess</p>
                       <input
                         type="number"
                         name="kneeRecess"
@@ -694,7 +695,7 @@ export default function WashRooms() {
                   {
                     buttonDefault ?
                     <div 
-                      onClick={()=>{searchKneeRecess}}
+                      onClick={searchKneeRecess}
                       className='input-button poppins-regular'>
                       <p>Search</p>
                     </div> :
