@@ -90,7 +90,7 @@ export default function Crossing() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Depth</p>
+                      <p className=' input-text poppins-regular'>Depth of central refuges</p>
                       <input
                         type="number"
                         name="depth"
@@ -129,7 +129,7 @@ export default function Crossing() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Width</p>
+                      <p className=' input-text poppins-regular'>Width of the carriges</p>
                       <input
                         type="number"
                         name="width"

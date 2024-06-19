@@ -46,7 +46,7 @@ export default function SafetySignage() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Available</p>
+                      <p className=' input-text poppins-regular'>Available footway width</p>
                       <input
                         type="number"
                         name="available"

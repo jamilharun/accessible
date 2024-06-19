@@ -43,7 +43,7 @@ export default function Thresholds() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Max</p>
+                      <p className=' input-text poppins-regular'>Max height</p>
                       <input
                         type="number"
                         name="max"

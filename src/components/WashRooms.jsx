@@ -478,7 +478,7 @@ export default function WashRooms() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Turning space area</p>
+                      <p className=' input-text poppins-regular'>Turning space dimension</p>
                       <input
                         type="number"
                         name="turningSpaceDimention"
@@ -675,7 +675,7 @@ export default function WashRooms() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Knee recess</p>
+                      <p className=' input-text poppins-regular'>Knee recesses</p>
                       <input
                         type="number"
                         name="kneeRecess"
@@ -753,7 +753,7 @@ export default function WashRooms() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Urical height lip</p>
+                      <p className=' input-text poppins-regular'>Urical height of the lip</p>
                       <input
                         type="number"
                         name="urinalHeightLip"

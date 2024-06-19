@@ -161,7 +161,7 @@ export default function Corridors() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Turnabout Area</p>
+                      <p className=' input-text poppins-regular'>Turnabouts Area</p>
                       <input
                         type="number"
                         name="tounaboutAreaNumerator"
@@ -209,7 +209,7 @@ export default function Corridors() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Turnabout space</p>
+                      <p className=' input-text poppins-regular'>Turnabouts space</p>
                       <input
                         type="number"
                         name="turnablutSpace"
@@ -248,7 +248,7 @@ export default function Corridors() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Turnabout space at dead end</p>
+                      <p className=' input-text poppins-regular'>Turnabouts space at dead end</p>
                       <input
                         type="number"
                         name="turnablutSpace"

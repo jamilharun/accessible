@@ -269,7 +269,7 @@ export default function Doors() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Level space corridor</p>
+                      <p className=' input-text poppins-regular'>Level space (corridor width)</p>
                       <input
                         type="number"
                         name="WIDTH"
@@ -308,7 +308,7 @@ export default function Doors() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Door knobs</p>
+                      <p className=' input-text poppins-regular'>Doorknobs and other hardware</p>
                       <input
                         type="number"
                         name="doorKnobs"
@@ -347,7 +347,7 @@ export default function Doors() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Vertical</p>
+                      <p className=' input-text poppins-regular'>Vertical dull handles</p>
                       <input
                         type="number"
                         name="doorKnobs"
@@ -386,7 +386,7 @@ export default function Doors() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Kick</p>
+                      <p className=' input-text poppins-regular'>Kick plates</p>
                       <input
                         type="number"
                         name="doorKnobs"

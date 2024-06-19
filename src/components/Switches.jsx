@@ -108,7 +108,7 @@ export default function Switches() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Distance</p>
+                      <p className=' input-text poppins-regular'>Distance from the latch</p>
                       <input
                         type="number"
                         name="max"

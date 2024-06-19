@@ -48,7 +48,8 @@ export default function DroppedCurbs() {
     const parsedNumerator = Number(gradientNumerator);
     const parsedDenominator = Number(gradientDenominator);
   
-    if (parsedNumerator / parsedDenominator <= Dropped_Curbs.GRADIENT.parsedRange.numerator / Dropped_Curbs.GRADIENT.parsedRange.denominator) {
+    if (parsedNumerator <= Dropped_Curbs.GRADIENT.parsedRange.numerator  &&
+        parsedDenominator <= Dropped_Curbs.GRADIENT.parsedRange.denominator) {
       console.log("success");
       setDesc(''); // Clear description on success
       setButtonDefault(false)
@@ -69,7 +70,8 @@ export default function DroppedCurbs() {
     const parsedNumerator = Number(maximumNumerator);
     const parsedDenominator = Number(maximumDenominator);
 
-    if (parsedNumerator / parsedDenominator <= Dropped_Curbs.MAXIMUM.parsedRange.numerator / Dropped_Curbs.MAXIMUM.parsedRange.denominator) {
+    if (parsedNumerator <= Dropped_Curbs.MAXIMUM.parsedRange.numerator && 
+        parsedDenominator <= Dropped_Curbs.MAXIMUM.parsedRange.denominator) {
       console.log("success");
       setDesc(''); // Clear description on success
       setButtonDefault(false)
@@ -167,7 +169,7 @@ export default function DroppedCurbs() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Gradient</p>
+                      <p className=' input-text poppins-regular'>Gradient (towards adjoining curbs)</p>
                       <input
                         type="number"
                         name="gradientNumerator"
@@ -214,7 +216,7 @@ export default function DroppedCurbs() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Maximum</p>
+                      <p className=' input-text poppins-regular'>Maximum cross gradient (Sloped towards road)</p>
                       <input
                         type="number"
                         name="gradientNumerator"
@@ -262,7 +264,7 @@ export default function DroppedCurbs() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Lowest</p>
+                      <p className=' input-text poppins-regular'>Lowest point of height above the road or gutter</p>
                       <input
                         type="number"
                         name="WIDTH"

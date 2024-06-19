@@ -255,7 +255,7 @@ export default function Elevator() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Control panel emergency</p>
+                      <p className=' input-text poppins-regular'>Control panel/emergency system location from floor</p>
                       <input
                         type="number"
                         name="locationFromEntrance"
@@ -294,7 +294,7 @@ export default function Elevator() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Diameter elevator buttons</p>
+                      <p className=' input-text poppins-regular'>Diameter of elevator buttons</p>
                       <input
                         type="number"
                         name="locationFromEntrance"
@@ -334,7 +334,7 @@ export default function Elevator() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Depth elevator buttons</p>
+                      <p className=' input-text poppins-regular'>Depth of elevator buttons</p>
                       <input
                         type="number"
                         name="locationFromEntrance"

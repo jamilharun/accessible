@@ -220,11 +220,11 @@ ul li a{
   text-decoration: none ;
 }
 
-/* ul li a:hover{
+ul li a:hover{
   color: #f46530;
   border-bottom: #2a0947;
-  text-decoration: underline #0097b2 4px;
-} */
+  /* text-decoration: underline #0097b2 4px; */
+}
 
 /* About Us */
 .about-us-main{
@@ -283,11 +283,17 @@ ul li a{
   align-items: center;
   /* background: #2a0947; */
   width: 100%;
-  bottom: 0;
-  position: absolute;
+  /* bottom: 0; */
+  /* position: absolute; */
   padding-bottom: 20px;
 }
 
+.devlist li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .footer ul li{
   margin-top: 20px;
@@ -299,6 +305,8 @@ ul li a{
 
 .footer{
   width: 100%;
+  bottom: 0;
+  position: absolute;
 }
 
 .about-us-logo{
@@ -430,9 +438,10 @@ ul li a{
 }
 
 .headernav:hover{
+  transition: 1s;
   color: #f46530;
   border-bottom: #2a0947;
-  text-decoration: underline #0097b2 5px;
+  /* text-decoration: underline #f46530 5px; */
 }
 
 .indigoblue{
@@ -494,7 +503,7 @@ ul li a{
 .home{
   width: 100%;
   height: 100%;
-  background: #f6f6f6;
+  /* background: #f6f6f6; */
   
 }
 

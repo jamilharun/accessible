@@ -65,7 +65,7 @@ export default function Fencing() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Top rails</p>
+                      <p className=' input-text poppins-regular'>Top rails above the adjacent surface</p>
                       <input
                         type="number"
                         name="topRails"
@@ -104,7 +104,7 @@ export default function Fencing() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Tapping rails</p>
+                      <p className=' input-text poppins-regular'>Tapping rails above the adjacent surface</p>
                       <input
                         type="number"
                         name="tappingRails"

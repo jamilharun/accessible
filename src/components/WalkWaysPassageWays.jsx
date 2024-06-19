@@ -572,7 +572,7 @@ export default function WalkWaysPassageWays() {
                     <div className=' flex mb-5'>
                       <div>
                         <div className=' input-container input-container-width'>
-                          <p className=' input-text poppins-regular'>Projection</p>
+                          <p className=' input-text poppins-regular'>Projection above or below the level of walkway</p>
                           <input
                             type="number"
                             name="WIDTH"
@@ -612,7 +612,7 @@ export default function WalkWaysPassageWays() {
                     <div className=' flex mb-5'>
                       <div>
                         <div className=' input-container input-container-width'>
-                          <p className=' input-text poppins-regular'>Interruption</p>
+                          <p className=' input-text poppins-regular'>Interruption by cracks or break</p>
                           <input
                             type="number"
                             name="WIDTH"
@@ -700,7 +700,7 @@ export default function WalkWaysPassageWays() {
                               <div className=' w-full flex flex-row'>
                                 <div className='asdasda flex-col'>
                                   <div className='input-container input-container-width'>
-                                    <p className=' input-text poppins-regular'>Distance</p>
+                                    <p className=' input-text poppins-regular'>Distance between stops</p>
                                     <input
                                       type="number"
                                       name="spaceDistance"

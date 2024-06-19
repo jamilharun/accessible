@@ -142,7 +142,7 @@ export const WALKWAYS_AND_PASSAGEWAYS = {
     SPACES_IN_LENGTHY_BUSY_WALKWAYS: {
         DIMENSION: {
             num: 3.7,
-            name: "SPACES IN LENGTHY OR BUSY WALKWAYS",
+            name: "Dimension",
             range: {
                 operator: ">=",
                 value: 1.5
@@ -232,7 +232,7 @@ export const HANDRAILS = {
     },
     CLEARANCE_HANDRAILS_ATTACHED_WALLS: {
         num: 4.5,
-        name: "HANDRAILS THAT REQUIRE FULL GRIP	",
+        name: "CLEARANCE OF HANDRAILS ATTACHED TO WALLS	",
         // range: ">=50",
         range: {
             operator: ">=",
@@ -243,7 +243,7 @@ export const HANDRAILS = {
     },
     CLEARANCE_HANDRAILS_LEDGES: {
         num: 4.5,
-        name: "HANDRAILS THAT REQUIRE FULL GRIP	",
+        name: "CLEARANCE OF HANDRAILS ON LEDGES	",
         // range: ">=40",
         range: {
             operator: ">=",

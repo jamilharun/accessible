@@ -71,7 +71,7 @@ export default function ParkingArea() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Width</p>
+                      <p className=' input-text poppins-regular'>Width of parking slots</p>
                       <input
                         type="number"
                         name="width"
@@ -110,7 +110,7 @@ export default function ParkingArea() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Clear</p>
+                      <p className=' input-text poppins-regular'>Clear width between the front ends of parker cars</p>
                       <input
                         type="number"
                         name="depth"

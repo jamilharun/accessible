@@ -65,7 +65,7 @@ export default function Covers() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Effective</p>
+                      <p className=' input-text poppins-regular'>Effective width of footways</p>
                       <input
                         type="number"
                         name="effective"
@@ -104,7 +104,7 @@ export default function Covers() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Kick board</p>
+                      <p className=' input-text poppins-regular'>Kickboard height</p>
                       <input
                         type="number"
                         name="kickBoard"

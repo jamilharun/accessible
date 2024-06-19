@@ -113,7 +113,7 @@ export default function WaterFountain() {
                 </div>
             }
 
-{
+            {
                showWallMounted && 
                 <div className=' flex mb-5'>
                   <div>

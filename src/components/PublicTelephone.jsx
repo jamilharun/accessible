@@ -180,7 +180,7 @@ export default function PublicTelephone() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Coin slot</p>
+                      <p className=' input-text poppins-regular'>Coins slot, dialing controls etc.</p>
                       <input
                         type="number"
                         name="max"

@@ -47,7 +47,7 @@ export const COVERS = {
 export const SIGNAGE = {
     AVAILABLE   : {
         num: "3.1.2",
-        name: "KICKBOARD HEIGHT	",
+        name: "AVAILABLE FOOTWAY WIDTH	",
         range: {
             operator: ">=",
             value: 1.2

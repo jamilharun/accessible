@@ -36,6 +36,7 @@ export default function Ramps() {
           setButtonDefault(false)
           setShowGradient(false);
           setShowLength(false);
+          setShowLanding(false);
           setShowLevel(false);
           setShowHandrailsRampLevel(false);
           setShowCurbs(false);
@@ -46,6 +47,7 @@ export default function Ramps() {
           setButtonDefault(false)
           setShowGradient(false);
           setShowLength(false);
+          setShowLanding(false);
           setShowLevel(false);
           setShowHandrailsRampLevel(false);
           setShowCurbs(false);
@@ -63,6 +65,7 @@ export default function Ramps() {
           setButtonDefault(false)
           setShowClear(false);
           setShowLength(false);
+          setShowLanding(false);
           setShowLevel(false);
           setShowHandrailsRampLevel(false);
           setShowCurbs(false);
@@ -73,6 +76,7 @@ export default function Ramps() {
           setButtonDefault(false)
           setShowClear(false);
           setShowLength(false);
+          setShowLanding(false);
           setShowLevel(false);
           setShowHandrailsRampLevel(false);
           setShowCurbs(false);
@@ -87,6 +91,7 @@ export default function Ramps() {
           setButtonDefault(false)
           setShowClear(false);
           setShowGradient(false);
+          setShowLanding(false);
           setShowLevel(false);
           setShowHandrailsRampLevel(false);
           setShowCurbs(false);
@@ -97,12 +102,40 @@ export default function Ramps() {
           setButtonDefault(false)
           setShowClear(false);
           setShowGradient(false);
+          setShowLanding(false);
           setShowLevel(false);
           setShowHandrailsRampLevel(false);
           setShowCurbs(false);
           setShowRailing(false);
         }
       };
+
+      const searchLandings = () => {
+        if (Number(landings) >= RAMPS.LANDING.range.value) {
+          console.log("success");
+          setDesc(''); // Clear description on success
+          setButtonDefault(false)
+          setShowClear(false);
+          setShowGradient(false);
+          setShowLength(false);
+
+          setShowLevel(false);
+          setShowHandrailsRampLevel(false);
+          setShowCurbs(false);
+          setShowRailing(false);
+        } else {
+          setDesc(RAMPS.LANDING.desc);
+          setError(true);
+          setButtonDefault(false)
+          setShowClear(false);
+          setShowGradient(false);
+          setShowLength(false);
+          setShowLevel(false);
+          setShowHandrailsRampLevel(false);
+          setShowCurbs(false);
+          setShowRailing(false);
+        }
+      }
 
       const searchLevel = () => {
         if (Number(levels) >= RAMPS.LEVEL.range.value) {
@@ -112,6 +145,7 @@ export default function Ramps() {
           setShowClear(false);
           setShowGradient(false);
           setShowLength(false);
+          setShowLanding  (false);
           setShowHandrailsRampLevel(false);
           setShowCurbs(false);
           setShowRailing(false);
@@ -122,6 +156,7 @@ export default function Ramps() {
           setShowClear(false);
           setShowGradient(false);
           setShowLength(false);
+          setShowLanding  (false);
           setShowHandrailsRampLevel(false);
           setShowCurbs(false);
           setShowRailing(false);
@@ -139,6 +174,7 @@ export default function Ramps() {
           setShowClear(false)
           setShowGradient(false);
           setShowLength(false);
+          setShowLanding  (false);
           setShowLevel(false);
           setShowCurbs(false);
           setShowRailing(false);
@@ -149,6 +185,7 @@ export default function Ramps() {
           setShowClear(false)
           setShowGradient(false);
           setShowLength(false);
+          setShowLanding  (false);
           setShowLevel(false);
           setShowCurbs(false);
           setShowRailing(false);
@@ -163,6 +200,7 @@ export default function Ramps() {
             setShowClear(false);
             setShowGradient(false);
             setShowLength(false);
+            setShowLanding  (false);
             setShowLevel(false);
             setShowHandrailsRampLevel(false);
             setShowRailing(false);
@@ -173,6 +211,7 @@ export default function Ramps() {
             setShowClear(false);
             setShowGradient(false);
             setShowLength(false);
+            setShowLanding  (false);
             setShowLevel(false);
             setShowHandrailsRampLevel(false);
             setShowRailing(false);
@@ -187,6 +226,7 @@ export default function Ramps() {
             setShowClear(false);
             setShowGradient(false);
             setShowLength(false);
+            setShowLanding  (false);
             setShowLevel(false);
             setShowHandrailsRampLevel(false);
             setShowCurbs(false);
@@ -197,6 +237,7 @@ export default function Ramps() {
             setShowClear(false);
             setShowGradient(false);
             setShowLength(false);
+            setShowLanding  (false);
             setShowLevel(false);
             setShowHandrailsRampLevel(false);
             setShowCurbs(false);
@@ -211,6 +252,7 @@ export default function Ramps() {
           setShowClear(true)
           setShowGradient(true);
           setShowLength(true);
+          setShowLevel(true);
           setShowLevel(true);
           setShowHandrailsRampLevel(true);
           setShowCurbs(true);
@@ -350,6 +392,88 @@ export default function Ramps() {
             }
 
             {
+              showLanding && 
+                <div className=' flex mb-5'>
+                  <div>
+                    <div className=' input-container input-container-width'>
+                      <p className=' input-text poppins-regular'>Landing</p>
+                      <input
+                        type="number"
+                        name="landings"
+                        className="input-field"
+                        value={landings}
+                        onChange={(e) => setLandings(e.target.value)}
+                      />
+                    </div>
+                    <div className=' input-text text-end'>
+                      <p className='unit'>{`(${RAMPS.LENGTH.unit})`}</p>
+                    </div>
+                  </div>
+                  {
+                    buttonDefault ?
+                    <div 
+                      onClick={searchLandings}
+                      className='input-button poppins-regular'>
+                      <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
+                    </div>
+                  }
+                </div>
+            }
+
+
+            {
+              showLevel && 
+                <div className=' flex mb-5'>
+                  <div>
+                    <div className=' input-container input-container-width'>
+                      <p className=' input-text poppins-regular'>Level area</p>
+                      <input
+                        type="number"
+                        name="levels"
+                        className="input-field"
+                        value={levels}
+                        onChange={(e) => setLevels(e.target.value)}
+                      />
+                    </div>
+                    <div className=' input-text text-end'>
+                      <p className='unit'>{`(${RAMPS.LENGTH.unit})`}</p>
+                    </div>
+                  </div>
+                  {
+                    buttonDefault ?
+                    <div 
+                      onClick={searchLevel}
+                      className='input-button poppins-regular'>
+                      <p>Search</p>
+                    </div> :
+                    <div>
+                      {
+                        error ? <div>
+                          <p className='inadequate'>INADEQUATE</p>
+                        </div> :
+                        <div>
+                        <p className='inadequate'>ADEQUATE</p>
+                      </div>
+                      }
+                    </div>
+                  }
+                </div>
+            }
+
+
+
+
+            {
               showHandrailsRampLevel &&
                 <div className=' flex mb-5'>
                   <div>
@@ -436,7 +560,7 @@ export default function Ramps() {
             }
 
 
-{
+            {
               showRailing && 
                 <div className=' flex mb-5'>
                   <div>

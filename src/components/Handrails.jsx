@@ -216,7 +216,7 @@ export default function Handrails() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Height</p>
+                      <p className=' input-text poppins-regular'>Height above steps or ramps</p>
                       <input
                         type="number"
                         name="heightNumerator"
@@ -224,7 +224,7 @@ export default function Handrails() {
                         value={heightNumerator}
                         onChange={(e) => setHeightNumerator(e.target.value)}
                       />
-                      <p className=' input-text poppins-regular'>x</p>
+                      <p className=' input-text poppins-regular'>&</p>
                       <input
                         type="number"
                         name="heightDenominator"
@@ -264,7 +264,7 @@ export default function Handrails() {
                   {/* <p>computation not working</p> */}
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>HandRails</p>
+                      <p className=' input-text poppins-regular'>HandRails for projection at great heights</p>
                       <input
                         type="number"
                         name="handRailNumerator"
@@ -303,7 +303,7 @@ export default function Handrails() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Extension</p>
+                      <p className=' input-text poppins-regular'>Extension or handrails at the start and end of ramps and stairs</p>
                       <input
                         type="number"
                         name="WIDTH"
@@ -343,7 +343,7 @@ export default function Handrails() {
                   {/* <p>computation not working</p> */}
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Handrail full grip</p>
+                      <p className=' input-text poppins-regular'>Handrail that require full grip</p>
                       <input
                         type="number"
                         name="handRailFullGripNumerator"
@@ -383,7 +383,7 @@ export default function Handrails() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Clearance handrails attached walls</p>
+                      <p className=' input-text poppins-regular'>Clearance of handrails attached to walls</p>
                       <input
                         type="number"
                         name="WIDTH"
@@ -422,7 +422,7 @@ export default function Handrails() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Clearance handrails ledge</p>
+                      <p className=' input-text poppins-regular'>Clearance of handrails on ledge</p>
                       <input
                         type="number"
                         name="WIDTH"

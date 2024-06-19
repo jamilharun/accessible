@@ -43,7 +43,8 @@ export default function Signages() {
     
      
     const searchA = () => {
-        if (Number(a) == SIGNAGES.INTERNATIONAL.a.range.value) {
+        if (Number(a) == SIGNAGES.INTERNATIONAL.a.range.value &&
+            Number(a1) == SIGNAGES.INTERNATIONAL.a.range.value) {
             console.log("success");
             setDesc('');
             
@@ -76,7 +77,8 @@ export default function Signages() {
     }
 
     const searchB = () => {
-        if (Number(b) == SIGNAGES.INTERNATIONAL.b.range.value) {
+        if (Number(b) == SIGNAGES.INTERNATIONAL.b.range.value &&
+            Number(b1) == SIGNAGES.INTERNATIONAL.b.range.value) {
             console.log("success");
             setDesc('');
             
@@ -110,7 +112,8 @@ export default function Signages() {
     }
 
     const searchC = () => {
-        if (Number(c) == SIGNAGES.INTERNATIONAL.c.range.value) {
+        if (Number(c) == SIGNAGES.INTERNATIONAL.c.range.value &&
+            Number(c1) == SIGNAGES.INTERNATIONAL.c.range.value) {
             console.log("success");
             setDesc('');
             
@@ -144,7 +147,8 @@ export default function Signages() {
     }
 
     const searchD = () => {
-        if (Number(d) == SIGNAGES.INTERNATIONAL.d.range.value) {
+        if (Number(d) == SIGNAGES.INTERNATIONAL.d.range.value &&
+            Number(d1) == SIGNAGES.INTERNATIONAL.d.range.value) {
             console.log("success");
             setDesc('');
           
@@ -178,7 +182,8 @@ export default function Signages() {
     }
 
     const searchE = () => {
-        if (Number(e) == SIGNAGES.INTERNATIONAL.e.range.value) {
+        if (Number(e) == SIGNAGES.INTERNATIONAL.e.range.value && 
+        Number(e1) == SIGNAGES.INTERNATIONAL.e.range.value) {
             console.log("success");
             setDesc('');
             
@@ -212,7 +217,8 @@ export default function Signages() {
     }
 
     const searchF = () => {
-        if (Number(f) == SIGNAGES.INTERNATIONAL.f.range.numerator) {
+        if (Number(f) == SIGNAGES.INTERNATIONAL.f.range.numerator && 
+            Number(f1) == SIGNAGES.INTERNATIONAL.f.range.denominator) {
             console.log("success");
             setDesc('');
           
@@ -293,7 +299,7 @@ export default function Signages() {
     }
 
     const searchHeight2 = () => {
-        if (Number(height2) >= SIGNAGES.HEIGHT2.range.value) {
+        if (Number(height2) <= SIGNAGES.HEIGHT2.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
             setShowInternational(false)
@@ -391,8 +397,8 @@ export default function Signages() {
                                       type="number"
                                       name="a"
                                       className="input-field"
-                                      value={a}
-                                      onChange={(e) => setA(e.target.value)}
+                                      value={a1}
+                                      onChange={(e) => setA1(e.target.value)}
                                     />
                                   </div>
                                   {
@@ -442,14 +448,14 @@ export default function Signages() {
                                       type="number"
                                       name="b"
                                       className="input-field"
-                                      value={b}
-                                      onChange={(e) => setB(e.target.value)}
+                                      value={b1}
+                                      onChange={(e) => setB1(e.target.value)}
                                     />
                                   </div>
                                   {
                                     buttonDefault ?
                                     <div 
-                                      onClick={searchA}
+                                      onClick={searchB}
                                       className='input-button poppins-regular'>
                                       <p>Search</p>
                                     </div> :
@@ -492,14 +498,14 @@ export default function Signages() {
                                     type="number"
                                     name="c"
                                     className="input-field"
-                                    value={c}
-                                    onChange={(e) => setC(e.target.value)}
+                                    value={c1}
+                                    onChange={(e) => setC1(e.target.value)}
                                   />
                                   </div>
                                   {
                                     buttonDefault ?
                                     <div 
-                                      onClick={searchA}
+                                      onClick={searchC}
                                       className='input-button poppins-regular'>
                                       <p>Search</p>
                                     </div> :
@@ -541,14 +547,14 @@ export default function Signages() {
                                     type="number"
                                     name="d"
                                     className="input-field"
-                                    value={d}
-                                    onChange={(e) => setD(e.target.value)}
+                                    value={d1}
+                                    onChange={(e) => setD1(e.target.value)}
                                   />
                                   </div>
                                   {
                                     buttonDefault ?
                                     <div 
-                                      onClick={searchA}
+                                      onClick={searchD}
                                       className='input-button poppins-regular'>
                                       <p>Search</p>
                                     </div> :
@@ -590,14 +596,14 @@ export default function Signages() {
                                     type="number"
                                     name="e"
                                     className="input-field"
-                                    value={e}
-                                    onChange={(e) => setE(e.target.value)}
+                                    value={e1}
+                                    onChange={(e) => setE1(e.target.value)}
                                   />
                                   </div>
                                   {
                                     buttonDefault ?
                                     <div 
-                                      onClick={searchA}
+                                      onClick={searchE}
                                       className='input-button poppins-regular'>
                                       <p>Search</p>
                                     </div> :
@@ -637,14 +643,14 @@ export default function Signages() {
                                     type="number"
                                     name="f"
                                     className="input-field"
-                                    value={f}
-                                    onChange={(e) => setF(e.target.value)}
+                                    value={f1}
+                                    onChange={(e) => setF1(e.target.value)}
                                   />
                                   </div>
                                   {
                                     buttonDefault ?
                                     <div 
-                                      onClick={searchA}
+                                      onClick={searchF}
                                       className='input-button poppins-regular'>
                                       <p>Search</p>
                                     </div> :
@@ -672,7 +678,7 @@ export default function Signages() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Dimension</p>
+                      <p className=' input-text poppins-regular'>Dimension of headroom</p>
                       <input
                         type="number"
                         name="dimension"
@@ -711,7 +717,7 @@ export default function Signages() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Height1</p>
+                      <p className=' input-text poppins-regular'>Height od signs on walls and doors (maximum)</p>
                       <input
                         type="number"
                         name="height1"
@@ -750,7 +756,7 @@ export default function Signages() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Height2</p>
+                      <p className=' input-text poppins-regular'>Height od signs on walls and doors (minimum)</p>
                       <input
                         type="number"
                         name="height2"
@@ -789,7 +795,7 @@ export default function Signages() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Height Signage</p>
+                      <p className=' input-text poppins-regular'>Height of Signage should have raised symbols, letter, or numbers</p>
                       <input
                         type="number"
                         name="heightSignage"

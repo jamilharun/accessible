@@ -76,7 +76,7 @@ export default function Home() {
                     <li onClick={()=>{navigate("Elevator")}}>Elevators</li>
                     <li onClick={()=>{navigate("WaterFountain")}}>Water Fountains</li>
                     <li onClick={()=>{navigate("PublicTel")}}>Public Telephones</li>
-                    <li onClick={()=>{navigate("PlaceAssembly")}}>Places of Assembly</li>
+                    {/* <li onClick={()=>{navigate("PlaceAssembly")}}>Places of Assembly</li> */}
                 </ul>
             </div>
 
@@ -125,7 +125,7 @@ export default function Home() {
                 <Route path="Elevator" element={<Elevator/>} />
                 <Route path="WaterFountain" element={<WaterFountain/>} />
                 <Route path="PublicTel" element={<PublicTelephone/>} />
-                <Route path="PlaceAssembly" element={<PlacesOfAssembly/>} />
+                {/* <Route path="PlaceAssembly" element={<PlacesOfAssembly/>} /> */}
             </Routes>
         </div>
         {/* <div>

@@ -85,9 +85,6 @@ export default function PlacesOfAssembly() {
   return (
     <div className='container poppins-regular'>
         <div className='container-body '>
-        
-        
-       
             {
               showWheelChairTurnabout && 
                 <div className=' flex mb-5'>
@@ -127,7 +124,7 @@ export default function PlacesOfAssembly() {
                 </div>
             }
 
-{
+            {
               showWheelChairWidth && 
                 <div className=' flex mb-5'>
                   <div>
@@ -166,7 +163,7 @@ export default function PlacesOfAssembly() {
                 </div>
             }
 
-{
+            {
               showSpacePerson && 
                 <div className=' flex mb-5'>
                   <div>

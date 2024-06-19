@@ -18,10 +18,10 @@ export default function Nav() {
           </div>
           <div className='menu'>
             <ul className=''>
-              <li className='headernav' onClick={()=>{navigate('home')}}><a>Home</a> </li>
+              <li className='headernav' onClick={()=>{navigate('home')}}>Home</li>
               <li className='headernav'><a href="https://www.dpwh.gov.ph/dpwh/references/laws_codes_orders/bpb344">Batas Pambansa Blg. 344</a></li>
               <li className='headernav'><a href="https://drive.google.com/file/d/1v6xehMOJou9d1ecloxikx5slXDm2M1lR/view">Implementing Rules and Regulations</a></li>
-              <li className='headernav' onClick={()=>{navigate("aboutUs")}}><a>About Us</a> </li>
+              <li className='headernav' onClick={()=>{navigate("aboutUs")}}>About Us</li>
             </ul>
           </div>
         </div>

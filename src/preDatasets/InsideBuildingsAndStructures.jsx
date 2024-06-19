@@ -101,10 +101,10 @@ export const RAMPS = {
         name: "RAILING",
         range: {
             // operator: ">=",
-            value: 1.8
+            value: 1.5
         },
         unit: "meters",
-        desc: ""
+        desc: `Any ramp with a rise greater than <span class="highlight">0.20m</span> and leads down towards ana rea where vehicular traffic is possible, should have a railing across the full width of its lower end, not less that <span class="highlight">1.50meters</span> from the foot of the ramp.`
     },
 }
 
@@ -358,7 +358,7 @@ export const WASHROOMS_TOILETS = {
     },
     URINAL_HEIGHT_LIP: {
         num: 8.9,
-        name: "LAVATORIES HEIGHT",
+        name: "URINAL HEIGHT OF THE LIP",
         range: {
             operator: "<=",
             value: 0.48
@@ -393,7 +393,7 @@ export const ELEVATORS = {
     },
     ELEVATOR_DIMENSION: {
         num: 10.2,
-        name: "DIMENSION",
+        name: "ELEVATOR DIMENSION",
         // range: ">=1.1	x	>=1.4",
         range: {
             operator: ">=",
