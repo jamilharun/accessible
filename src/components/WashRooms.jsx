@@ -46,7 +46,7 @@ export default function WashRooms() {
         const parsedNumerator = parseFloat(waterClosetAreaNumerator);
         const parsedDenominator = parseFloat(waterClosetAreaDenominator);
         if (parsedNumerator >= WASHROOMS_TOILETS.WATER_CLOSET_AREA.range.numerator && 
-            parsedDenominator <= WASHROOMS_TOILETS.WATER_CLOSET_AREA.range.denominator) {
+            parsedDenominator >= WASHROOMS_TOILETS.WATER_CLOSET_AREA.range.denominator) {
           setError(false);
           // Add any search logic here if needed
           console.log('Values are within the range.');
