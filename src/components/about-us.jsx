@@ -23,7 +23,7 @@ export default function About_us() {
                 <p className="us aumessage">The purpose of this project is to develop an interactive website that emphasizes the importance of 
                     complying with BP 344 and its IRR in constructing buildings and structures.</p>
             </div>
-            <div className='footer'>
+            <div className='footer mt-10'>
                 <p className="footer-developers colorBlack" >Developed by: <span className='colorsomeOrange'>GROUP 4 </span><span className='colorBlack'>|</span> <span className='colorblue'>BSCE 4-2</span></p>
                 <ul className='devlist'>
                     <li>

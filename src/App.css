@@ -415,8 +415,8 @@ ul li a:hover{
   background-size: cover; /* Ensures the image covers the whole area */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents the image from repeating */
-  width: 100vw;
-  height: 80vh;
+  width: 100%;
+  height: 100%;
   /* background: #2a0947; */
 }
 
