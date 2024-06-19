@@ -339,7 +339,7 @@ export const WASHROOMS_TOILETS = {
             value: 0.8
         },
         unit: "meters",
-        desc: `Maximum height of lavatories should be <span class="highlight">0.80m</span>.`
+        desc: `Maximum height of lavatories should be <span class="highlight">0.80m</span> with a knee recess of <span class="highlight">0.60</span> - <span class="highlight">0.70m</span> vertical clearance and a <span class="highlight">0.50m</span> depth.`
     },
     KNEE_RECESS: {
         name: "KNEE RECESSES",
@@ -350,11 +350,13 @@ export const WASHROOMS_TOILETS = {
             denominator: 0.7
         },
         unit: "meters",
+        desc: `Maximum height of lavatories should be <span class="highlight">0.80m</span> with a knee recess of <span class="highlight">0.60</span> - <span class="highlight">0.70m</span> vertical clearance and a <span class="highlight">0.50m</span> depth.`
     },
     VERTICAL_CLEARANCE: {
         name: "VERTICAL CLEARANCE",
         range: 	0.5,
         unit: "meters",
+        desc: `Maximum height of lavatories should be <span class="highlight">0.80m</span> with a knee recess of <span class="highlight">0.60</span> - <span class="highlight">0.70m</span> vertical clearance and a <span class="highlight">0.50m</span> depth.`
     },
     URINAL_HEIGHT_LIP: {
         num: 8.9,

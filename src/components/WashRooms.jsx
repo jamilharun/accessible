@@ -234,7 +234,9 @@ export default function WashRooms() {
     }
 
     const searchLavatories = () => {
-        if (Number(lavatoriesHeight) <= WASHROOMS_TOILETS.LAVATORIES_HEIGHT.range.value) {
+      console.log(parseFloat(lavatoriesHeight));
+      const height = parseFloat(lavatoriesHeight);
+        if (height <= WASHROOMS_TOILETS.LAVATORIES_HEIGHT.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
             setButtonDefault(false)
@@ -335,7 +337,7 @@ export default function WashRooms() {
     }
 
     const searchUrinalHightLip = () => {
-        if (Number(urinalHeightLip) <= WASHROOMS_TOILETS.URINAL_HEIGHT_LIP.range) {
+        if (parseFloat(urinalHeightLip) <= WASHROOMS_TOILETS.URINAL_HEIGHT_LIP.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
             setButtonDefault(false)
