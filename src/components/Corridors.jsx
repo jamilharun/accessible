@@ -41,7 +41,7 @@ export default function Corridors() {
         const parsedNumerator = parseFloat(tounaboutAreaNumerator);
         const parsedDenominator = parseFloat(tounaboutAreaDenominator);
         if (parsedNumerator >= CORRIDORS.TURNABOUTS_AREA.range.numerator && 
-            parsedDenominator <= CORRIDORS.TURNABOUTS_AREA.range.denominator) {
+            parsedDenominator >= CORRIDORS.TURNABOUTS_AREA.range.denominator) {
           setError(false);
           // Add any search logic here if needed
           console.log('Values are within the range.');
