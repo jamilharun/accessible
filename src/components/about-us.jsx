@@ -27,28 +27,28 @@ export default function About_us() {
                 <p className="footer-developers colorBlack" >Developed by: <span className='colorsomeOrange'>GROUP 4 </span><span className='colorBlack'>|</span> <span className='colorblue'>BSCE 4-2</span></p>
                 <ul className='devlist'>
                     <li>
-                        <p>BRUSOLA, KRISHA LORRAINE B.</p> 
                         <img src={BRUSOLA} alt="krisha" width="80" height="80"/>
+                        <p>BRUSOLA, KRISHA LORRAINE B.</p> 
                     </li>
                     <li>
-                        <p>CURTISS, KERR C.</p>
                         <img src={CURTISS} alt="krisha" width="80" height="80"/>
+                        <p>CURTISS, KERR C.</p>
                     </li>
                     <li>
-                        <p>PANGANIBAN, KAILA MAE N.</p>
                         <img src={PANGANIBAN} alt="krisha" width="80" height="80"/>
+                        <p>PANGANIBAN, KAILA MAE N.</p>
                     </li>
                     <li>
-                        <p>RUBICO, COREENE JANE O.</p>
                         <img src={RUBICO} alt="krisha" width="80" height="80"/>
+                        <p>RUBICO, COREENE JANE O.</p>
                     </li>
                     <li>
-                        <p>TOLENTINO, MJ F.</p>
                         <img src={TOLENTINO} alt="krisha" width="80" height="80"/>
+                        <p>TOLENTINO, MJ F.</p>
                     </li>
                     <li>
-                        <p>VELUNTA, KYLA A.</p>
                         <img src={VELUNTA} alt="krisha" width="80" height="80"/>
+                        <p>VELUNTA, KYLA A.</p>
                     </li>
                 </ul>
             </div>
