@@ -70,7 +70,7 @@ export default function Elevator() {
     }
 
     const searchControlPanel = () => {
-        const parsedNumerator = parseFloat(elevatorDimensionNumerator);
+        const parsedNumerator = parseFloat(controlPanel);
         // const parsedDenominator = parseFloat(elevatorDimensionDenominator);
         if (parsedNumerator >= ELEVATORS.CONTROL_PANEL_EMERGENCY_SYSTEM_LOCATION_FLOOR.range.numerator && 
             parsedNumerator <= ELEVATORS.CONTROL_PANEL_EMERGENCY_SYSTEM_LOCATION_FLOOR.range.denominator) {
@@ -85,6 +85,8 @@ export default function Elevator() {
             setShowDepthElevator(false)
         } else {
           setDesc(ELEVATORS.CONTROL_PANEL_EMERGENCY_SYSTEM_LOCATION_FLOOR.desc);
+          console.log(`${parsedNumerator} >= ${ELEVATORS.CONTROL_PANEL_EMERGENCY_SYSTEM_LOCATION_FLOOR.range.numerator}`);
+          console.log(`${parsedNumerator} <= ${ELEVATORS.CONTROL_PANEL_EMERGENCY_SYSTEM_LOCATION_FLOOR.range.denominator}`);
           setError(true);
           setButtonDefault(false)
             setShowLocationFromEntrance(false)

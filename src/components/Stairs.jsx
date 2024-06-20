@@ -13,7 +13,7 @@ export default function Stairs() {
   const [tactile, setTactile] = useState(0)
 
   const searchTactile = () => {
-    if (Number(tactile) == STAIRS.TACTILE_STRIP_WIDTH.range) {
+    if (Number(tactile) >= STAIRS.TACTILE_STRIP_WIDTH.range) {
         console.log("success");
         setDesc(''); // Clear description on success
         setButtonDefault(false)

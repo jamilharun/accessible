@@ -494,7 +494,7 @@ export const PUBLIC_TELEPHONES = {
             value: 0.8
         },
         unit: "meters",
-        desc: `Telephone booth door openings should have a minimum clear width of 0.80 m.`
+        desc: `Telephone booth door openings should have a minimum clear width of <span class="highlight">0.80m</span>.`
     },
     COINS_SLOT: {
         num: 12.3,

@@ -39,14 +39,14 @@ export default function WaterFountain() {
             console.log("success");
             setDesc(''); // Clear description on success
             setButtonDefault(false)
-            showLocation(false)
+            setShowLocation(false)
             // setShowWallMounted(false)
             setShowFloorMounted(false)
           } else {
             setDesc(WATER_FOUNTAINS.WALL_MOUNTED.desc);
             setError(true);
             setButtonDefault(false)
-            showLocation(false)
+            setShowLocation(false)
             // setShowWallMounted(false)
             setShowFloorMounted(false)
           }
@@ -57,18 +57,31 @@ export default function WaterFountain() {
             console.log("success");
             setDesc(''); // Clear description on success
             setButtonDefault(false)
-            showLocation(false)
+            setShowLocation(false)
             setShowWallMounted(false)
             // setShowFloorMounted(false)
           } else {
             setDesc(WATER_FOUNTAINS.FLOOR_MOUNTED.desc);
             setError(true);
             setButtonDefault(false)
-            showLocation(false)
+            setShowLocation(false)
             setShowWallMounted(false)
             // setShowFloorMounted(false)
           }
         
+    }
+
+    const backButton = () => {
+      if (!buttonDefault) {
+        setDesc(false)
+        setError(false);
+        setButtonDefault(true)
+        setShowLocation(true)
+        setShowWallMounted(true)
+        setShowFloorMounted(true)
+      } else {
+        navigate("/Profile");
+      }
     }
   return (
     <div className='container poppins-regular'>
