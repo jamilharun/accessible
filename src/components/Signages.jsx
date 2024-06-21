@@ -717,7 +717,7 @@ export default function Signages() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Height od signs on walls and doors (maximum)</p>
+                      <p className=' input-text poppins-regular'>Height of signs on walls and doors (maximum)</p>
                       <input
                         type="number"
                         name="height1"
@@ -756,7 +756,7 @@ export default function Signages() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Height od signs on walls and doors (minimum)</p>
+                      <p className=' input-text poppins-regular'>Height of signs on walls and doors (minimum)</p>
                       <input
                         type="number"
                         name="height2"
@@ -795,7 +795,7 @@ export default function Signages() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width h-16'>
-                      <p className=' input-text poppins-regular'>Height of Signage should have raised symbols, letter, or numbers</p>
+                      <p className=' input-text poppins-regular'>Height of Signages should have raised symbols, letters, or numbers</p>
                       <input
                         type="number"
                         name="heightSignage"

@@ -6,7 +6,7 @@ export const ENTRANCES = {
             operator: ">=",
             value: 1.8
         },
-        unit: "Meters",
+        unit: "meters",
         desc: `Entrances with vestibules shall be provided with at least <span class="highlight">1.80 m</span>. at depth.`
     },
     WIDTH:{

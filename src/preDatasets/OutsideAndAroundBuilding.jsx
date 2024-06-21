@@ -239,7 +239,7 @@ export const HANDRAILS = {
             value: 50
         },
         unit: "millimeters",
-        desc: `Handrails attached to walls should have a clearance no less than <span class="highlight">50mm</span> from the wall,`
+        desc: `Handrails attached to walls should have a clearance no less than <span class="highlight">50mm</span> from the wall.`
     },
     CLEARANCE_HANDRAILS_LEDGES: {
         num: 4.5,
@@ -323,7 +323,7 @@ export const SIGNAGES = {
             value: 2
         },
         unit: "meters",
-        desc: `Signs protrude into a walkway or route should provide a minimum headroom of <span class="highlight">2.0m</span>,`
+        desc: `Signs protrude into a walkway or route should provide a minimum headroom of <span class="highlight">2.0m</span>.`
     },
     HEIGHT1:{
         num: 6.5,
@@ -386,7 +386,7 @@ export const CROSSINGS = {
             value: 6
         },
         unit: "seconds",
-        desc: `The minimum period for the steady green (for pedestrians) should not be less than <span class="highlight">6</span> seconds or the crossing distance times <span class="highlight">0.90m/sec</span>, whichever is the greatest,`
+        desc: `The minimum period for the steady green (for pedestrians) should not be less than <span class="highlight">6</span> seconds or the crossing distance times <span class="highlight">0.90m/sec</span>, whichever is the greatest.`
     }
 }
 // https://docs.google.com/spreadsheets/d/1INlWvv3XZu0cRbJc4_uIpCUtVAQyAWQD/htmlview#

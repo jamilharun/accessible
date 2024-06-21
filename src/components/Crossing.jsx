@@ -129,7 +129,7 @@ export default function Crossing() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Width of the carriges</p>
+                      <p className=' input-text poppins-regular'>Width of the carrigeway</p>
                       <input
                         type="number"
                         name="width"

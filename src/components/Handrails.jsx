@@ -130,7 +130,7 @@ export default function Handrails() {
         setShowClearanceHandRailsLegs(false)
         
       } else {
-        setDesc(HANDRAILS.HANDRAILS.desc);
+        setDesc(HANDRAILS.HANDRAILS_FULL_GRIP.desc);
         setError(true);
         setButtonDefault(false)
         setShowHeight(false)
@@ -264,7 +264,7 @@ export default function Handrails() {
                   {/* <p>computation not working</p> */}
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>HandRails for projection at great heights</p>
+                      <p className=' input-text poppins-regular'>Handrails for projection at great heights</p>
                       <input
                         type="number"
                         name="handRailNumerator"
@@ -274,7 +274,7 @@ export default function Handrails() {
                       />
                     </div>
                     <div className=' input-text text-end'>
-                      <p className='unit'>{`(${HANDRAILS.HANDRAILS_FULL_GRIP.unit})`}</p>
+                      <p className='unit'>{`(${HANDRAILS.HANDRAILS.unit})`}</p>
                     </div>
                   </div>
                   {
