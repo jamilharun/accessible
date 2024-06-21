@@ -133,7 +133,7 @@ export default function DroppedCurbs() {
                       <input
                         type="number"
                         name="WIDTH"
-                        className="input-field w-full"
+                        className="input-field"
                         value={width}
                         onChange={(e) => setWidth(e.target.value)}
                       />
@@ -177,7 +177,7 @@ export default function DroppedCurbs() {
                         value={gradientNumerator}
                         onChange={(e) => setGradientNumerator(e.target.value)}
                       />
-                      <p className=' input-text poppins-regular '>:</p>
+                      <p className=' input-border poppins-regular '>:</p>
                       <input
                         type="number"
                         name="gradientDenuminator"
@@ -215,7 +215,7 @@ export default function DroppedCurbs() {
               showMaximum &&
                 <div className=' flex mb-5'>
                   <div>
-                    <div className=' input-container input-container-width h-24'>
+                    <div className=' input-container input-container-width h-16'>
                       <p className=' input-text poppins-regular'>Maximum cross gradient (Sloped towards road)</p>
                       <input
                         type="number"
@@ -224,7 +224,7 @@ export default function DroppedCurbs() {
                         value={maximumNumerator}
                         onChange={(e) => setMaximumNumerator(e.target.value)}
                       />
-                      <p className=' input-text poppins-regular'>:</p>
+                      <p className=' input-border poppins-regular'>:</p>
                       <input
                         type="number"
                         name="gradientDenuminator"

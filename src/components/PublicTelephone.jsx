@@ -102,7 +102,7 @@ export default function PublicTelephone() {
                         value={spaceInfrontNumerator}
                         onChange={(e) => setSpaceInfrontNumerator(e.target.value)}
                       />
-                      <p className=' input-text poppins-regular'>x</p>
+                      <p className=' input-border poppins-regular'>x</p>
                       <input
                         type="number"
                         name="handRailDenominator"

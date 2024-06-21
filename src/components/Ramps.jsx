@@ -275,7 +275,7 @@ export default function Ramps() {
                       <input
                         type="number"
                         name="clear"
-                        className="input-field w-full"
+                        className="input-field "
                         value={clear}
                         onChange={(e) => setClear(e.target.value)}
                       />
@@ -318,7 +318,7 @@ export default function Ramps() {
                         value={gradientNumerator}
                         onChange={(e) => setGradientNumerator(e.target.value)}
                       />
-                      <p className=' input-text poppins-regular'>:</p>
+                      <p className=' input-border poppins-regular'>:</p>
                       <input
                         type="number"
                         name="gradientDenuminator"
@@ -361,7 +361,7 @@ export default function Ramps() {
                       <input
                         type="number"
                         name="length"
-                        className="input-field w-full"
+                        className="input-field "
                         value={length}
                         onChange={(e) => setLength(e.target.value)}
                       />
@@ -400,7 +400,7 @@ export default function Ramps() {
                       <input
                         type="number"
                         name="landings"
-                        className="input-field w-full"
+                        className="input-field "
                         value={landings}
                         onChange={(e) => setLandings(e.target.value)}
                       />
@@ -440,7 +440,7 @@ export default function Ramps() {
                       <input
                         type="number"
                         name="levels"
-                        className="input-field w-full"
+                        className="input-field "
                         value={levels}
                         onChange={(e) => setLevels(e.target.value)}
                       />
@@ -486,7 +486,7 @@ export default function Ramps() {
                         value={handrailsRampLevelsNumerator}
                         onChange={(e) => setHandrailsRampLevelsNumerator(e.target.value)}
                       />
-                      <p className=' input-text poppins-regular'>:</p>
+                      <p className=' input-border poppins-regular'>:</p>
                       <input
                         type="number"
                         name="handrailsRampLevelsDenominator"
@@ -529,7 +529,7 @@ export default function Ramps() {
                       <input
                         type="number"
                         name="curbs"
-                        className="input-field w-full"
+                        className="input-field "
                         value={curbs}
                         onChange={(e) => setCurbs(e.target.value)}
                       />
@@ -569,7 +569,7 @@ export default function Ramps() {
                       <input
                         type="number"
                         name="curbs"
-                        className="input-field w-full"
+                        className="input-field "
                         value={railings}
                         onChange={(e) => setRailings(e.target.value)}
                       />

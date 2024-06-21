@@ -215,7 +215,7 @@ export default function Handrails() {
               showHeight &&
                 <div className=' flex mb-5'>
                   <div>
-                    <div className=' input-container input-container-width h-20'>
+                    <div className=' input-container input-container-width h-16'>
                       <p className=' input-text poppins-regular'>Height above steps or ramps</p>
                       <input
                         type="number"
@@ -224,7 +224,7 @@ export default function Handrails() {
                         value={heightNumerator}
                         onChange={(e) => setHeightNumerator(e.target.value)}
                       />
-                      <p className=' input-text poppins-regular'>&</p>
+                      <p className=' input-border poppins-regular'>&</p>
                       <input
                         type="number"
                         name="heightDenominator"
@@ -302,7 +302,7 @@ export default function Handrails() {
               showExtension && 
                 <div className=' flex mb-5'>
                   <div>
-                    <div className=' input-container input-container-width  h-20'>
+                    <div className=' input-container input-container-width  h-16'>
                       <p className=' input-text poppins-regular'>Extension or handrails at the start and end of ramps and stairs</p>
                       <input
                         type="number"

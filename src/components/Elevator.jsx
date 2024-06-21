@@ -217,7 +217,7 @@ export default function Elevator() {
                         value={elevatorDimensionNumerator}
                         onChange={(e) => setElevatorDimensionNumerator(e.target.value)}
                       />
-                      <p className=' input-text poppins-regular'>x</p>
+                      <p className=' input-border poppins-regular'>x</p>
                       <input
                         type="number"
                         name="waterClosetAreaDenominator"

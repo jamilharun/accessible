@@ -186,7 +186,7 @@ export default function Doors() {
                       <input
                         type="number"
                         name="WIDTH"
-                        className="input-field w-full"
+                        className="input-field "
                         value={width}
                         onChange={(e) => setWidth(e.target.value)}
                       />
@@ -218,7 +218,7 @@ export default function Doors() {
 
             {
               showLevelSpace &&
-                <div className=' flex mb-5'>
+                <div className=' flex mb-5'>  
                   <div>
                     <div className=' input-container input-container-width'>
                       <p className=' input-text poppins-regular'>Level space</p>
@@ -229,7 +229,7 @@ export default function Doors() {
                         value={levelSpaceNumerator}
                         onChange={(e) => setLevelSpaceDenominator(e.target.value)}
                       />
-                      <p className=' input-text poppins-regular'>:</p>
+                      <p className=' input-border poppins-regular'>:</p>
                       <input
                         type="number"
                         name="levelSpaceDenominator"
@@ -390,7 +390,7 @@ export default function Doors() {
                       <input
                         type="number"
                         name="doorKnobs"
-                        className="input-field w-full"
+                        className="input-field "
                         value={kick}
                         onChange={(e) => setKick(e.target.value)}
                       />

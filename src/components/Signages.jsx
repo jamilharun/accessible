@@ -386,17 +386,17 @@ export default function Signages() {
                                     <input
                                       type="number"
                                       name="a"
-                                      className="input-field"
+                                      className="input-field w-full"
                                       value={a}
                                       onChange={(e) => setA(e.target.value)}
                                     />
                                   </div>
-                                  <p className='input-text operator'> x </p>
+                                  <p className='input-border operator'> x </p>
                                   <div className='input-field-signage'>
                                     <input
                                       type="number"
                                       name="a"
-                                      className="input-field"
+                                      className="input-field w-full"
                                       value={a1}
                                       onChange={(e) => setA1(e.target.value)}
                                     />
@@ -435,19 +435,19 @@ export default function Signages() {
                                     <input
                                       type="number"
                                       name="b"
-                                      className="input-field"
+                                      className="input-field w-full"
                                       value={b}
                                       onChange={(e) => setB(e.target.value)}
                                     />
                                   </div>
                                   
-                                  <p className='input-text operator'> x </p>
+                                  <p className='input-border operator'> x </p>
 
                                   <div className='input-field-signage'>
                                     <input
                                       type="number"
                                       name="b"
-                                      className="input-field"
+                                      className="input-field w-full"
                                       value={b1}
                                       onChange={(e) => setB1(e.target.value)}
                                     />
@@ -484,20 +484,20 @@ export default function Signages() {
                                   <input
                                     type="number"
                                     name="c"
-                                    className="input-field"
+                                    className="input-field w-full"
                                     value={c}
                                     onChange={(e) => setC(e.target.value)}
                                   />
                                   </div>
                                   
                                   
-                                  <p className='input-text operator'> x </p>
+                                  <p className='input-border operator'> x </p>
                                   
                                   <div className='input-field-signage'>
                                   <input
                                     type="number"
                                     name="c"
-                                    className="input-field"
+                                    className="input-field w-full"
                                     value={c1}
                                     onChange={(e) => setC1(e.target.value)}
                                   />
@@ -534,19 +534,19 @@ export default function Signages() {
                                   <input
                                     type="number"
                                     name="d"
-                                    className="input-field"
+                                    className="input-field w-full"
                                     value={d}
                                     onChange={(e) => setD(e.target.value)}
                                   />
                                   </div>
                                   
                                   
-                                  <p className='input-text operator'> x </p>
+                                  <p className='input-border operator'> x </p>
                                   <div className='input-field-signage'>
                                   <input
                                     type="number"
                                     name="d"
-                                    className="input-field"
+                                    className="input-field w-full"
                                     value={d1}
                                     onChange={(e) => setD1(e.target.value)}
                                   />
@@ -583,19 +583,19 @@ export default function Signages() {
                                   <input
                                     type="number"
                                     name="e"
-                                    className="input-field"
+                                    className="input-field w-full"
                                     value={e}
                                     onChange={(e) => setE(e.target.value)}
                                   />
                                   </div>
                                   
                                   
-                                  <p className='input-text operator'> x </p>
+                                  <p className='input-border operator'> x </p>
                                   <div className='input-field-signage'>
                                   <input
                                     type="number"
                                     name="e"
-                                    className="input-field"
+                                    className="input-field w-full"
                                     value={e1}
                                     onChange={(e) => setE1(e.target.value)}
                                   />
@@ -631,18 +631,18 @@ export default function Signages() {
                                   <input
                                     type="number"
                                     name="f"
-                                    className="input-field"
+                                    className="input-field w-full"
                                     value={f}
                                     onChange={(e) => setF(e.target.value)}
                                   />
                                   </div>
 
-                                  <p className='input-text operator'> x </p>
+                                  <p className='input-border operator'> x </p>
                                   <div className='input-field-signage'>
                                   <input
                                     type="number"
                                     name="f"
-                                    className="input-field"
+                                    className="input-field w-full"
                                     value={f1}
                                     onChange={(e) => setF1(e.target.value)}
                                   />
@@ -794,7 +794,7 @@ export default function Signages() {
               showHeightSignage && 
                 <div className=' flex mb-5'>
                   <div>
-                    <div className=' input-container input-container-width h-20'>
+                    <div className=' input-container input-container-width h-16'>
                       <p className=' input-text poppins-regular'>Height of Signage should have raised symbols, letter, or numbers</p>
                       <input
                         type="number"

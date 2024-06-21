@@ -72,7 +72,7 @@ export default function Switches() {
                       <input
                         type="number"
                         name="max"
-                        className="input-field w-full"
+                        className="input-field "
                         value={height}
                         onChange={(e) => setHeight(e.target.value)}
                       />

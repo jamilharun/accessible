@@ -475,7 +475,7 @@ ul li a:hover{
   justify-content: center;
   align-items: center;
 
-  margin-right: 300px;
+  margin-right: 150px;
 }
 
 .container-moreheight{
@@ -522,7 +522,7 @@ ul li a:hover{
 }
 
 .input-container-width{
-  width: 500px;
+  width: 750px;
 }
 
 .input-button{
@@ -539,6 +539,16 @@ ul li a:hover{
 
 .input-text{
   /* max-height: 50px; */
+  width: 100%;
+  font-size: larger;
+  text-align: start;
+  padding: 0 10px;
+  
+}
+
+.input-border{
+  /* max-height: 50px; */
+  /* width: 100%; */
   font-size: larger;
   text-align: start;
   padding: 0 10px;
@@ -566,8 +576,8 @@ ul li a:hover{
 }
 
 .input-field{
-  
-  width: 60%;
+  justify-self: end;
+  width: 200px;
   /* margin: 0px 0px 0px 15px; */
   /* padding: 0 10px; */
   font-size: large;
@@ -639,6 +649,7 @@ ul li a:hover{
   background: #ff9e7a;
   border-radius: 50px;
   padding: 0px 15px 0 0;
+
 }
 
 

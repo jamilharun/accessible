@@ -126,7 +126,7 @@ export default function Corridors() {
                       <input
                         type="number"
                         name="WIDTH"
-                        className="input-field w-full"
+                        className="input-field "
                         value={width}
                         onChange={(e) => setWidth(e.target.value)}
                       />
@@ -169,7 +169,7 @@ export default function Corridors() {
                         value={tounaboutAreaNumerator}
                         onChange={(e) => setTounablutAreaNumerator(e.target.value)}
                       />
-                      <p className=' input-text poppins-regular'>x</p>
+                      <p className=' input-border poppins-regular'>x</p>
                       <input
                         type="number"
                         name="handRailDenominator"

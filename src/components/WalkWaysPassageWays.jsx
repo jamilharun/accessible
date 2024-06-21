@@ -401,7 +401,7 @@ export default function WalkWaysPassageWays() {
                         value={gradientNumerator}
                         onChange={(e) => setGradientNumerator(e.target.value)}
                       />
-                      <p className=' input-text poppins-regular '>:</p>
+                      <p className=' input-border poppins-regular '>:</p>
                       <input
                         type="number"
                         name="gradientDenuminator"
@@ -451,7 +451,7 @@ export default function WalkWaysPassageWays() {
                                 value={crossGradientNumerator}
                                 onChange={(e) => setCrossGradientNumerator(e.target.value)}
                             />
-                            <p className=' input-text poppins-regular'>:</p>
+                            <p className=' input-border poppins-regular'>:</p>
                             <input
                                 type="number"
                                 name="crossGradientDenominator"
@@ -494,7 +494,7 @@ export default function WalkWaysPassageWays() {
                           <input
                             type="number"
                             name="WIDTH"
-                            className="input-field w-full"
+                            className="input-field"
                             value={width}
                             onChange={(e) => setWidth(e.target.value)}
                           />
@@ -538,7 +538,7 @@ export default function WalkWaysPassageWays() {
                                 value={gratingWidth}
                                 onChange={(e) => setGratingWidth(e.target.value)}
                             />
-                            <p className=' input-text poppins-regular'>x</p>
+                            <p className=' input-border poppins-regular'>x</p>
                             <input
                                 type="number"
                                 name="gratingHeight"
@@ -577,7 +577,7 @@ export default function WalkWaysPassageWays() {
                   showProjection && 
                     <div className=' flex mb-5'>
                       <div>
-                        <div className=' input-container input-container-width h-16'>
+                        <div className=' input-container input-container-width'>
                           <p className=' input-text poppins-regular'>Projection above or below the level of walkway</p>
                           <input
                             type="number"
@@ -668,7 +668,7 @@ export default function WalkWaysPassageWays() {
                                     <input
                                       type="number"
                                       name="spaceDimension"
-                                      className="input-field w-full"
+                                      className="input-field "
                                       value={spaceDimension}
                                       onChange={(e) => setSpaceDimension(e.target.value)}
                                     />
@@ -760,7 +760,7 @@ export default function WalkWaysPassageWays() {
                           <input
                             type="number"
                             name="angle"
-                            className="input-field w-full"
+                            className="input-field "
                             value={angle}
                             onChange={(e) => setAngle(e.target.value)}
                           />

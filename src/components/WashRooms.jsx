@@ -405,7 +405,7 @@ export default function WashRooms() {
                         value={waterClosetAreaNumerator}
                         onChange={(e) => setWaterClosetAreaNumerator(e.target.value)}
                       />
-                      <p className=' input-text poppins-regular'>x</p>
+                      <p className=' input-border poppins-regular'>x</p>
                       <input
                         type="number"
                         name="waterClosetAreaDenominator"
@@ -685,7 +685,7 @@ export default function WashRooms() {
                       <input
                         type="number"
                         name="kneeRecess"
-                        className="input-field w-full"
+                        className="input-field "
                         value={kneeRecess}
                         onChange={(e) => setKneeRecess(e.target.value)}
                       />

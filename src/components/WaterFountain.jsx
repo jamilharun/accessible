@@ -92,11 +92,11 @@ export default function WaterFountain() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Location of Fountain</p>
+                      <p className=' input-text poppins-regular justify-self-start'>Location of Fountain</p>
                       <input
                         type="number"
                         name="location"
-                        className="input-field"
+                        className="input-field "
                         value={location}
                         onChange={(e) => setLocation(e.target.value)}
                       />
@@ -131,7 +131,7 @@ export default function WaterFountain() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Wall-mounted w.f. height</p>
+                      <p className=' input-text poppins-regular'>Wall-mounted W.F. height</p>
                       <input
                         type="number"
                         name="wallMounted"
@@ -170,7 +170,7 @@ export default function WaterFountain() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Floor-mounted w.f. height</p>
+                      <p className=' input-text poppins-regular'>Floor-mounted W.F. height</p>
                       <input
                         type="number"
                         name="floorMounted"

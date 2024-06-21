@@ -81,7 +81,7 @@ export default function CurbCutouts() {
                           <input
                             type="number"
                             name="WIDTH"
-                            className="input-field w-full"
+                            className="input-field"
                             value={width}
                             onChange={(e) => setWidth(e.target.value)}
                           />
@@ -125,7 +125,7 @@ export default function CurbCutouts() {
                             value={gradientNumerator}
                             onChange={(e) => setGradientNumerator(e.target.value)}
                           />
-                          <p className=' input-text poppins-regular'>:</p>
+                          <p className=' input-border poppins-regular'>:</p>
                           <input
                             type="number"
                             name="gradientDenuminator"
