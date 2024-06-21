@@ -15,7 +15,7 @@ export default function About_us() {
                 <img src={logo} alt="logo2" class="about-us-logo"/>
             </header>
             <div className="about-us-content">
-                <p className="tagline colotsomepurple poppins-bold" >&ldquo;Accessibility for All&rdquo;</p>
+                <p className="tagline colotsomepurple alice-regular" >&ldquo;Accessibility for All&rdquo;</p>
                 <p className="us aumessage">AccessAble is a database management system designed for the construction industry to 
                     quickly and effectively verify whether a certain structure meets the IRR of the Accessibility Law. 
                     By specifying a structure and inputting the dimensions, it will immediately determine if the structure 

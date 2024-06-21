@@ -81,7 +81,7 @@ export default function CurbCutouts() {
                           <input
                             type="number"
                             name="WIDTH"
-                            className="input-field"
+                            className="input-field w-full"
                             value={width}
                             onChange={(e) => setWidth(e.target.value)}
                           />
