@@ -215,7 +215,7 @@ export default function Handrails() {
               showHeight &&
                 <div className=' flex mb-5'>
                   <div>
-                    <div className=' input-container input-container-width'>
+                    <div className=' input-container input-container-width h-20'>
                       <p className=' input-text poppins-regular'>Height above steps or ramps</p>
                       <input
                         type="number"
@@ -302,7 +302,7 @@ export default function Handrails() {
               showExtension && 
                 <div className=' flex mb-5'>
                   <div>
-                    <div className=' input-container input-container-width'>
+                    <div className=' input-container input-container-width  h-20'>
                       <p className=' input-text poppins-regular'>Extension or handrails at the start and end of ramps and stairs</p>
                       <input
                         type="number"

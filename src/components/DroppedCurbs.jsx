@@ -133,7 +133,7 @@ export default function DroppedCurbs() {
                       <input
                         type="number"
                         name="WIDTH"
-                        className="input-field"
+                        className="input-field w-full"
                         value={width}
                         onChange={(e) => setWidth(e.target.value)}
                       />
@@ -168,8 +168,8 @@ export default function DroppedCurbs() {
               showGradient &&
                 <div className=' flex mb-5'>
                   <div>
-                    <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Gradient (towards adjoining curbs)</p>
+                    <div className=' input-container input-container-width h-16'>
+                      <p className=' input-text poppins-regular'>Gradient(towards adjoining curbs)</p>
                       <input
                         type="number"
                         name="gradientNumerator"
@@ -215,7 +215,7 @@ export default function DroppedCurbs() {
               showMaximum &&
                 <div className=' flex mb-5'>
                   <div>
-                    <div className=' input-container input-container-width'>
+                    <div className=' input-container input-container-width h-24'>
                       <p className=' input-text poppins-regular'>Maximum cross gradient (Sloped towards road)</p>
                       <input
                         type="number"
@@ -263,7 +263,7 @@ export default function DroppedCurbs() {
               showLowest && 
                 <div className=' flex mb-5'>
                   <div>
-                    <div className=' input-container input-container-width'>
+                    <div className=' input-container input-container-width h-16'>
                       <p className=' input-text poppins-regular'>Lowest point of height above the road or gutter</p>
                       <input
                         type="number"

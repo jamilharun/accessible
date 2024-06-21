@@ -275,7 +275,7 @@ export default function Ramps() {
                       <input
                         type="number"
                         name="clear"
-                        className="input-field"
+                        className="input-field w-full"
                         value={clear}
                         onChange={(e) => setClear(e.target.value)}
                       />
@@ -361,7 +361,7 @@ export default function Ramps() {
                       <input
                         type="number"
                         name="length"
-                        className="input-field"
+                        className="input-field w-full"
                         value={length}
                         onChange={(e) => setLength(e.target.value)}
                       />
@@ -400,7 +400,7 @@ export default function Ramps() {
                       <input
                         type="number"
                         name="landings"
-                        className="input-field"
+                        className="input-field w-full"
                         value={landings}
                         onChange={(e) => setLandings(e.target.value)}
                       />
@@ -440,7 +440,7 @@ export default function Ramps() {
                       <input
                         type="number"
                         name="levels"
-                        className="input-field"
+                        className="input-field w-full"
                         value={levels}
                         onChange={(e) => setLevels(e.target.value)}
                       />
@@ -477,7 +477,7 @@ export default function Ramps() {
               showHandrailsRampLevel &&
                 <div className=' flex mb-5'>
                   <div>
-                    <div className=' input-container input-container-width'>
+                    <div className=' input-container input-container-width h-20'>
                       <p className=' input-text poppins-regular'>Handrails from the ramp level</p>
                       <input
                         type="number"
@@ -529,7 +529,7 @@ export default function Ramps() {
                       <input
                         type="number"
                         name="curbs"
-                        className="input-field"
+                        className="input-field w-full"
                         value={curbs}
                         onChange={(e) => setCurbs(e.target.value)}
                       />
@@ -569,7 +569,7 @@ export default function Ramps() {
                       <input
                         type="number"
                         name="curbs"
-                        className="input-field"
+                        className="input-field w-full"
                         value={railings}
                         onChange={(e) => setRailings(e.target.value)}
                       />

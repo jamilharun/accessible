@@ -685,7 +685,7 @@ export default function WashRooms() {
                       <input
                         type="number"
                         name="kneeRecess"
-                        className="input-field"
+                        className="input-field w-full"
                         value={kneeRecess}
                         onChange={(e) => setKneeRecess(e.target.value)}
                       />

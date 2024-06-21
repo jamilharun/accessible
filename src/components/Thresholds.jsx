@@ -47,7 +47,7 @@ export default function Thresholds() {
                       <input
                         type="number"
                         name="max"
-                        className="input-field"
+                        className="input-field w-full"
                         value={max}
                         onChange={(e) => setMax(e.target.value)}
                       />

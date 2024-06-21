@@ -186,7 +186,7 @@ export default function Doors() {
                       <input
                         type="number"
                         name="WIDTH"
-                        className="input-field"
+                        className="input-field w-full"
                         value={width}
                         onChange={(e) => setWidth(e.target.value)}
                       />
@@ -390,7 +390,7 @@ export default function Doors() {
                       <input
                         type="number"
                         name="doorKnobs"
-                        className="input-field"
+                        className="input-field w-full"
                         value={kick}
                         onChange={(e) => setKick(e.target.value)}
                       />

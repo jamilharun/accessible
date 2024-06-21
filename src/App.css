@@ -537,10 +537,11 @@ ul li a:hover{
 }
 
 .input-text{
-  max-height: 50px;
+  /* max-height: 50px; */
   font-size: larger;
   text-align: start;
   padding: 0 10px;
+  
 }
 
 .signage_title{
@@ -564,7 +565,8 @@ ul li a:hover{
 }
 
 .input-field{
-  width: 70%;
+  
+  width: 60%;
   /* margin: 0px 0px 0px 15px; */
   /* padding: 0 10px; */
   font-size: large;

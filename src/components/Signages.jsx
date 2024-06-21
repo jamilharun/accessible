@@ -794,7 +794,7 @@ export default function Signages() {
               showHeightSignage && 
                 <div className=' flex mb-5'>
                   <div>
-                    <div className=' input-container input-container-width'>
+                    <div className=' input-container input-container-width h-20'>
                       <p className=' input-text poppins-regular'>Height of Signage should have raised symbols, letter, or numbers</p>
                       <input
                         type="number"
