@@ -300,8 +300,10 @@ export default function WalkWaysPassageWays() {
     }
 
     const searchAngle = () => {
-      if (Number(angle) === WALKWAYS_AND_PASSAGEWAYS.ANGLE.range.value) {
+      if (Number(angle) == WALKWAYS_AND_PASSAGEWAYS.ANGLE.range.value) {
           console.log("success");
+          console.log(angle);
+          console.log(WALKWAYS_AND_PASSAGEWAYS.ANGLE.range.value);
           setDesc(''); // Clear description on success
           setButtonDefault(false)
           setShowGradient           (false)
@@ -313,11 +315,12 @@ export default function WalkWaysPassageWays() {
           setShowDimension          (false)
           setShowSpacesLengthBusyWalkWays(false)
       } else {
+        console.log(angle);
+        console.log(WALKWAYS_AND_PASSAGEWAYS.ANGLE.range.value);
+        console.log('error');
           setDesc(WALKWAYS_AND_PASSAGEWAYS.ANGLE.desc);
           setError                  (true);
           setButtonDefault(false)
-          setDesc                   (false)
-          setError                  (false);
           setShowGradient           (false)
           setShowCrossGradient      (false)
           setShowWidth              (false)
