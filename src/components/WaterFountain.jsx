@@ -35,7 +35,7 @@ export default function WaterFountain() {
     }
 
     const searchWallMounted = () => {
-        if (Number(wallMounted) >= WATER_FOUNTAINS.WALL_MOUNTED.range.value) {
+        if (Number(wallMounted) <= WATER_FOUNTAINS.WALL_MOUNTED.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
             setButtonDefault(false)

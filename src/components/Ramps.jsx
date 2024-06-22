@@ -85,7 +85,7 @@ export default function Ramps() {
       };
 
       const searchLength = () => {
-        if (Number(length) >= RAMPS.LENGTH.range.value) {
+        if (Number(length) <= RAMPS.LENGTH.range.value) {
           console.log("success");
           setDesc(''); // Clear description on success
           setButtonDefault(false)
@@ -219,7 +219,7 @@ export default function Ramps() {
       }
 
       const searchRailing = () => {
-        if (Number(railings) == RAMPS.RAILING.range.value) {
+        if (Number(railings) >= RAMPS.RAILING.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
             setButtonDefault(false)

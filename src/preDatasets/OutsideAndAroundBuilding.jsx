@@ -213,7 +213,7 @@ export const HANDRAILS = {
         // range: "(==)30",
         range: {
             operator: "==",
-            value: 30
+            value: 0.30
         },
         unit: "meters",
         desc: `A.<span class="highlight">0.30</span> long extension of the handrail should be provided at the start and end of ramps and stairs.`
@@ -330,7 +330,7 @@ export const SIGNAGES = {
         name: "HEIGHT OF SIGNS ON WALLS AND DOORS	",
         range: {
             operator: "<=",
-            value: 1.4
+            value: 1.6
         },
         unit: "meters",
         desc: `Signs on walls and doors should be located at a maximum height of <span class="highlight">1.6m</span>.`
@@ -340,7 +340,7 @@ export const SIGNAGES = {
         name: "HEIGHT OF SIGNS ON WALLS AND DOORS	",
         range: {
             operator: ">=",
-            value: 1.6
+            value: 1.4
         },
         unit: "meters",
         desc: `Signs on walls and doors should be located at a minimum height of <span class="highlight">1.4m</span>.`

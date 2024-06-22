@@ -276,7 +276,7 @@ export default function Signages() {
     }
 
     const searchHeight1 = () => {
-        if (Number(height1) >= SIGNAGES.HEIGHT1.range.value) {
+        if (Number(height1) <= SIGNAGES.HEIGHT1.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
             setShowInternational(false)
@@ -299,7 +299,7 @@ export default function Signages() {
     }
 
     const searchHeight2 = () => {
-        if (Number(height2) <= SIGNAGES.HEIGHT2.range.value) {
+        if (Number(height2) >= SIGNAGES.HEIGHT2.range.value) {
             console.log("success");
             setDesc(''); // Clear description on success
             setShowInternational(false)

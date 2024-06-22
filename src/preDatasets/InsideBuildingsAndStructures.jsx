@@ -100,7 +100,7 @@ export const RAMPS = {
         num: 2.8,
         name: "RAILING",
         range: {
-            // operator: ">=",
+            operator: ">=",
             value: 1.5
         },
         unit: "meters",
