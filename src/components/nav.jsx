@@ -9,16 +9,16 @@ export default function Nav() {
     const navigate = useNavigate()
   return (
     <>
-      <div className='main'>
-        <div className='navbar'>
-          <div className='icon'>
+      <div className='main z-10'>
+        <div className='navbar z-10'>
+          <div className='icon z-10'>
             <header>
-                <img className='logo' src={logo} alt="logo" />
+                <img className='logo z-10' src={logo} alt="logo" />
             </header>
           </div>
-          <div className='menu'>
+          <div className='menu z-10'>
             <ul className=''>
-              <li className='headernav' onClick={()=>{navigate('home')}}>Home</li>
+              <li className='headernav' onClick={()=>{navigate('/')}}>Home</li>
               <li className='headernav'><a href="https://www.dpwh.gov.ph/dpwh/references/laws_codes_orders/bpb344">Batas Pambansa Blg. 344</a></li>
               <li className='headernav'><a href="https://drive.google.com/file/d/1v6xehMOJou9d1ecloxikx5slXDm2M1lR/view">Implementing Rules and Regulations</a></li>
               <li className='headernav' onClick={()=>{navigate("aboutUs")}}>About Us</li>

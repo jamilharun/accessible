@@ -23,6 +23,7 @@ import Elevator from './Elevator';
 import WaterFountain from './WaterFountain';
 import PublicTelephone from './PublicTelephone';
 import PlacesOfAssembly from './PlacesOfAssembly';
+import Empty from './empty';
 export default function Home() {
     const navigate = useNavigate();
 
@@ -36,15 +37,15 @@ export default function Home() {
     // const maxHeight = computedStyle.getPropertyValue('max-height');
   return (
     <>
-    <div className='home'>
-        <header className='homeHeader'>
-          <h2>BP 344 Checker</h2>
-          <h1 className='colorBlack league-spartan'>Minimum Requirements for <span className='colorblue'>Accessibility</span></h1>
+    <div className='home z-10'>
+        <header className='homeHeader z-10'>
+          <h2 className='z-20'>BP 344 Checker</h2>
+          <h1 className='colorBlack league-spartan z-50'>Minimum Requirements for <span className='colorblue z-50'>Accessibility</span></h1>
         </header>
         
-        <div className='mainContent h-3/4'>
+        <div className='mainContent h-3/4 z-10'>
             {/* drop down */}
-            <div className='dropdown-container'>
+            <div className='dropdown-container z-10'>
             <div id="dc-meters-search" className='displaynone'>
                 <input className="dropped-curbs" type="number" id="meter-input"/>
                 <a href="#"><button id="check-meter">Search</button></a>
@@ -101,6 +102,7 @@ export default function Home() {
             <Outlet />
 
             <Routes>
+                <Route path="/" element={<Empty />} />
                 <Route path="DroppedCurbs" element={<DroppedCurbs />} />
                 <Route path="CurbCutouts" element={<CurbCutouts/>} />
                 <Route path="WalkPassageWays" element={<WalkWaysPassageWays/>} />
