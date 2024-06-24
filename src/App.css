@@ -789,6 +789,12 @@ ul li a:hover{
 }
 
 @media (max-width: 1315px) {
+  .aumessage{
+    width: 75%;
+  }
+  .about-us-content .us{
+
+  }
   .input-container {
     height: 45px;
   }
