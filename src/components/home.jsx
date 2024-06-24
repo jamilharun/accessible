@@ -37,10 +37,10 @@ export default function Home() {
     // const maxHeight = computedStyle.getPropertyValue('max-height');
   return (
     <>
-    <div className='home z-10'>
-        <header className='homeHeader z-10'>
-          <h2 className='z-20'>BP 344 Checker</h2>
-          <h1 className='colorBlack league-spartan z-50'>Minimum Requirements for <span className='colorblue z-50'>Accessibility</span></h1>
+    <div className='home '>
+        <header className='homeHeader '>
+          <h2 className=''>BP 344 Checker</h2>
+          <h1 className='colorBlack league-spartan '>Minimum Requirements for <span className='colorblue z-50'>Accessibility</span></h1>
         </header>
         
         <div className='mainContent h-3/4 z-10'>
@@ -100,7 +100,6 @@ export default function Home() {
             {/* end of drop down */}
 
             <Outlet />
-
             <Routes>
                 <Route path="/" element={<Empty />} />
                 <Route path="DroppedCurbs" element={<DroppedCurbs />} />

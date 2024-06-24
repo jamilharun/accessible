@@ -109,7 +109,7 @@ export default function ParkingArea() {
               showClear && 
                 <div className=' flex mb-5'>
                   <div>
-                    <div className=' input-container input-container-width'>
+                    <div className=' input-container input-container-width h-16'>
                       <p className=' input-text poppins-regular'>Clear width between the front ends of parker cars</p>
                       <input
                         type="number"

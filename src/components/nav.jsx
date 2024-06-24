@@ -9,7 +9,7 @@ export default function Nav() {
     const navigate = useNavigate()
   return (
     <>
-      <div className='main z-10'>
+      <div className='main'>
         <div className='navbar z-10'>
           <div className='icon z-10'>
             <header>

@@ -263,7 +263,7 @@ export default function DroppedCurbs() {
               showLowest && 
                 <div className=' flex mb-5'>
                   <div>
-                    <div className=' input-container input-container-width h-16'>
+                    <div className=' input-container input-container-width '>
                       <p className=' input-text poppins-regular'>Lowest point of height above the road or gutter</p>
                       <input
                         type="number"

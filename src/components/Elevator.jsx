@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+  import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { ELEVATORS } from '../preDatasets/InsideBuildingsAndStructures';
 export default function Elevator() {
@@ -256,7 +256,7 @@ export default function Elevator() {
               showControlPanel && 
                 <div className=' flex mb-5'>
                   <div>
-                    <div className=' input-container input-container-width'>
+                    <div className=' input-container input-container-width h-16'>
                       <p className=' input-text poppins-regular'>Control panel/emergency system location from floor</p>
                       <input
                         type="number"
