@@ -446,7 +446,7 @@ export default function WalkWaysPassageWays() {
                         <div className=' flex mb-5'>
                         <div>
                             <div className=' input-container input-container-width'>
-                            <p className=' input-text poppins-regular'>Cross Gradient</p>
+                            <p className=' input-text poppins-regular'>Cross gradient</p>
                             <input
                                 type="number"
                                 name="crossGradientNumerator"
@@ -533,7 +533,7 @@ export default function WalkWaysPassageWays() {
                         <div className=' flex mb-5'>
                         <div>
                             <div className=' input-container input-container-width'>
-                            <p className=' input-text poppins-regular'>Grating Openings</p>
+                            <p className=' input-text poppins-regular'>Grating openings</p>
                             <input
                                 type="number"
                                 name="gratingWidth"

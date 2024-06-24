@@ -140,7 +140,7 @@ export default function PublicTelephone() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Telephone boot door Width</p>
+                      <p className=' input-text poppins-regular'>Telephone boot door width</p>
                       <input
                         type="number"
                         name="telephone"
