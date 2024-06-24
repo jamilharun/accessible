@@ -598,6 +598,8 @@ ul li a:hover{
   font-size: large;
   font-weight: 400;
   padding-left: 10px;
+  background: white;
+  color: black;
 }
 
 .input-field-signage{
