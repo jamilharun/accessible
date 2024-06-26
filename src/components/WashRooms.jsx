@@ -397,7 +397,7 @@ export default function WashRooms() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular'>Water closet Area</p>
+                      <p className=' input-text poppins-regular'>Water closet area</p>
                       <input
                         type="number"
                         name="waterClosetAreaNumerator"

@@ -92,7 +92,7 @@ export default function WaterFountain() {
                 <div className=' flex mb-5'>
                   <div>
                     <div className=' input-container input-container-width'>
-                      <p className=' input-text poppins-regular justify-self-start'>Location of Fountain</p>
+                      <p className=' input-text poppins-regular justify-self-start'>Location of fountain</p>
                       <input
                         type="number"
                         name="location"
