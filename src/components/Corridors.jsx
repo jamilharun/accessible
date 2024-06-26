@@ -110,7 +110,7 @@ export default function Corridors() {
           setShowTurnaboutSpaceDead(true)
           
         } else {
-          navigate("/Profile");
+          navigate("/");
         }
       }
   return (

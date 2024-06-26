@@ -30,7 +30,7 @@ export default function Thresholds() {
       setShowMax(true)
       setButtonDefault(true)
     } else {
-      navigate("/Profile");
+      navigate("/");
     }
   }
 

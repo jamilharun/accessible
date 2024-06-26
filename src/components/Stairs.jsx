@@ -31,7 +31,7 @@ export default function Stairs() {
       setShowTactile(true)
       setButtonDefault(true)
     } else {
-      navigate("/Profile");
+      navigate("/");
     }
   }
 

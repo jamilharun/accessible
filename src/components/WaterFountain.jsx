@@ -80,7 +80,7 @@ export default function WaterFountain() {
         setShowWallMounted(true)
         setShowFloorMounted(true)
       } else {
-        navigate("/Profile");
+        navigate("/");
       }
     }
   return (

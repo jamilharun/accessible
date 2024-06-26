@@ -170,7 +170,7 @@ export default function Doors() {
           setShowVertical(true)
           setShowKick(true)
         } else {
-          navigate("/Profile");
+          navigate("/");
         }
       }
   return (

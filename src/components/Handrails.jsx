@@ -203,7 +203,7 @@ export default function Handrails() {
             setShowHandRailsPullGrip(true)
             setShowClearanceHandRailsLegs(true)
         } else {
-          navigate("/Profile");
+          navigate("/");
         }
       }
 

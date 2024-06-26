@@ -78,7 +78,7 @@ export default function Crossing() {
       setShowWidth(true)
       setShowCrossing(true)
     } else {
-      navigate("/Profile");
+      navigate("/");
     }
 }
   return (

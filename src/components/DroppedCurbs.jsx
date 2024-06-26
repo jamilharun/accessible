@@ -116,7 +116,7 @@ export default function DroppedCurbs() {
       setShowMaximum(true);
       setShowLowest(true);      
     } else {
-      navigate("/Profile");
+      navigate("/");
     }
   } 
   

@@ -52,7 +52,7 @@ export default function Covers() {
           setShowKickBoard(true)
           setButtonDefault(true)
         } else {
-          navigate("/Profile");
+          navigate("/");
         }
       }
 

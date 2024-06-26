@@ -384,7 +384,7 @@ export default function WashRooms() {
           setShowVerticalClearance(true)
           setShowUrinalHeightLip(true)
         } else {
-          navigate("/Profile");
+          navigate("/");
         }
       }
 

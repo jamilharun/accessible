@@ -157,7 +157,7 @@ export default function Elevator() {
           setShowDiameterElevator(true)
           setShowDepthElevator(true)
         } else {
-          navigate("/Profile");
+          navigate("/");
         }
       }
   

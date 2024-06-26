@@ -54,7 +54,7 @@ export default function Switches() {
           setShowDistance(true)
           setShowHeight(true)     
         } else {
-          navigate("/Profile");
+          navigate("/");
         }
       }
 

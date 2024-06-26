@@ -33,7 +33,7 @@ export default function SafetySignage() {
       setShowAvailable(true)
       setButtonDefault(true)
     } else {
-      navigate("/Profile");
+      navigate("/");
     }
   }
 

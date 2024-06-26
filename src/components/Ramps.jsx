@@ -258,7 +258,7 @@ export default function Ramps() {
           setShowCurbs(true);
           setShowRailing(true);
         } else {
-          navigate("/Profile");
+          navigate("/");
         }
       }
       

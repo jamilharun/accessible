@@ -52,7 +52,7 @@ export default function Fencing() {
           setShowTappingRails(true)
           setButtonDefault(true)
         } else {
-          navigate("/Profile");
+          navigate("/");
         }
       }
   

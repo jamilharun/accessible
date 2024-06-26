@@ -49,7 +49,7 @@ export default function Entrance() {
           setShowWidth(true)
           setButtonDefault(true)
         } else {
-          navigate("/Profile");
+          navigate("/");
         }
       }
   return (

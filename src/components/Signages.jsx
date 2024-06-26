@@ -360,7 +360,7 @@ export default function Signages() {
           setShowHeightSignage(true)
           
         } else {
-          navigate("/Profile");
+          navigate("/");
         }
     }
   return (

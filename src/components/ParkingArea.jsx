@@ -56,7 +56,7 @@ export default function ParkingArea() {
           setShowWidth(true)
             setShowClear(true)
         } else {
-          navigate("/Profile");
+          navigate("/");
         }
     }
   

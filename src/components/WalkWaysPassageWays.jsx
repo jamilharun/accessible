@@ -384,7 +384,7 @@ export default function WalkWaysPassageWays() {
             setShowSpaceDimension(true)
             setShowSpaceDistance(true)
         } else {
-          navigate("/Profile");
+          navigate("/");
         }
       }
     return (

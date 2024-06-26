@@ -81,7 +81,7 @@ export default function PublicTelephone() {
       setShowTelephone(true)
       setShowCoins(true)     
     } else {
-      navigate("/Profile");
+      navigate("/");
     }
   }
   return (

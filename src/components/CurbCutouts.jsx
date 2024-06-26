@@ -64,7 +64,7 @@ export default function CurbCutouts() {
           setShowGradient(true);
           setButtonDefault(true);  
         } else {
-          navigate("/Profile");
+          navigate("/");
         }
     }
     
